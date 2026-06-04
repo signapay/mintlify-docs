@@ -27,6 +27,7 @@
         "pages": [
           {
             "group": "Authentication",
+            "icon": "lock",
             "pages": [
               "getting-started/tutorials/authentication/overview",
               {
@@ -66,6 +67,7 @@
           },
           {
             "group": "Boarding",
+            "icon": "check-to-slot",
             "pages": [
               "getting-started/tutorials/onboarding",
               "merchants",
