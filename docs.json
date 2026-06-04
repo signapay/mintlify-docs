@@ -33,46 +33,7 @@
               "tutorials/boarding/partners"
             ]
           },
-          {
-            "group": "Authentication",
-            "icon": "lock",
-            "pages": [
-              "tutorials/authentication/overview",
-              {
-                "group": "Sessions",
-                "pages": [
-                  "tutorials/authentication/get-session",
-                  "tutorials/authentication/create-session",
-                  "tutorials/authentication/impersonate-user",
-                  "tutorials/authentication/end-impersonation",
-                  "tutorials/authentication/verify-mfa",
-                  "tutorials/authentication/resend-mfa-otp",
-                  "tutorials/authentication/change-password",
-                  "tutorials/authentication/forced-password-change",
-                  "tutorials/authentication/get-session-permissions"
-                ]
-              },
-              {
-                "group": "Password Reset",
-                "pages": [
-                  "tutorials/authentication/create-password-reset",
-                  "tutorials/authentication/complete-password-reset",
-                  "tutorials/authentication/verify-password-reset-token",
-                  "tutorials/authentication/verify-password-reset-otp"
-                ]
-              },
-              {
-                "group": "OTP & Verification",
-                "pages": [
-                  "tutorials/authentication/verify-email",
-                  "tutorials/authentication/send-otp",
-                  "tutorials/authentication/send-phone-otp",
-                  "tutorials/authentication/verify-phone-otp",
-                  "tutorials/authentication/verify-otp"
-                ]
-              }
-            ]
-          }
+          "tutorials/authentication/overview"
         ]
       },
       {
@@ -80,6 +41,45 @@
         "icon": "code",
         "pages": [
           "api-reference/overview",
+          {
+            "group": "Authentication",
+            "icon": "lock",
+            "pages": [
+              {
+                "group": "Sessions",
+                "pages": [
+                  "api-reference/authentication/get-session",
+                  "api-reference/authentication/create-session",
+                  "api-reference/authentication/impersonate-user",
+                  "api-reference/authentication/end-impersonation",
+                  "api-reference/authentication/verify-mfa",
+                  "api-reference/authentication/resend-mfa-otp",
+                  "api-reference/authentication/change-password",
+                  "api-reference/authentication/forced-password-change",
+                  "api-reference/authentication/get-session-permissions"
+                ]
+              },
+              {
+                "group": "Password Reset",
+                "pages": [
+                  "api-reference/authentication/create-password-reset",
+                  "api-reference/authentication/complete-password-reset",
+                  "api-reference/authentication/verify-password-reset-token",
+                  "api-reference/authentication/verify-password-reset-otp"
+                ]
+              },
+              {
+                "group": "OTP & Verification",
+                "pages": [
+                  "api-reference/authentication/verify-email",
+                  "api-reference/authentication/send-otp",
+                  "api-reference/authentication/send-phone-otp",
+                  "api-reference/authentication/verify-phone-otp",
+                  "api-reference/authentication/verify-otp"
+                ]
+              }
+            ]
+          },
           {
             "group": "Agents",
             "icon": "user-tie",
