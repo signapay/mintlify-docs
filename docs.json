@@ -35,10 +35,10 @@
                 "group": "Authentication",
                 "icon": "lock",
                 "pages": [
+                  "getting-started/tutorials/authentication/overview",
                   {
                     "group": "Sessions",
                     "pages": [
-                      "getting-started/tutorials/authentication/overview",
                       "getting-started/tutorials/authentication/get-session",
                       "getting-started/tutorials/authentication/create-session",
                       "getting-started/tutorials/authentication/impersonate-user",
