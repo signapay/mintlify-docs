@@ -26,66 +26,66 @@
       {
         "group": "Getting Started",
         "pages": [
-          "getting-started",
-          "index",
-          "quickstart"
-        ]
-      },
-      {
-        "group": "Tutorials",
-        "pages": [
-          "tutorials/overview",
+          "getting-started/getting-started",
+          "getting-started/index",
+          "getting-started/quickstart",
           {
-            "group": "Authentication",
-            "icon": "lock",
+            "group": "Tutorials",
             "pages": [
+              "tutorials/overview",
               {
-                "group": "Sessions",
+                "group": "Authentication",
+                "icon": "lock",
                 "pages": [
-                  "api-reference/authentication/overview",
-                  "api-reference/authentication/get-session",
-                  "api-reference/authentication/create-session",
-                  "api-reference/authentication/impersonate-user",
-                  "api-reference/authentication/end-impersonation",
-                  "api-reference/authentication/verify-mfa",
-                  "api-reference/authentication/resend-mfa-otp",
-                  "api-reference/authentication/change-password",
-                  "api-reference/authentication/forced-password-change",
-                  "api-reference/authentication/get-session-permissions"
+                  {
+                    "group": "Sessions",
+                    "pages": [
+                      "api-reference/authentication/overview",
+                      "api-reference/authentication/get-session",
+                      "api-reference/authentication/create-session",
+                      "api-reference/authentication/impersonate-user",
+                      "api-reference/authentication/end-impersonation",
+                      "api-reference/authentication/verify-mfa",
+                      "api-reference/authentication/resend-mfa-otp",
+                      "api-reference/authentication/change-password",
+                      "api-reference/authentication/forced-password-change",
+                      "api-reference/authentication/get-session-permissions"
+                    ]
+                  },
+                  {
+                    "group": "Password Reset",
+                    "pages": [
+                      "api-reference/authentication/create-password-reset",
+                      "api-reference/authentication/complete-password-reset",
+                      "api-reference/authentication/verify-password-reset-token",
+                      "api-reference/authentication/verify-password-reset-otp"
+                    ]
+                  },
+                  {
+                    "group": "OTP & Verification",
+                    "pages": [
+                      "api-reference/authentication/verify-email",
+                      "api-reference/authentication/send-otp",
+                      "api-reference/authentication/send-phone-otp",
+                      "api-reference/authentication/verify-phone-otp",
+                      "api-reference/authentication/verify-otp"
+                    ]
+                  }
                 ]
               },
               {
-                "group": "Password Reset",
+                "group": "Boarding",
+                "icon": "check-to-slot",
                 "pages": [
-                  "api-reference/authentication/create-password-reset",
-                  "api-reference/authentication/complete-password-reset",
-                  "api-reference/authentication/verify-password-reset-token",
-                  "api-reference/authentication/verify-password-reset-otp"
-                ]
-              },
-              {
-                "group": "OTP & Verification",
-                "pages": [
-                  "api-reference/authentication/verify-email",
-                  "api-reference/authentication/send-otp",
-                  "api-reference/authentication/send-phone-otp",
-                  "api-reference/authentication/verify-phone-otp",
-                  "api-reference/authentication/verify-otp"
+                  "tutorials/boarding",
+                  "merchants",
+                  "partners"
                 ]
               }
-            ]
-          },
-          {
-            "group": "Boarding",
-            "icon": "check-to-slot",
-            "pages": [
-              "tutorials/boarding",
-              "merchants",
-              "partners"
-            ]
+            ],
+            "icon": "readme"
           }
-        ],
-        "icon": "readme"
+        ]
       },
       {
         "group": "API Reference",
