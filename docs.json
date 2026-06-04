@@ -32,7 +32,6 @@
           {
             "group": "Tutorials",
             "pages": [
-              "tutorials/overview",
               {
                 "group": "Authentication",
                 "icon": "lock",
