@@ -26,6 +26,13 @@
         "icon": "readme",
         "pages": [
           {
+            "group": "Boarding",
+            "icon": "ship",
+            "pages": [
+              "getting-started/tutorials/boarding/partners"
+            ]
+          },
+          {
             "group": "Authentication",
             "icon": "lock",
             "pages": [
