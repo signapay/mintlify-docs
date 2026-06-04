@@ -25,63 +25,62 @@
     "groups": [
       {
         "group": "Getting Started",
+        "icon": "check-to-slot",
         "pages": [
           "getting-started/index",
-          "getting-started/quickstart",
+          "getting-started/quickstart"
+        ]
+      },
+      {
+        "group": "Tutorials",
+        "icon": "readme",
+        "pages": [
           {
-            "group": "Tutorials",
+            "group": "Authentication",
             "pages": [
+              "getting-started/tutorials/authentication/overview",
               {
-                "group": "Authentication",
-                "icon": "lock",
+                "group": "Sessions",
                 "pages": [
-                  "getting-started/tutorials/authentication/overview",
-                  {
-                    "group": "Sessions",
-                    "pages": [
-                      "getting-started/tutorials/authentication/get-session",
-                      "getting-started/tutorials/authentication/create-session",
-                      "getting-started/tutorials/authentication/impersonate-user",
-                      "getting-started/tutorials/authentication/end-impersonation",
-                      "getting-started/tutorials/authentication/verify-mfa",
-                      "getting-started/tutorials/authentication/resend-mfa-otp",
-                      "getting-started/tutorials/authentication/change-password",
-                      "getting-started/tutorials/authentication/forced-password-change",
-                      "getting-started/tutorials/authentication/get-session-permissions"
-                    ]
-                  },
-                  {
-                    "group": "Password Reset",
-                    "pages": [
-                      "getting-started/tutorials/authentication/create-password-reset",
-                      "getting-started/tutorials/authentication/complete-password-reset",
-                      "getting-started/tutorials/authentication/verify-password-reset-token",
-                      "getting-started/tutorials/authentication/verify-password-reset-otp"
-                    ]
-                  },
-                  {
-                    "group": "OTP & Verification",
-                    "pages": [
-                      "getting-started/tutorials/authentication/verify-email",
-                      "getting-started/tutorials/authentication/send-otp",
-                      "getting-started/tutorials/authentication/send-phone-otp",
-                      "getting-started/tutorials/authentication/verify-phone-otp",
-                      "getting-started/tutorials/authentication/verify-otp"
-                    ]
-                  }
+                  "getting-started/tutorials/authentication/get-session",
+                  "getting-started/tutorials/authentication/create-session",
+                  "getting-started/tutorials/authentication/impersonate-user",
+                  "getting-started/tutorials/authentication/end-impersonation",
+                  "getting-started/tutorials/authentication/verify-mfa",
+                  "getting-started/tutorials/authentication/resend-mfa-otp",
+                  "getting-started/tutorials/authentication/change-password",
+                  "getting-started/tutorials/authentication/forced-password-change",
+                  "getting-started/tutorials/authentication/get-session-permissions"
                 ]
               },
               {
-                "group": "Boarding",
-                "icon": "check-to-slot",
+                "group": "Password Reset",
                 "pages": [
-                  "getting-started/tutorials/onboarding",
-                  "merchants",
-                  "partners"
+                  "getting-started/tutorials/authentication/create-password-reset",
+                  "getting-started/tutorials/authentication/complete-password-reset",
+                  "getting-started/tutorials/authentication/verify-password-reset-token",
+                  "getting-started/tutorials/authentication/verify-password-reset-otp"
+                ]
+              },
+              {
+                "group": "OTP & Verification",
+                "pages": [
+                  "getting-started/tutorials/authentication/verify-email",
+                  "getting-started/tutorials/authentication/send-otp",
+                  "getting-started/tutorials/authentication/send-phone-otp",
+                  "getting-started/tutorials/authentication/verify-phone-otp",
+                  "getting-started/tutorials/authentication/verify-otp"
                 ]
               }
-            ],
-            "icon": "readme"
+            ]
+          },
+          {
+            "group": "Boarding",
+            "pages": [
+              "getting-started/tutorials/onboarding",
+              "merchants",
+              "partners"
+            ]
           }
         ]
       },
