@@ -26,6 +26,7 @@
       {
         "group": "Getting Started",
         "pages": [
+          "getting-started",
           "index",
           "quickstart"
         ]
@@ -33,6 +34,7 @@
       {
         "group": "Tutorials",
         "pages": [
+          "tutorials/overview",
           {
             "group": "Authentication",
             "icon": "lock",
@@ -77,6 +79,7 @@
             "group": "Boarding",
             "icon": "check-to-slot",
             "pages": [
+              "tutorials/boarding",
               "merchants",
               "partners"
             ]
@@ -88,10 +91,12 @@
         "group": "API Reference",
         "icon": "code",
         "pages": [
+          "api-reference/overview",
           {
             "group": "Agents",
             "icon": "user-tie",
             "pages": [
+              "api-reference/agents/index",
               {
                 "group": "Agents",
                 "pages": [
@@ -130,6 +135,7 @@
             "group": "Reporting",
             "icon": "chart-line",
             "pages": [
+              "api-reference/dashboards/index",
               {
                 "group": "Agent",
                 "pages": [
@@ -174,6 +180,7 @@
             "group": "Applications",
             "icon": "user-plus",
             "pages": [
+              "api-reference/leads/index",
               {
                 "group": "Leads",
                 "pages": [
@@ -348,6 +355,7 @@
             "group": "Merchants",
             "icon": "store",
             "pages": [
+              "api-reference/merchants/index",
               {
                 "group": "Merchants",
                 "pages": [
@@ -472,6 +480,7 @@
             "group": "Partners",
             "icon": "handshake",
             "pages": [
+              "api-reference/partners/index",
               {
                 "group": "Partners",
                 "pages": [
@@ -559,6 +568,7 @@
             "group": "Tickets",
             "icon": "ticket",
             "pages": [
+              "api-reference/tickets/index",
               {
                 "group": "Tickets",
                 "pages": [
