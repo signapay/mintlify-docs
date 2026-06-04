@@ -1,0 +1,45 @@
+---
+title: "Merchants Overview"
+description: "Manage active merchant accounts and their configuration"
+---
+
+Merchants are fully boarded processing accounts linked to a client record. They have completed onboarding and are actively processing card transactions.
+
+## What's included
+
+### Core
+
+- **Merchant records** — List, retrieve, and update merchant profiles.
+- **Status transitions** — Activate, deactivate, or close a merchant via `PUT /merchants/{merchantId}/{action}`.
+- **MID** — Retrieve the merchant identifier.
+- **Risk profile** — Update the merchant's risk classification.
+- **Service acceptance** — Retrieve and update service terms acceptance.
+- **Terminal setup** — Retrieve and update terminal configuration. Download the VAR sheet PDF for deployment.
+- **QA review** — Mark a merchant's quality assurance review as complete.
+- **Sensitive data** — Decrypt protected fields on demand.
+
+### Business profile
+
+- **Business addresses** — Manage merchant location addresses.
+- **Principals** — Add and update beneficial owners with encrypted sensitive field support.
+
+### Documents & notes
+
+- **Documents** — Attach, retrieve, update, and delete merchant compliance and onboarding documents.
+- **Notes** — Internal notes on the merchant record.
+
+### Pricing
+
+- **Pricing items** — Individual fee line items.
+- **Pricing packages** — Grouped pricing configurations.
+- **Pricing templates** — Reusable pricing structures.
+- **Pricing rules** — Conditional pricing logic.
+
+### Equipment
+
+- **Equipment models** — Terminal hardware records for the merchant.
+- **Equipment orders** — Deployment orders with line items, gateway configuration, and file build type.
+
+### ISO package
+
+- **ISO package** — Create, retrieve, and remove the merchant's ISO package association.

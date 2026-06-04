@@ -1,0 +1,36 @@
+---
+title: "Users and Access Overview"
+description: "Manage users, roles, permissions, and user groups"
+---
+
+The Users and Access endpoints control platform authentication identities and their authorization. Users are scoped to one or more clients in the hierarchy and assigned a role that governs what they can see and do.
+
+## What's included
+
+### Users
+
+- **User CRUD** — Create, list, retrieve, update, and delete user accounts.
+- **Filtered lists** — List users by client hierarchy (`GET /users/by-client-hierarchy`) or by group type (`GET /users/groups/{groupType}`).
+- **Role assignment** — Update the role assigned to a user.
+- **Invitations** — Resend invite emails for pending (unactivated) users.
+- **Password** — Trigger a forgot-password email for a user.
+
+### Contact details
+
+- **Phone numbers** — Add, remove, set a primary phone, verify via OTP, and resend verification SMS.
+- **Email addresses** — Add, remove, set a primary email, and resend verification.
+
+### Client associations
+
+- **Client users** — Associate a user with a client (`POST /users/{userId}/clients/{clientId}`), remove the association, and list a user's client memberships.
+
+### Roles & permissions
+
+- **Roles** — Create, list, retrieve, and update role definitions.
+- **Role features** — Assign and remove features from a role. The feature set controls which platform resources a role can access (leads, clients, users, pricing, equipment, tickets, reports, and more).
+- **Features catalog** — Browse all available feature flags that can be assigned to a role.
+
+### Groups
+
+- **User groups** — Create, list, retrieve, update, and delete user groups.
+- **Group membership** — Add and remove users from groups.

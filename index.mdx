@@ -1,0 +1,58 @@
+---
+title: "Introduction"
+description: "The PayHub API is a REST interface for the SignaPay PayHub platform. It covers the full merchant lifecycle — from lead origination and boarding through active merchant management, reporting, and user administration.
+All requests are made over HTTPS. Request and response bodies are JSON."
+---
+
+## Authentication
+
+Two schemes are supported. Pass one in the `Authorization` header of every request.
+
+| Scheme | Format | When to use |
+| --- | --- | --- |
+| Session token | `Bearer <token>` | User-driven calls. Obtained from `POST /sessions`. |
+| API key | `Api-Key <api-key>` | Service-to-service integrations. Managed via the [Client API Key](/api-reference/clients/get-client-api-key) endpoints. |
+
+<Tip>
+  See the [Authentication Overview](/api-reference/authentication/overview) for the full session and MFA flow, including multi-factor authentication, impersonation, and password reset.
+</Tip>
+
+## Get started
+
+<CardGroup cols={2}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Authenticate and make your first API call.
+  </Card>
+
+  <Card title="Authentication" icon="lock" href="/api-reference/authentication/overview">
+    Sessions, MFA, password reset, and OTP endpoints.
+  </Card>
+</CardGroup>
+
+## API areas
+
+<CardGroup cols={2}>
+  <Card title="Agents" icon="user-tie" href="/api-reference/agents/overview">
+    Manage sales agents, their documents, and notes.
+  </Card>
+
+  <Card title="Applications" icon="user-plus" href="/api-reference/leads/overview">
+    Create and board merchant applications through the full underwriting workflow.
+  </Card>
+
+  <Card title="Reporting" icon="chart-line" href="/api-reference/dashboards/overview">
+    KPI metrics and summary data for agents, merchants, and partners.
+  </Card>
+
+  <Card title="Merchants" icon="store" href="/api-reference/merchants/overview">
+    Manage active merchants, pricing, equipment, and documents.
+  </Card>
+
+  <Card title="Partners" icon="handshake" href="/api-reference/partners/overview">
+    Manage partner organizations, their settings, and pricing.
+  </Card>
+
+  <Card title="Tickets" icon="ticket" href="/api-reference/tickets/overview">
+    Create and manage support tickets, activities, and watchers.
+  </Card>
+</CardGroup>

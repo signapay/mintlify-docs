@@ -1,0 +1,51 @@
+---
+title: "Authentication Overview"
+description: "Session, MFA, password reset, and OTP endpoints"
+---
+
+The Authentication endpoints manage user sessions and the full identity verification flow. All protected API endpoints require a valid session token or API key passed in the `Authorization` header.
+
+## Authentication methods
+
+Two schemes are supported:
+
+- **`Bearer <token>`** — Issued after a successful `POST /sessions` login. Used for user-driven API calls.
+- **`Api-Key <api-key>`** — Long-lived key issued per client. Used for service-to-service integrations. Manage keys via the [Client API Key](/api-reference/clients/get-client-api-key) endpoints.
+
+## What's included
+
+### Sessions
+
+- **Create session** — Authenticate with email and password to receive a bearer token.
+- **Get session** — Retrieve the current session and its associated user.
+- **Get session permissions** — Return the full permission set for the active session.
+- **Change password** — Update the current user's password within a live session.
+- **Forced password change** — Complete a forced password change required on first login or after an admin reset.
+
+### Multi-factor authentication
+
+- **Verify MFA** — Submit the MFA code to complete a pending login challenge.
+- **Resend MFA OTP** — Re-send the MFA one-time password via email or SMS.
+
+### Impersonation
+
+- **Impersonate a user** — Privileged users can assume another user's session for support and debugging.
+- **End impersonation** — Return to the original privileged session.
+
+### Password reset
+
+- **Create password reset** — Initiate the reset flow; triggers an OTP to the user's email.
+- **Verify password reset OTP** — Confirm the one-time password sent during reset.
+- **Verify password reset token** — Validate a reset token (link-based flow).
+- **Complete password reset** — Set a new password to finalize the reset.
+
+### One-time passwords
+
+- **Send OTP** — Deliver an OTP to the user's email.
+- **Verify OTP** — Confirm the submitted OTP.
+- **Send phone OTP** — Deliver an OTP via SMS.
+- **Verify phone OTP** — Confirm the SMS OTP.
+
+### Email verification
+
+- **Verify email address** — Confirm ownership of an email address via a verification token.

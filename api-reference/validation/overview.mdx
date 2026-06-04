@@ -1,0 +1,37 @@
+---
+title: "Validation Overview"
+description: "Validate inputs against platform rules before submission"
+---
+
+The Validation section covers federated identity integrations — SAML SSO for identity provider (IdP) login flows, and an OAuth2 authorization server with an Okta-compatible layer.
+
+<Info>
+  For data validation checks against leads and clients (DataX, Equifax, GIACT, MATCH Pro, TinCheck), see the [Leads](/api-reference/leads/overview) and [Clients](/api-reference/clients/overview) sections.
+</Info>
+
+## What's included
+
+### SAML SSO
+
+Integrates with any SAML 2.0 compliant identity provider:
+
+- **Initiate SSO** — `GET /saml/sso` redirects the user to the configured IdP for authentication.
+- **Complete SSO** — `GET /saml/complete` handles the IdP callback and establishes a platform session.
+
+### OAuth2
+
+Standard authorization code flow:
+
+- **Authorize** — `GET /oauth/authorize` initiates the authorization code flow.
+- **Complete** — `GET /oauth/complete` handles the redirect callback after user consent.
+- **Token exchange** — `POST /oauth/token` exchanges an authorization code for an access token.
+- **Token introspection** — `POST /oauth/introspect` validates and inspects an active token.
+- **Token revocation** — `POST /oauth/revoke` revokes an access or refresh token.
+
+### Okta-compatible layer
+
+Parallel endpoints for environments integrated with Okta as an identity provider:
+
+- **Okta authorize** — `GET /oauth/okta/authorize`
+- **Okta token exchange** — `POST /oauth/okta/token`
+- **Okta token introspection** — `POST /oauth/okta/introspect`

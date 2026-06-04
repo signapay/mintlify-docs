@@ -1,0 +1,35 @@
+---
+title: "Partners Overview"
+description: "Manage partner organizations in the SignaPay network"
+---
+
+Partners are ISO or referral organizations that bring merchants and agents onto the platform. They sit in the client hierarchy above merchants and below the platform operator.
+
+## What's included
+
+### Core
+
+- **Partner records** — List, retrieve, and update partner profiles.
+- **Status transitions** — Activate, deactivate, or close a partner via `PUT /partners/{partnerId}/{action}`.
+- **Sensitive data** — Decrypt protected fields on demand.
+
+### Business profile
+
+- **Business addresses** — Manage partner location addresses.
+- **Principals** — Add and update beneficial owners and key contacts with encrypted sensitive field support.
+
+### Documents & notes
+
+- **Documents** — Attach, retrieve, update, and delete partner documents.
+- **Notes** — Internal notes on the partner record.
+
+### Pricing
+
+- **Pricing items** — Individual fee line items defining the partner's cost schedule.
+- **Pricing packages** — Grouped pricing configurations.
+- **Pricing templates** — Reusable pricing structures applied to downstream merchants.
+- **Pricing rules** — Conditional pricing logic.
+
+### Processor settings
+
+- **Processor settings** — List all processor-specific settings for a partner, and update individual entries.

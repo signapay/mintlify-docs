@@ -1,0 +1,43 @@
+---
+title: "Financial Reporting Overview"
+description: "Residuals, deposits, fees, and statement data"
+---
+
+The Financial Reporting endpoints expose read-only monetary and transaction data used by finance teams, operations staff, and merchant-facing UIs.
+
+## What's included
+
+### Deposits
+
+- **Deposits** — List and retrieve daily or batch funding records.
+- **Deposit details** — Line-item breakdown of each deposit record.
+
+### Chargebacks
+
+- **Chargebacks** — List and retrieve dispute records tied to merchant transactions.
+- **Related chargebacks** — Retrieve other chargebacks related to a given dispute.
+
+### Residuals
+
+- **ISO residual summaries** — Historical residual payout periods with aggregate metrics.
+- **Residual metrics** — Aggregated KPI metrics across all residual periods.
+- **Gross details** — Cross-residual gross fee breakdown.
+- **Merchant summaries** — Per-merchant residual breakdowns within a residual period, also queryable across all periods.
+- **Merchant details** — Fee category line items for a merchant's residual summary.
+- **Overrides** — Manual residual adjustments for a period, also queryable across all periods.
+
+### Transactions
+
+- **Transactions** — List and retrieve individual card transactions with filtering. Look up by external reference ID.
+- **Transaction notes** — Internal notes attached to a transaction.
+
+### Transaction batches
+
+- **Batches** — List and retrieve settlement batch records.
+- **Batch notes** — Internal notes on a batch.
+
+### Statements
+
+- **Statements** — List and retrieve merchant or partner statement records.
+- **Statement documents** — Download a document attached to a statement.
+- **Statement notes** — Internal notes on a statement.

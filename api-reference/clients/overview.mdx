@@ -1,0 +1,50 @@
+---
+title: "Clients Overview"
+description: "Manage clients across the SignaPay hierarchy"
+---
+
+Clients represent every organization node in the SignaPay hierarchy — from the platform operator down through processors, banks, ISOs, sub-ISOs, and agents. Every entity that owns settings, users, or processing relationships is a client record.
+
+## What's included
+
+### Core
+
+- **Client records** — List, retrieve, and update client profiles. Status transitions (activate, deactivate, close) use `PUT /clients/{clientId}/{action}`.
+- **Search** — Look up a client by MID, DBA, or other identifier via `GET /clients/search/{type}`.
+- **Defaults** — Retrieve and update default configuration scoped to a client.
+- **Sensitive data** — Decrypt protected fields on demand.
+
+### Business profile
+
+- **Business addresses** — Add and manage multiple business location addresses.
+- **Principals** — Capture beneficial owners and key signers with encrypted SSN and date-of-birth support.
+- **Deposit info** — ACH funding account details with field-level decryption.
+
+### Documents & notes
+
+- **Documents** — Attach, retrieve, update, and delete compliance and onboarding documents.
+- **Notes** — Internal notes visible to platform staff.
+
+### Settings
+
+- **Portal settings** — Configure the client-branded portal appearance, including subdomain. Can also be retrieved by subdomain without a client ID.
+- **Security settings** — Password expiration, login attempt limits, session timeouts, and MFA requirements.
+
+### API access
+
+- **API keys** — Generate, retrieve, and revoke long-lived API keys for service-to-service access.
+
+### Users & hierarchy
+
+- **Users** — List users belonging to a client; list users by type.
+- **Bank BINs** — View the bank BIN records available to a specific client.
+
+### Validations
+
+Run identity and compliance checks directly against a client record:
+
+- **DataX** — Identity verification.
+- **Equifax** — Credit report and state ID verification.
+- **GIACT** — Bank account validation.
+- **MATCH Pro** — Mastercard terminated merchant screening.
+- **TinCheck** — Tax ID verification.

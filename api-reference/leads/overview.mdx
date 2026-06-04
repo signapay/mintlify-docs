@@ -1,0 +1,78 @@
+---
+title: "Leads Overview"
+description: "Manage prospective merchant leads through the sales pipeline"
+---
+
+Leads represent merchant applications in progress. A lead captures everything needed to underwrite and board a new merchant — business details, ownership, pricing, equipment, and e-signatures. Once approved, a lead is transitioned into an active merchant record.
+
+## Lifecycle
+
+Leads move through a configurable pipeline of statuses:
+
+- Use `PUT /leads/{leadId}/transition/{status}` to move a lead to a new status.
+- Use `PUT /leads/{leadId}/submit/{reviewer}` to send a lead to underwriting or compliance for review.
+
+## What's included
+
+### Core
+
+- **Lead CRUD** — Create, list, retrieve, update, and delete leads.
+- **MID** — Retrieve the assigned merchant identifier once boarding is complete.
+- **Risk profile** — Update the lead's risk classification.
+- **Service acceptance** — Retrieve and update service terms acceptance.
+- **Sensitive data** — Decrypt protected fields (SSN, bank account, etc.) on demand.
+
+### Lead sources
+
+- **Lead sources** — Create and manage referral and campaign sources. Associate or remove sources on individual leads.
+
+### Business profile
+
+- **Business addresses** — Add and manage multiple business location addresses.
+- **Principals** — Capture beneficial owners and signers with encrypted SSN and date-of-birth support.
+- **Deposit info** — ACH funding account details with field-level decryption.
+
+### Documents & notes
+
+- **Documents** — Attach, retrieve, update, and delete supporting documents.
+- **Notes** — Add internal notes for team collaboration.
+
+### Pricing
+
+- **Pricing items** — Individual fee line items (e.g. interchange, basis points, per-item fees).
+- **Pricing packages** — Grouped pricing configurations.
+- **Pricing rules** — Conditional pricing logic applied to the lead.
+
+### Equipment
+
+- **Equipment models** — Define the terminal hardware associated with the lead.
+- **Equipment orders** — Create and manage deployment orders.
+- **Order items** — Line items within an equipment order.
+- **Order gateway** — Gateway configuration for the equipment order.
+- **Order file build type** — File build type for the equipment deployment.
+
+### Compliance & validation
+
+- **Completeness check** — Validate the lead against all required fields before submission.
+- **DataX** — Identity verification.
+- **Equifax** — Credit report and state ID verification.
+- **GIACT** — Bank account validation.
+- **MATCH Pro** — Mastercard terminated merchant screening.
+- **TinCheck** — Tax ID verification.
+
+### Signing
+
+- **E-signature sessions** — Create and verify signing sessions for MPA agreement delivery.
+
+### Clear identity verification
+
+- **Clear sessions** — Initiate a Clear identity verification session.
+- **Verification status** — Retrieve the result of a Clear verification.
+
+### Fast Apply
+
+Streamlined public-facing MPA form flow:
+
+- **General** — Update the general application section.
+- **Business** — Update the business details section.
+- **Principals** — Save, create, and update principal records via the Fast Apply form.

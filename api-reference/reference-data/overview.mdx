@@ -1,0 +1,53 @@
+---
+title: "Reference Data Overview"
+description: "Lookups for MCCs, industries, banks, processors, and more"
+---
+
+Reference Data endpoints return lookup tables and utility services used throughout the platform for underwriting, equipment deployment, address validation, and application forms. Most are read-only.
+
+## What's included
+
+### Merchant category codes (MCC)
+
+- **MCCs** — Full list of merchant category codes used for routing and risk underwriting.
+- **MCC relations** — Relationship mappings between related MCC codes.
+- **MCC card processing profiles** — Card processing profile configurations per MCC.
+
+### Classifications
+
+- **Industry types** — Available business industry classifications.
+- **Merchant types** — Merchant business type options.
+- **Merchant risk categories** — Risk category definitions. Look up by MCC code or by risk category ID.
+
+### Banking
+
+- **Bank BINs** — All bank BIN records available on the platform. For client-scoped BINs, use `GET /clients/{clientId}/bank-bins`.
+
+### Pricing
+
+- **Pricing models** — Available pricing model types (e.g. interchange-plus, flat-rate, tiered).
+- **Pricing templates** — Platform-wide reusable pricing templates.
+
+### Documents
+
+- **Document types** — Supported document category definitions used when attaching documents across the platform.
+
+### Address validation
+
+- **Autocomplete** — US address autocomplete suggestions powered by the Smarty proxy.
+- **Verify** — Normalize and validate a US address.
+
+### Search
+
+- **Algolia search config** — Retrieve the Algolia API key and index configuration for client-side search integration.
+
+### Equipment
+
+- **Deployment queue** — View the current equipment deployment queue across all merchants.
+
+### MATCH Pro
+
+- **Add terminated merchant** — Report a terminated merchant to the Mastercard MATCH list.
+- **Inquiry history** — Retrieve the full inquiry history for a MATCH reference number.
+- **Retroactive inquiry list** — Submit a retroactive MATCH inquiry request.
+- **Retroactive inquiry details** — Retrieve the results of a retroactive inquiry by reference number.

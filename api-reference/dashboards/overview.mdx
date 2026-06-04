@@ -1,0 +1,51 @@
+---
+title: "Dashboards Overview"
+description: "Aggregated metrics and visualizations across the platform"
+---
+
+The Dashboard endpoints return pre-aggregated metrics that power the SignaPay admin, partner, agent, and merchant UIs. All responses are read-only and scoped to the authenticated user's role and client hierarchy.
+
+## Dashboard types
+
+### Agent dashboard
+
+Metrics scoped to a specific agent's portfolio:
+
+| Endpoint | Description |
+| --- | --- |
+| Applications summary | Lead counts broken down by pipeline stage |
+| KPI metrics | Key performance indicators for the agent |
+| Merchant status | Active, inactive, and closed merchant breakdown |
+| Monthly active merchants | Month-over-month active merchant count |
+| Monthly processing volume | Rolling monthly processing volume trend |
+| Net merchants | Net merchant adds and attrition by month |
+| Ticket counts | Open ticket summary for the agent |
+| Top performers by processing | Highest-volume merchants in the agent's book |
+
+### Merchant dashboard
+
+Metrics scoped to a single merchant's activity:
+
+| Endpoint | Description |
+| --- | --- |
+| KPI metrics | Key performance indicators for the merchant |
+| Latest batch date | Most recent settlement batch date |
+| Recent transactions | Latest transaction activity |
+| Ticket counts | Open support tickets for the merchant |
+| Transaction trend | Volume trend over time |
+
+### Partner dashboard
+
+Metrics scoped to a partner's full downstream portfolio:
+
+| Endpoint | Description |
+| --- | --- |
+| Applications summary | Lead pipeline breakdown across all agents |
+| KPI metrics | Key performance indicators for the partner |
+| Merchant status | Portfolio-level active/inactive/closed breakdown |
+| Monthly active merchants | Month-over-month active merchant count |
+| Monthly processing volume | Rolling monthly volume trend |
+| Net merchants | Net merchant adds and attrition by month |
+| Top agents MTD | Best-performing agents month-to-date |
+| Top performers by processing | Highest-volume merchants in the portfolio |
+| Top performers by residual | Highest-residual merchants in the portfolio |
