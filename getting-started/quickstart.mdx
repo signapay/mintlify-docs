@@ -8,7 +8,7 @@ description: "Begin with a guide on the fastest path to a successful outcome"
 Before you begin, make sure you have:
 
 - A SignaPay PayHub account with API access enabled
-- Either a user login (email \+ password) or a long-lived **API key** issued for your client — see [Authentication](/getting-started/tutorials/authentication/overview) for details
+- Either a user login (email \+ password) or a long-lived **API key** issued for your client — see [Authentication](/tutorials/authentication/overview) for details
 - An HTTP client such as `curl`, Postman, or your preferred SDK
 
 All requests must be made over HTTPS to the base URL:
@@ -51,7 +51,7 @@ PayHub supports two authentication schemes. Use whichever fits your integration:
     Authorization: Bearer <token>
     ```
 
-    See [Create session](/getting-started/tutorials/authentication/create-session) and [Verify MFA](/getting-started/tutorials/authentication/verify-mfa) for full request and response schemas.
+    See [Create session](/api-reference/authentication/create-session) and [Verify MFA](/api-reference/authentication/verify-mfa) for full request and response schemas.
   </Tab>
   <Tab title="API key (service-to-service)">
     For automated integrations, use a long-lived API key instead of logging in on each request. Keys are managed through the [Client API Key](/api-reference/clients/get-client-api-key) endpoints.
@@ -119,6 +119,6 @@ From here, the API covers the full merchant lifecycle. Jump to the section that 
 
 ## Next steps
 
-- **Authentication deep dive** — Learn about session management, MFA, impersonation, and password reset flows in the [Authentication overview](/getting-started/tutorials/authentication/overview).
+- **Authentication deep dive** — Learn about session management, MFA, impersonation, and password reset flows in the [Authentication overview](/tutorials/authentication/overview).
 - **Full API reference** — Browse every available endpoint in the [API Reference overview](/api-reference/overview).
 - **Errors** — All errors follow a consistent structure. Review response codes before building error-handling logic.
