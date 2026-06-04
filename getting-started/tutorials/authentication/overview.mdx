@@ -7,6 +7,20 @@ The Authentication endpoints manage user sessions and the full identity verifica
 
 ## Authentication methods
 
+
+## Authentication
+
+Two schemes are supported. Pass one in the `Authorization` header of every request.
+
+| Scheme | Format | When to use |
+| --- | --- | --- |
+| Session token | `Bearer <token>` | User-driven calls. Obtained from `POST /sessions`. |
+| API key | `Api-Key <api-key>` | Service-to-service integrations. Managed via the [Client API Key](/api-reference/clients/get-client-api-key) endpoints. |
+
+<Tip>
+  See the [Authentication Overview](/api-reference/authentication/overview) for the full session and MFA flow, including multi-factor authentication, impersonation, and password reset.
+</Tip>
+
 Two schemes are supported:
 
 - **`Bearer <token>`** — Issued after a successful `POST /sessions` login. Used for user-driven API calls.

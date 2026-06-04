@@ -77,7 +77,7 @@
                 "group": "Boarding",
                 "icon": "check-to-slot",
                 "pages": [
-                  "tutorials/boarding",
+                  "getting-started/tutorials/onboarding",
                   "merchants",
                   "partners"
                 ]
