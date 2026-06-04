@@ -3,45 +3,122 @@ title: "Quickstart"
 description: "Begin with a guide on the fastest path to a successful outcome"
 ---
 
-Describe how someone begins using your product. What is the first thing they need to do? Are there any prerequisites?
-
-A quickstart should take someone from zero to using your product. They'll get a quick win and a sense of what they can accomplish.
-
 ## Prerequisites
 
-Before you begin, you must have:
+Before you begin, make sure you have:
 
-- Requirement one (for example, Node.js 18+, a free account, an API key)
-- Requirement two (for example, a compatible device, a compatible browser, a compatible operating system)
+- A SignaPay PayHub account with API access enabled
+- Either a user login (email \+ password) or a long-lived **API key** issued for your client — see [Authentication](/getting-started/tutorials/authentication/overview) for details
+- An HTTP client such as `curl`, Postman, or your preferred SDK
 
-## Get started
+All requests must be made over HTTPS to the base URL:
 
-<Steps>
-  <Step title="Install">
-    Describe how to install your product or sign up.
+```text
+https://api.signapay.com
+```
+
+---
+
+## Step 1 — Obtain a token
+
+PayHub supports two authentication schemes. Use whichever fits your integration:
+
+<Tabs>
+  <Tab title="Session token (user login)">
+    Exchange an email and password for a short-lived bearer token. If your account has MFA enabled, a second call is required to complete the challenge.
+
+    **1a. Create a session**
 
     ```bash
-    npm install your-package
+    curl -s -X POST https://api.signapay.com/v1/crm/sessions \
+      -H "Content-Type: application/json" \
+      -d '{"email": "you@example.com", "password": "••••••••"}'
     ```
-  </Step>
-  <Step title="Configure">
-    Describe any setup or configuration needed before first use.
+
+    A successful response returns a `token` and, if MFA is pending, a `mfaRequired: true` flag.
+
+    **1b. Complete MFA (if required)**
 
     ```bash
-    your-cli init
+    curl -s -X POST https://api.signapay.com/v1/crm/sessions/mfa \
+      -H "Content-Type: application/json" \
+      -d '{"code": "123456"}'
     ```
-  </Step>
-  <Step title="Run it">
-    Show the first thing a user does to see it working.
 
-    ```bash
-    your-cli start
+    Once MFA is verified, the response includes your bearer token. Pass it in every subsequent request:
+
+    ```text
+    Authorization: Bearer <token>
     ```
-  </Step>
-</Steps>
+
+    See [Create session](/getting-started/tutorials/authentication/create-session) and [Verify MFA](/getting-started/tutorials/authentication/verify-mfa) for full request and response schemas.
+  </Tab>
+  <Tab title="API key (service-to-service)">
+    For automated integrations, use a long-lived API key instead of logging in on each request. Keys are managed through the [Client API Key](/api-reference/clients/get-client-api-key) endpoints.
+
+    Pass the key in every request:
+
+    ```text
+    Authorization: Api-Key <your-api-key>
+    ```
+
+    No session creation step is needed.
+  </Tab>
+</Tabs>
+
+---
+
+## Step 2 — Make your first request
+
+With your token or API key in hand, try fetching the list of agents in your account:
+
+```bash
+curl -s https://api.signapay.com/v1/crm/agents \
+  -H "Authorization: Bearer <token>"
+```
+
+A successful `200` response returns a paginated list of agent records. If the list is empty, your account may not have any agents configured yet — that's fine; the important thing is that the request authenticated successfully.
 
 <Tip>
-  Give people a way to get help. This could be a link to a support page, a chat with a customer support agent, or a forum for your product.
-
-  Example: Need help? Reach out to us at [support@yourcompany.com](mailto:support@yourcompany.com).
+  Replace `Bearer <token>` with `Api-Key <your-api-key>` if you're using a service key instead.
 </Tip>
+
+---
+
+## Step 3 — Explore what you can do
+
+From here, the API covers the full merchant lifecycle. Jump to the section that fits your use case:
+
+<CardGroup cols={2}>
+  <Card title="Applications" icon="user-plus" href="/api-reference/leads/overview">
+    Create and board merchant applications through the full underwriting workflow.
+  </Card>
+
+  <Card title="Merchants" icon="store" href="/api-reference/merchants/overview">
+    Manage active merchants, pricing schedules, equipment, and documents.
+  </Card>
+
+  <Card title="Agents" icon="user-tie" href="/api-reference/agents/overview">
+    Manage sales agents, their merchant assignments, documents, and notes.
+  </Card>
+
+  <Card title="Partners" icon="handshake" href="/api-reference/partners/overview">
+    Manage partner organizations, processor settings, and pricing.
+  </Card>
+
+  <Card title="Reporting" icon="chart-line" href="/api-reference/dashboards/overview">
+    KPI metrics and summary data for agents, merchants, and partners.
+  </Card>
+
+  <Card title="Tickets" icon="ticket" href="/api-reference/tickets/overview">
+    Create and manage support tickets, activities, and document attachments.
+  </Card>
+</CardGroup>
+
+---
+
+## Next steps
+
+- **Authentication deep dive** — Learn about session management, MFA, impersonation, and password reset flows in the [Authentication overview](/getting-started/tutorials/authentication/overview).
+- **Full API reference** — Browse every available endpoint in the [API Reference overview](/api-reference/overview).
+- **Errors** — All errors follow a consistent structure. Review response codes before building error-handling logic.
