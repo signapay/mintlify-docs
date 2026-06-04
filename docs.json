@@ -29,7 +29,8 @@
             "group": "Boarding",
             "icon": "ship",
             "pages": [
-              "getting-started/tutorials/boarding/partners"
+              "tutorials/boarding/merchants",
+              "tutorials/boarding/partners"
             ]
           },
           {
@@ -70,15 +71,6 @@
                   "getting-started/tutorials/authentication/verify-otp"
                 ]
               }
-            ]
-          },
-          {
-            "group": "Boarding",
-            "icon": "check-to-slot",
-            "pages": [
-              "getting-started/tutorials/onboarding",
-              "merchants",
-              "partners"
             ]
           }
         ]
