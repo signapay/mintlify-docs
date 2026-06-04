@@ -1,0 +1,102 @@
+---
+title: "Boarding a Partner"
+description: "Step-by-step guide to onboarding a new ISO or referral partner onto PayHub"
+icon: "handshake"
+---
+
+This guide walks through the full partner onboarding lifecycle — from creating the partner record through business profile setup, pricing configuration, and final activation. Each step links to the relevant API endpoint or overview for details.
+
+## Prerequisites
+
+Before you start, you need an authenticated session or API key with sufficient privileges to manage partner records. See the [Authentication Overview](/getting-started/tutorials/authentication/overview) for supported schemes.
+
+- **Session token** — Obtain one via [Create Session](/getting-started/tutorials/authentication/create-session). Pass it as `Bearer <token>` in the `Authorization` header.
+- **API key** — Long-lived keys for service-to-service integrations. Managed via [Client API Keys](/api-reference/clients/get-client-api-key).
+
+---
+
+## Boarding steps
+
+<Steps>
+  <Step title="Create the partner record">
+    A partner record is the root entity for an ISO or referral organization. All subsequent configuration — addresses, principals, pricing, and documents — attaches to this record.
+
+    **Endpoint:** `POST /v1/crm/partners`
+
+    Provide the partner's legal name, DBA name, and the client it belongs to. Refer to the [Partners Overview](/api-reference/partners/overview) for a full description of available fields and the partner hierarchy.
+
+    ```http
+    POST /v1/crm/partners
+    Authorization: Bearer <token>
+    ```
+  </Step>
+  <Step title="Add a business address">
+    Attach the partner's physical business location to the record.
+
+    **Endpoint:** [Add Partner Address](/api-reference/partners/add-partner-address) — `POST /v1/crm/partners/{partnerId}/business-addresses`
+
+    Include street, city, state, and ZIP. Multiple addresses can be added if the partner operates from more than one location.
+  </Step>
+  <Step title="Add principals">
+    Capture beneficial owners, key contacts, and signers for the partner organization.
+
+    **Endpoint:** [Add Partner Principal](/api-reference/partners/add-partner-principal) — `POST /v1/crm/partners/{partnerId}/principals`
+
+    Sensitive fields such as SSN and date of birth are encrypted at rest. Use [Decrypt Partner Principal](/api-reference/partners/decrypt-partner-principal) to retrieve protected values when needed.
+  </Step>
+  <Step title="Attach supporting documents">
+    Upload any required compliance or contractual documents for the partner.
+
+    **Endpoint:** [Create Partner Document](/api-reference/partners/create-partner-document) — `POST /v1/crm/partners/{partnerId}/documents`
+
+    Documents are stored against the partner record and can be retrieved individually or listed via [List Partner Documents](/api-reference/partners/list-partner-documents).
+  </Step>
+  <Step title="Configure pricing">
+    Set up the fee structure that defines the partner's cost schedule and the pricing structures it can apply to downstream merchants.
+
+    - **Pricing items** — [Create Pricing Item](/api-reference/partners/create-partner-pricing-item) (`POST /v1/crm/partners/{partnerId}/pricing-items`). Individual fee line items such as interchange pass-through, basis points, and per-transaction fees.
+    - **Pricing packages** — [Create Pricing Package](/api-reference/partners/create-partner-pricing-package) (`POST /v1/crm/partners/{partnerId}/pricing-packages`). Group related pricing items into a named configuration.
+    - **Pricing templates** — [Create Pricing Template](/api-reference/partners/create-partner-pricing-template) (`POST /v1/crm/partners/{partnerId}/pricing-templates`). Reusable pricing structures the partner can apply when boarding its own merchants.
+    - **Pricing rules** — [Create Pricing Rule](/api-reference/partners/create-partner-pricing-rule) (`POST /v1/crm/partners/{partnerId}/pricing-rules`). Apply conditional pricing logic, such as volume tiers or card-type overrides.
+  </Step>
+  <Step title="Review processor settings">
+    Confirm or update the processor-specific configuration for the partner. These settings control how the partner's downstream transactions are routed and processed.
+
+    - **List settings** — [List Partner Processor Settings](/api-reference/partners/list-partner-processor-settings) (`GET /v1/crm/partners/{partnerId}/processor-settings`). Review all processor configuration entries.
+    - **Update a setting** — [Update Partner Processor Setting](/api-reference/partners/update-partner-processor-setting) (`PUT /v1/crm/partners/{partnerId}/processor-settings/{processorSettingId}`). Modify an individual entry as needed.
+  </Step>
+  <Step title="Activate the partner">
+    Once all configuration is in place, transition the partner to an active status so it can begin boarding merchants and agents.
+
+    **Endpoint:** [Update Partner Status](/api-reference/partners/update-partner-status) — `PUT /v1/crm/partners/{partnerId}/{action}`
+
+    Pass `activate` as the `action` path parameter. See the [Partners Overview](/api-reference/partners/overview) for a description of all available status transitions.
+
+    ```http
+    PUT /v1/crm/partners/{partnerId}/activate
+    Authorization: Bearer <token>
+    ```
+  </Step>
+</Steps>
+
+---
+
+## Related resources
+
+<CardGroup cols={2}>
+  <Card title="Partners Overview" icon="handshake" href="/api-reference/partners/overview">
+    Full reference for the partner hierarchy, status lifecycle, and all available sub-resources.
+  </Card>
+
+  <Card title="Partners API" icon="code" href="/api-reference/partners/index">
+    Browse all partner endpoints — records, addresses, principals, documents, pricing, and processor settings.
+  </Card>
+
+  <Card title="Boarding a Merchant" icon="store" href="/merchants">
+    Walk through the full lead-to-activation flow for onboarding a merchant under a partner.
+  </Card>
+
+  <Card title="Authentication Overview" icon="lock" href="/getting-started/tutorials/authentication/overview">
+    Session tokens, API keys, and MFA for accessing protected endpoints.
+  </Card>
+</CardGroup>
