@@ -93,7 +93,6 @@
                   "api-reference/agents/create-agent",
                   "api-reference/agents/get-agent",
                   "api-reference/agents/update-agent",
-                  "api-reference/agents/list-agent-assignments",
                   "api-reference/agents/decrypt-agent",
                   "api-reference/agents/update-agent-status"
                 ]
