@@ -26,7 +26,6 @@
       {
         "group": "Getting Started",
         "pages": [
-          "getting-started/getting-started",
           "getting-started/index",
           "getting-started/quickstart",
           {
