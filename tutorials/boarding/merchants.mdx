@@ -9,7 +9,7 @@ This guide walks through the full merchant boarding lifecycle — from creating 
 
 Before you start, you need an API key.
 
-- **API key** — Long-lived keys for service-to-service integrations. Managed via [Client API Keys](/api-reference/clients/get-client-api-key). Pass it as `Api-Key <your-api-key>` in the `Authorization` header.
+- **API key** — Long-lived keys for service-to-service integrations. Pass it as `Api-Key <your-api-key>` in the `Authorization` header.
 
 ---
 
@@ -110,7 +110,7 @@ Before you start, you need an API key.
 
     **Endpoint:** [Get Lead MID](/api-reference/leads/get-lead-mid) — `GET /v1/crm/leads/{leadId}/mid`
 
-    At this point the merchant becomes an active client record in the system. See the [Clients Overview](/api-reference/clients/overview) for available operations on active merchant accounts.
+    At this point the merchant becomes an active client record in the system.
   </Step>
 </Steps>
 
@@ -121,9 +121,6 @@ Before you start, you need an API key.
 <CardGroup cols={2}>
   <Card title="Leads Overview" icon="file-lines" href="/api-reference/leads/overview">
     Full reference for the lead lifecycle, status pipeline, and all available sub-resources.
-  </Card>
-  <Card title="Clients Overview" icon="building" href="/api-reference/clients/overview">
-    Manage active merchant accounts, portal settings, users, and API keys.
   </Card>
   <Card title="Financial Reporting" icon="chart-line" href="/api-reference/financial-reporting/overview">
     Transactions, batches, deposits, and statements for active merchants.
