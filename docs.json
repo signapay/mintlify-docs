@@ -493,9 +493,8 @@
             "icon": "chart-line",
             "pages": [
               "api-reference/dashboards/index",
-              "api-reference/financial-reporting/overview",
               {
-                "group": "Agent",
+                "group": "Agent Dashboard",
                 "pages": [
                   "api-reference/dashboards/overview",
                   "api-reference/dashboards/agent-applications-summary",
@@ -505,34 +504,48 @@
                   "api-reference/dashboards/agent-monthly-processing-volume",
                   "api-reference/dashboards/agent-net-merchants",
                   "api-reference/dashboards/agent-ticket-counts",
-                  "api-reference/dashboards/agent-top-performers-processing",
-                  {
-                    "group": "Residuals",
-                    "pages": [
-                      "api-reference/financial-reporting/list-residuals",
-                      "api-reference/financial-reporting/get-residual",
-                      "api-reference/financial-reporting/get-residual-metrics",
-                      "api-reference/financial-reporting/list-all-residual-merchant-summaries",
-                      "api-reference/financial-reporting/list-residual-merchant-summaries",
-                      "api-reference/financial-reporting/get-residual-merchant-summary",
-                      "api-reference/financial-reporting/list-residual-gross-details",
-                      "api-reference/financial-reporting/list-residual-merchant-details",
-                      "api-reference/financial-reporting/get-residual-merchant-detail",
-                      "api-reference/financial-reporting/list-all-residual-overrides",
-                      "api-reference/financial-reporting/list-residual-overrides",
-                      "api-reference/financial-reporting/get-residual-override"
-                    ]
-                  }
+                  "api-reference/dashboards/agent-top-performers-processing"
                 ]
               },
               {
-                "group": "Merchant",
+                "group": "Merchant Dashboard",
                 "pages": [
                   "api-reference/dashboards/merchant-kpi-metrics",
                   "api-reference/dashboards/merchant-latest-batch-date",
                   "api-reference/dashboards/merchant-recent-transactions",
                   "api-reference/dashboards/merchant-ticket-counts",
-                  "api-reference/dashboards/merchant-transaction-trend",
+                  "api-reference/dashboards/merchant-transaction-trend"
+                ]
+              },
+              {
+                "group": "Partner Dashboard",
+                "pages": [
+                  "api-reference/dashboards/partner-applications-summary",
+                  "api-reference/dashboards/partner-kpi-metrics",
+                  "api-reference/dashboards/partner-merchant-status",
+                  "api-reference/dashboards/partner-monthly-active-merchants",
+                  "api-reference/dashboards/partner-monthly-processing-volume",
+                  "api-reference/dashboards/partner-net-merchants",
+                  "api-reference/dashboards/partner-top-agents",
+                  "api-reference/dashboards/partner-top-performers-processing",
+                  "api-reference/dashboards/partner-top-performers-residual"
+                ]
+              },
+              {
+                "group": "Financial Reporting",
+                "pages": [
+                  "api-reference/financial-reporting/overview",
+                  {
+                    "group": "Transactions",
+                    "pages": [
+                      "api-reference/financial-reporting/list-transactions",
+                      "api-reference/financial-reporting/list-transactions-by-reference",
+                      "api-reference/financial-reporting/get-transaction",
+                      "api-reference/financial-reporting/list-transaction-notes",
+                      "api-reference/financial-reporting/create-transaction-note",
+                      "api-reference/financial-reporting/get-transaction-note"
+                    ]
+                  },
                   {
                     "group": "Batches",
                     "pages": [
@@ -544,20 +557,20 @@
                     ]
                   },
                   {
-                    "group": "Chargebacks",
-                    "pages": [
-                      "api-reference/financial-reporting/list-chargebacks",
-                      "api-reference/financial-reporting/list-related-chargebacks",
-                      "api-reference/financial-reporting/get-chargeback"
-                    ]
-                  },
-                  {
                     "group": "Deposits",
                     "pages": [
                       "api-reference/financial-reporting/list-deposits",
                       "api-reference/financial-reporting/get-deposit",
                       "api-reference/financial-reporting/list-deposit-details",
                       "api-reference/financial-reporting/get-deposit-detail"
+                    ]
+                  },
+                  {
+                    "group": "Chargebacks",
+                    "pages": [
+                      "api-reference/financial-reporting/list-chargebacks",
+                      "api-reference/financial-reporting/list-related-chargebacks",
+                      "api-reference/financial-reporting/get-chargeback"
                     ]
                   },
                   {
@@ -571,31 +584,6 @@
                       "api-reference/financial-reporting/get-statement-note"
                     ]
                   },
-                  {
-                    "group": "Transactions",
-                    "pages": [
-                      "api-reference/financial-reporting/list-transactions",
-                      "api-reference/financial-reporting/list-transactions-by-reference",
-                      "api-reference/financial-reporting/get-transaction",
-                      "api-reference/financial-reporting/list-transaction-notes",
-                      "api-reference/financial-reporting/create-transaction-note",
-                      "api-reference/financial-reporting/get-transaction-note"
-                    ]
-                  }
-                ]
-              },
-              {
-                "group": "Partner",
-                "pages": [
-                  "api-reference/dashboards/partner-applications-summary",
-                  "api-reference/dashboards/partner-kpi-metrics",
-                  "api-reference/dashboards/partner-merchant-status",
-                  "api-reference/dashboards/partner-monthly-active-merchants",
-                  "api-reference/dashboards/partner-monthly-processing-volume",
-                  "api-reference/dashboards/partner-net-merchants",
-                  "api-reference/dashboards/partner-top-agents",
-                  "api-reference/dashboards/partner-top-performers-processing",
-                  "api-reference/dashboards/partner-top-performers-residual",
                   {
                     "group": "Residuals",
                     "pages": [
