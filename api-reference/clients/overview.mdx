@@ -9,42 +9,115 @@ Clients represent every organization node in the SignaPay hierarchy — from the
 
 ### Core
 
-- **Client records** — List, retrieve, and update client profiles. Status transitions (activate, deactivate, close) use `PUT /clients/{clientId}/{action}`.
-- **Search** — Look up a client by MID, DBA, or other identifier via `GET /clients/search/{type}`.
-- **Defaults** — Retrieve and update default configuration scoped to a client.
-- **Sensitive data** — Decrypt protected fields on demand.
+| Endpoint | Description |
+| --- | --- |
+| [List clients](/api-reference/clients/list-clients) | Retrieve a paginated list of clients |
+| [Get client](/api-reference/clients/get-client) | Retrieve a single client by ID |
+| [Update client](/api-reference/clients/update-client) | Update an existing client record |
+| [Update status](/api-reference/clients/update-client-status) | Transition a client to a new status (activate, deactivate, close) |
+| [Search by identifier](/api-reference/clients/search-clients) | Look up a client by MID, DBA, or other identifier |
+| [Get defaults](/api-reference/clients/get-client-defaults) | Retrieve default configuration scoped to a client |
+| [Update defaults](/api-reference/clients/update-client-defaults) | Update default configuration for a client |
+| [Decrypt sensitive data](/api-reference/clients/decrypt-client) | Decrypt a protected field on demand |
 
-### Business profile
+### Business addresses
 
-- **Business addresses** — Add and manage multiple business location addresses.
-- **Principals** — Capture beneficial owners and key signers with encrypted SSN and date-of-birth support.
-- **Deposit info** — ACH funding account details with field-level decryption.
+| Endpoint | Description |
+| --- | --- |
+| [List addresses](/api-reference/clients/list-client-addresses) | Retrieve all business addresses for a client |
+| [Add address](/api-reference/clients/add-client-address) | Add a business address to a client |
+| [Get address](/api-reference/clients/get-client-address) | Retrieve a single business address |
+| [Update address](/api-reference/clients/update-client-address) | Update a business address |
 
-### Documents & notes
+### Principals
 
-- **Documents** — Attach, retrieve, update, and delete compliance and onboarding documents.
-- **Notes** — Internal notes visible to platform staff.
+| Endpoint | Description |
+| --- | --- |
+| [List principals](/api-reference/clients/list-client-principals) | Retrieve all principals associated with a client |
+| [Add principal](/api-reference/clients/add-client-principal) | Add a principal to a client record |
+| [Get principal](/api-reference/clients/get-client-principal) | Retrieve a single principal by ID |
+| [Update principal](/api-reference/clients/update-client-principal) | Update a client principal's information |
+| [Decrypt principal data](/api-reference/clients/decrypt-client-principal) | Decrypt a sensitive field on a principal |
 
-### Settings
+### Deposit info
 
-- **Portal settings** — Configure the client-branded portal appearance, including subdomain. Can also be retrieved by subdomain without a client ID.
-- **Security settings** — Password expiration, login attempt limits, session timeouts, and MFA requirements.
+| Endpoint | Description |
+| --- | --- |
+| [List deposit info](/api-reference/clients/list-client-deposit-info) | Retrieve all deposit info records for a client |
+| [Create deposit info](/api-reference/clients/create-client-deposit-info) | Add a deposit info record to a client |
+| [Get deposit info](/api-reference/clients/get-client-deposit-info) | Retrieve a single deposit info record |
+| [Update deposit info](/api-reference/clients/update-client-deposit-info) | Update a deposit info record |
+| [Delete deposit info](/api-reference/clients/delete-client-deposit-info) | Remove a deposit info record from a client |
+| [Decrypt deposit info](/api-reference/clients/decrypt-client-deposit-info) | Decrypt a sensitive field on a deposit info record |
 
-### API access
+### Documents
 
-- **API keys** — Generate, retrieve, and revoke long-lived API keys for service-to-service access.
+| Endpoint | Description |
+| --- | --- |
+| [List documents](/api-reference/clients/list-client-documents) | Retrieve all documents for a client |
+| [Create document](/api-reference/clients/create-client-document) | Attach a document to a client |
+| [Get document](/api-reference/clients/get-client-document) | Retrieve a single client document |
+| [Update document](/api-reference/clients/update-client-document) | Update document metadata |
+| [Delete document](/api-reference/clients/delete-client-document) | Remove a document from a client |
 
-### Users & hierarchy
+### Notes
 
-- **Users** — List users belonging to a client; list users by type.
-- **Bank BINs** — View the bank BIN records available to a specific client.
+| Endpoint | Description |
+| --- | --- |
+| [List notes](/api-reference/clients/list-client-notes) | Retrieve all notes on a client record |
+| [Create note](/api-reference/clients/create-client-note) | Add a note to a client record |
+| [Get note](/api-reference/clients/get-client-note) | Retrieve a single note |
+| [Update note](/api-reference/clients/update-client-note) | Edit a note on a client record |
+
+### Portal settings
+
+| Endpoint | Description |
+| --- | --- |
+| [Get portal settings](/api-reference/clients/get-client-portal-settings) | Retrieve portal settings for a client |
+| [Update portal settings](/api-reference/clients/update-client-portal-settings) | Update portal settings for a client |
+| [Get settings by subdomain](/api-reference/clients/get-portal-settings-by-subdomain) | Retrieve portal settings by subdomain without a client ID |
+
+### Security settings
+
+| Endpoint | Description |
+| --- | --- |
+| [Update security settings](/api-reference/clients/update-client-security-settings) | Update password expiration, login limits, session timeouts, and MFA requirements |
+
+### API keys
+
+| Endpoint | Description |
+| --- | --- |
+| [Get API key](/api-reference/clients/get-client-api-key) | Retrieve the active API key for a client |
+| [Generate API key](/api-reference/clients/generate-client-api-key) | Generate a new long-lived API key |
+| [Revoke API keys](/api-reference/clients/revoke-client-api-keys) | Revoke all active API keys for a client |
+
+### Users
+
+| Endpoint | Description |
+| --- | --- |
+| [List users](/api-reference/clients/list-users-for-client) | Retrieve all users associated with a client |
+| [List users by type](/api-reference/clients/list-client-users-by-type) | Retrieve client users filtered by type |
+| [List clients for user](/api-reference/clients/list-user-clients) | Retrieve all clients for a given user |
+| [Add user to client](/api-reference/clients/create-client-user-for-user) | Create a client user association |
+| [Remove user from client](/api-reference/clients/delete-client-user-for-user) | Delete a client user association |
+
+### Bank BINs
+
+| Endpoint | Description |
+| --- | --- |
+| [List bank BINs](/api-reference/clients/list-client-bank-bins) | Retrieve bank BINs available for a client |
 
 ### Validations
 
 Run identity and compliance checks directly against a client record:
 
-- **DataX** — Identity verification.
-- **Equifax** — Credit report and state ID verification.
-- **GIACT** — Bank account validation.
-- **MATCH Pro** — Mastercard terminated merchant screening.
-- **TinCheck** — Tax ID verification.
+| Endpoint | Description |
+| --- | --- |
+| [DataX verification](/api-reference/clients/client-datax-validation) | Run a DataX identity verification |
+| [Equifax credit](/api-reference/clients/client-equifax-credit) | Run an Equifax credit report |
+| [Equifax state ID](/api-reference/clients/client-equifax-state-id) | Run an Equifax state ID verification |
+| [GIACT validation](/api-reference/clients/client-giact-validation) | Run a GIACT bank account validation |
+| [MATCH inquiry](/api-reference/clients/client-match-validation) | Run a MATCH Pro terminated merchant screening |
+| [TinCheck](/api-reference/clients/client-tincheck-validation) | Run a TinCheck tax ID verification |
+| [List validations](/api-reference/clients/list-client-validations) | Retrieve all validation records for a client |
+| [Get validation](/api-reference/clients/get-client-validation) | Retrieve a single validation record |

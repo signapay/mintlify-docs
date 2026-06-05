@@ -9,70 +9,191 @@ Leads represent merchant applications in progress. A lead captures everything ne
 
 Leads move through a configurable pipeline of statuses:
 
-- Use `PUT /leads/{leadId}/transition/{status}` to move a lead to a new status.
-- Use `PUT /leads/{leadId}/submit/{reviewer}` to send a lead to underwriting or compliance for review.
+- Use [Transition status](/api-reference/leads/transition-lead-status) to move a lead to a new pipeline stage.
+- Use [Submit for review](/api-reference/leads/submit-lead-for-review) to send a lead to underwriting or compliance.
 
 ## What's included
 
 ### Core
 
-- **Lead CRUD** — Create, list, retrieve, update, and delete leads.
-- **MID** — Retrieve the assigned merchant identifier once boarding is complete.
-- **Risk profile** — Update the lead's risk classification.
-- **Service acceptance** — Retrieve and update service terms acceptance.
-- **Sensitive data** — Decrypt protected fields (SSN, bank account, etc.) on demand.
+| Endpoint | Description |
+| --- | --- |
+| [List leads](/api-reference/leads/list-leads) | Retrieve a paginated list of leads |
+| [Create lead](/api-reference/leads/create-lead) | Create a new merchant lead |
+| [Get lead](/api-reference/leads/get-lead) | Retrieve a single lead by ID |
+| [Update lead](/api-reference/leads/update-lead) | Update an existing lead record |
+| [Delete lead](/api-reference/leads/delete-lead) | Permanently delete a lead record |
+| [Transition status](/api-reference/leads/transition-lead-status) | Move a lead to a new status in the pipeline |
+| [Submit for review](/api-reference/leads/submit-lead-for-review) | Submit a lead for underwriting or compliance review |
+| [Get MID](/api-reference/leads/get-lead-mid) | Retrieve the assigned merchant identifier once boarding is complete |
+| [Update risk profile](/api-reference/leads/update-lead-risk-profile) | Update the lead's risk classification |
+| [Get service acceptance](/api-reference/leads/get-lead-service-acceptance) | Retrieve service terms acceptance status |
+| [Update service acceptance](/api-reference/leads/update-lead-service-acceptance) | Update service terms acceptance |
+| [Decrypt sensitive data](/api-reference/leads/decrypt-lead) | Decrypt a protected field (SSN, bank account, etc.) on demand |
 
 ### Lead sources
 
-- **Lead sources** — Create and manage referral and campaign sources. Associate or remove sources on individual leads.
+| Endpoint | Description |
+| --- | --- |
+| [List lead sources](/api-reference/leads/list-lead-sources) | Retrieve all lead sources |
+| [Create lead source](/api-reference/leads/create-lead-source) | Create a new referral or campaign source |
+| [Get lead source](/api-reference/leads/get-lead-source) | Retrieve a single lead source by ID |
+| [Update lead source](/api-reference/leads/update-lead-source) | Update an existing lead source |
+| [Get source summary](/api-reference/leads/get-lead-source-summary) | Retrieve an aggregate summary for a lead source |
+| [List leads for source](/api-reference/leads/list-leads-for-source) | Retrieve all leads associated with a lead source |
+| [List sources for lead](/api-reference/leads/list-lead-lead-sources) | Retrieve all sources associated with a lead |
+| [Add source to lead](/api-reference/leads/add-lead-source-to-lead) | Associate a lead source with a lead |
+| [Remove source from lead](/api-reference/leads/remove-lead-source-from-lead) | Remove a lead source association from a lead |
 
-### Business profile
+### Business addresses
 
-- **Business addresses** — Add and manage multiple business location addresses.
-- **Principals** — Capture beneficial owners and signers with encrypted SSN and date-of-birth support.
-- **Deposit info** — ACH funding account details with field-level decryption.
+| Endpoint | Description |
+| --- | --- |
+| [List addresses](/api-reference/leads/list-lead-addresses) | Retrieve all business addresses for a lead |
+| [Add address](/api-reference/leads/add-lead-address) | Add a business address to a lead |
+| [Get address](/api-reference/leads/get-lead-address) | Retrieve a single business address |
+| [Update address](/api-reference/leads/update-lead-address) | Update a business address |
 
-### Documents & notes
+### Principals
 
-- **Documents** — Attach, retrieve, update, and delete supporting documents.
-- **Notes** — Add internal notes for team collaboration.
+| Endpoint | Description |
+| --- | --- |
+| [List principals](/api-reference/leads/list-lead-principals) | Retrieve all principals associated with a lead |
+| [Add principal](/api-reference/leads/add-lead-principal) | Add a beneficial owner or signer to a lead |
+| [Get principal](/api-reference/leads/get-lead-principal) | Retrieve a single principal by ID |
+| [Update principal](/api-reference/leads/update-lead-principal) | Update a lead principal's information |
+| [Delete principal](/api-reference/leads/delete-lead-principal) | Remove a principal from a lead record |
+| [Decrypt principal data](/api-reference/leads/decrypt-lead-principal) | Decrypt a sensitive field on a principal |
 
-### Pricing
+### Deposit info
 
-- **Pricing items** — Individual fee line items (e.g. interchange, basis points, per-item fees).
-- **Pricing packages** — Grouped pricing configurations.
-- **Pricing rules** — Conditional pricing logic applied to the lead.
+| Endpoint | Description |
+| --- | --- |
+| [List deposit info](/api-reference/leads/list-lead-deposit-info) | Retrieve all deposit info records for a lead |
+| [Create deposit info](/api-reference/leads/create-lead-deposit-info) | Add a deposit info record to a lead |
+| [Get deposit info](/api-reference/leads/get-lead-deposit-info) | Retrieve a single deposit info record |
+| [Update deposit info](/api-reference/leads/update-lead-deposit-info) | Update a deposit info record |
+| [Delete deposit info](/api-reference/leads/delete-lead-deposit-info) | Remove a deposit info record from a lead |
+| [Decrypt deposit info](/api-reference/leads/decrypt-lead-deposit-info) | Decrypt a sensitive field on a deposit info record |
 
-### Equipment
+### Documents
 
-- **Equipment models** — Define the terminal hardware associated with the lead.
-- **Equipment orders** — Create and manage deployment orders.
-- **Order items** — Line items within an equipment order.
-- **Order gateway** — Gateway configuration for the equipment order.
-- **Order file build type** — File build type for the equipment deployment.
+| Endpoint | Description |
+| --- | --- |
+| [List documents](/api-reference/leads/list-lead-documents) | Retrieve all documents for a lead |
+| [Create document](/api-reference/leads/create-lead-document) | Attach a document to a lead |
+| [Get document](/api-reference/leads/get-lead-document) | Retrieve a single lead document |
+| [Update document](/api-reference/leads/update-lead-document) | Update document metadata |
+| [Delete document](/api-reference/leads/delete-lead-document) | Remove a document from a lead |
+
+### Notes
+
+| Endpoint | Description |
+| --- | --- |
+| [List notes](/api-reference/leads/list-lead-notes) | Retrieve all notes on a lead record |
+| [Create note](/api-reference/leads/create-lead-note) | Add a note to a lead record |
+| [Get note](/api-reference/leads/get-lead-note) | Retrieve a single note |
+| [Update note](/api-reference/leads/update-lead-note) | Edit a note on a lead record |
+
+### Pricing items
+
+| Endpoint | Description |
+| --- | --- |
+| [List pricing items](/api-reference/leads/list-lead-pricing-items) | Retrieve all pricing items for a lead |
+| [Create pricing item](/api-reference/leads/create-lead-pricing-item) | Add a pricing item (e.g. interchange, basis points) to a lead |
+| [Get pricing item](/api-reference/leads/get-lead-pricing-item) | Retrieve a single pricing item |
+| [Update pricing item](/api-reference/leads/update-lead-pricing-item) | Update a lead pricing item |
+| [Delete pricing item](/api-reference/leads/delete-lead-pricing-item) | Remove a pricing item from a lead |
+
+### Pricing packages
+
+| Endpoint | Description |
+| --- | --- |
+| [List pricing packages](/api-reference/leads/list-lead-pricing-packages) | Retrieve all pricing packages for a lead |
+| [Create pricing package](/api-reference/leads/create-lead-pricing-package) | Add a pricing package to a lead |
+| [Get pricing package](/api-reference/leads/get-lead-pricing-package) | Retrieve a single pricing package |
+| [Update pricing package](/api-reference/leads/update-lead-pricing-package) | Update a lead pricing package |
+| [Delete pricing package](/api-reference/leads/delete-lead-pricing-package) | Remove a pricing package from a lead |
+
+### Pricing rules
+
+| Endpoint | Description |
+| --- | --- |
+| [List pricing rules](/api-reference/leads/list-lead-pricing-rules) | Retrieve all pricing rules for a lead |
+| [Create pricing rule](/api-reference/leads/create-lead-pricing-rule) | Add a pricing rule to a lead |
+| [Get pricing rule](/api-reference/leads/get-lead-pricing-rule) | Retrieve a single pricing rule |
+| [Update pricing rule](/api-reference/leads/update-lead-pricing-rule) | Update a lead pricing rule |
+| [Delete pricing rule](/api-reference/leads/delete-lead-pricing-rule) | Remove a pricing rule from a lead |
+
+### Equipment models
+
+| Endpoint | Description |
+| --- | --- |
+| [List equipment models](/api-reference/leads/list-lead-equipment-models) | Retrieve all equipment models for a lead |
+| [Create equipment model](/api-reference/leads/create-lead-equipment-model) | Add an equipment model to a lead |
+| [Get equipment model](/api-reference/leads/get-lead-equipment-model) | Retrieve a single equipment model |
+| [Update equipment model](/api-reference/leads/update-lead-equipment-model) | Update a lead equipment model |
+| [Delete equipment model](/api-reference/leads/delete-lead-equipment-model) | Remove an equipment model from a lead |
+
+### Equipment orders
+
+| Endpoint | Description |
+| --- | --- |
+| [List equipment orders](/api-reference/leads/list-lead-equipment-orders) | Retrieve all equipment orders for a lead |
+| [Create equipment order](/api-reference/leads/create-lead-equipment-order) | Create a new equipment order for a lead |
+| [Get equipment order](/api-reference/leads/get-lead-equipment-order) | Retrieve a single equipment order |
+| [Update equipment order](/api-reference/leads/update-lead-equipment-order) | Update a lead equipment order |
+| [Delete equipment order](/api-reference/leads/delete-lead-equipment-order) | Remove an equipment order from a lead |
+| [List order items](/api-reference/leads/list-lead-equipment-order-items) | Retrieve all items in an equipment order |
+| [Create order item](/api-reference/leads/create-lead-equipment-order-item) | Add an item to an equipment order |
+| [Get order item](/api-reference/leads/get-lead-equipment-order-item) | Retrieve a single order item |
+| [Update order item](/api-reference/leads/update-lead-equipment-order-item) | Update an equipment order item |
+| [Delete order item](/api-reference/leads/delete-lead-equipment-order-item) | Remove an item from an equipment order |
+| [Create gateway](/api-reference/leads/create-lead-equipment-order-gateway) | Add gateway configuration to an equipment order |
+| [Get gateway](/api-reference/leads/get-lead-equipment-order-gateway) | Retrieve the gateway configuration |
+| [Update gateway](/api-reference/leads/update-lead-equipment-order-gateway) | Update the gateway configuration |
+| [Delete gateway](/api-reference/leads/delete-lead-equipment-order-gateway) | Remove the gateway configuration |
+| [Create file build type](/api-reference/leads/create-lead-equipment-order-file-build-type) | Set the file build type for an equipment order |
+| [Get file build type](/api-reference/leads/get-lead-equipment-order-file-build-type) | Retrieve the file build type |
+| [Update file build type](/api-reference/leads/update-lead-equipment-order-file-build-type) | Update the file build type |
+| [Delete file build type](/api-reference/leads/delete-lead-equipment-order-file-build-type) | Remove the file build type from an equipment order |
 
 ### Compliance & validation
 
-- **Completeness check** — Validate the lead against all required fields before submission.
-- **DataX** — Identity verification.
-- **Equifax** — Credit report and state ID verification.
-- **GIACT** — Bank account validation.
-- **MATCH Pro** — Mastercard terminated merchant screening.
-- **TinCheck** — Tax ID verification.
+| Endpoint | Description |
+| --- | --- |
+| [Validate completeness](/api-reference/leads/validate-lead-completeness) | Check all required fields before submission |
+| [DataX verification](/api-reference/leads/lead-datax-validation) | Run a DataX identity verification |
+| [Equifax credit](/api-reference/leads/lead-equifax-credit) | Run an Equifax credit report |
+| [Equifax state ID](/api-reference/leads/lead-equifax-state-id) | Run an Equifax state ID verification |
+| [GIACT validation](/api-reference/leads/lead-giact-validation) | Run a GIACT bank account validation |
+| [MATCH inquiry](/api-reference/leads/lead-match-validation) | Run a MATCH Pro terminated merchant screening |
+| [TinCheck](/api-reference/leads/lead-tincheck-validation) | Run a TinCheck tax ID verification |
+| [List validations](/api-reference/leads/list-lead-validations) | Retrieve all validation records for a lead |
+| [Get validation](/api-reference/leads/get-lead-validation) | Retrieve a single validation record |
 
 ### Signing
 
-- **E-signature sessions** — Create and verify signing sessions for MPA agreement delivery.
+| Endpoint | Description |
+| --- | --- |
+| [Create signing session](/api-reference/leads/create-signing-session) | Create an e-signature session for MPA agreement delivery |
+| [Verify signing token](/api-reference/leads/verify-signing-token) | Verify a signing session token |
 
 ### Clear identity verification
 
-- **Clear sessions** — Initiate a Clear identity verification session.
-- **Verification status** — Retrieve the result of a Clear verification.
+| Endpoint | Description |
+| --- | --- |
+| [Create Clear session](/api-reference/leads/create-clear-session) | Initiate a Clear identity verification session |
+| [Get Clear status](/api-reference/leads/get-clear-verification-status) | Retrieve the result of a Clear verification |
 
 ### Fast Apply
 
-Streamlined public-facing MPA form flow:
+Streamlined public-facing MPA form flow for lead capture:
 
-- **General** — Update the general application section.
-- **Business** — Update the business details section.
-- **Principals** — Save, create, and update principal records via the Fast Apply form.
+| Endpoint | Description |
+| --- | --- |
+| [Update general](/api-reference/leads/update-fast-apply-general) | Update the general section of a Fast Apply form |
+| [Update business](/api-reference/leads/update-fast-apply-business) | Update the business details section |
+| [Save principals](/api-reference/leads/save-fast-apply-principals) | Save the principals section |
+| [Create principal](/api-reference/leads/create-fast-apply-principal) | Add a principal via the Fast Apply form |
+| [Update principal](/api-reference/leads/update-fast-apply-principal) | Update a specific principal via the Fast Apply form |

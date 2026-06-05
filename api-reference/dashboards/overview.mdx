@@ -13,33 +13,33 @@ Metrics scoped to a specific agent's portfolio:
 
 | Endpoint | Description |
 | --- | --- |
-| Applications summary | Lead counts broken down by pipeline stage |
-| KPI metrics | Key performance indicators for the agent |
-| Merchant status | Active, inactive, and closed merchant breakdown |
-| Monthly active merchants | Month-over-month active merchant count |
-| Monthly processing volume | Rolling monthly processing volume trend |
-| Net merchants | Net merchant adds and attrition by month |
-| Ticket counts | Open ticket summary for the agent |
-| Top performers by processing | Highest-volume merchants in the agent's book |
+| [Applications summary](/api-reference/dashboards/agent-applications-summary) | Lead counts broken down by pipeline stage |
+| [KPI metrics](/api-reference/dashboards/agent-kpi-metrics) | Key performance indicators for the agent |
+| [Merchant status](/api-reference/dashboards/agent-merchant-status) | Active, inactive, and closed merchant breakdown |
+| [Monthly active merchants](/api-reference/dashboards/agent-monthly-active-merchants) | Month-over-month active merchant count |
+| [Monthly processing volume](/api-reference/dashboards/agent-monthly-processing-volume) | Rolling monthly processing volume trend |
+| [Net merchants](/api-reference/dashboards/agent-net-merchants) | Net merchant adds and attrition by month |
+| [Ticket counts](/api-reference/dashboards/agent-ticket-counts) | Open ticket summary for the agent |
+| [Top performers (processing)](/api-reference/dashboards/agent-top-performers-processing) | Highest-volume merchants in the agent's book |
 
 ### Agent residuals
 
-ISO residual data scoped to an agent's portfolio:
+ISO residual data scoped to an agent's portfolio. These endpoints are served from the [Financial Reporting](/api-reference/financial-reporting/overview) section:
 
 | Endpoint | Description |
 | --- | --- |
-| List residuals | ISO residual historical summaries and aggregated metrics |
-| Get residual | Single residual period summary |
-| Get residual metrics | Aggregated residual metrics |
-| List all merchant summaries | All-time merchant-level residual summaries |
-| List merchant summaries | Merchant summaries for a specific residual period |
-| Get merchant summary | Single merchant residual summary |
-| List gross details | Gross residual detail records |
-| List merchant details | Line-item residual details for a merchant |
-| Get merchant detail | Single merchant residual detail record |
-| List all overrides | All-time residual overrides |
-| List overrides | Overrides for a specific residual period |
-| Get override | Single residual override record |
+| [List residuals](/api-reference/financial-reporting/list-residuals) | ISO residual historical summaries and aggregated metrics |
+| [Get residual](/api-reference/financial-reporting/get-residual) | Single residual period summary |
+| [Get residual metrics](/api-reference/financial-reporting/get-residual-metrics) | Aggregated residual metrics |
+| [List all merchant summaries](/api-reference/financial-reporting/list-all-residual-merchant-summaries) | All-time merchant-level residual summaries |
+| [List merchant summaries](/api-reference/financial-reporting/list-residual-merchant-summaries) | Merchant summaries for a specific residual period |
+| [Get merchant summary](/api-reference/financial-reporting/get-residual-merchant-summary) | Single merchant residual summary |
+| [List gross details](/api-reference/financial-reporting/list-residual-gross-details) | Gross residual detail records |
+| [List merchant details](/api-reference/financial-reporting/list-residual-merchant-details) | Line-item residual details for a merchant |
+| [Get merchant detail](/api-reference/financial-reporting/get-residual-merchant-detail) | Single merchant residual detail record |
+| [List all overrides](/api-reference/financial-reporting/list-all-residual-overrides) | All-time residual overrides |
+| [List overrides](/api-reference/financial-reporting/list-residual-overrides) | Overrides for a specific residual period |
+| [Get override](/api-reference/financial-reporting/get-residual-override) | Single residual override record |
 
 ### Merchant dashboard
 
@@ -47,11 +47,11 @@ Metrics scoped to a single merchant's activity:
 
 | Endpoint | Description |
 | --- | --- |
-| KPI metrics | Key performance indicators for the merchant |
-| Latest batch date | Most recent settlement batch date |
-| Recent transactions | Latest transaction activity |
-| Ticket counts | Open support tickets for the merchant |
-| Transaction trend | Volume trend over time |
+| [KPI metrics](/api-reference/dashboards/merchant-kpi-metrics) | Key performance indicators for the merchant |
+| [Latest batch date](/api-reference/dashboards/merchant-latest-batch-date) | Most recent settlement batch date |
+| [Recent transactions](/api-reference/dashboards/merchant-recent-transactions) | Latest transaction activity |
+| [Ticket counts](/api-reference/dashboards/merchant-ticket-counts) | Open support tickets for the merchant |
+| [Transaction trend](/api-reference/dashboards/merchant-transaction-trend) | Volume trend over time |
 
 ### Partner dashboard
 
@@ -59,31 +59,31 @@ Metrics scoped to a partner's full downstream portfolio:
 
 | Endpoint | Description |
 | --- | --- |
-| Applications summary | Lead pipeline breakdown across all agents |
-| KPI metrics | Key performance indicators for the partner |
-| Merchant status | Portfolio-level active/inactive/closed breakdown |
-| Monthly active merchants | Month-over-month active merchant count |
-| Monthly processing volume | Rolling monthly volume trend |
-| Net merchants | Net merchant adds and attrition by month |
-| Top agents MTD | Best-performing agents month-to-date |
-| Top performers by processing | Highest-volume merchants in the portfolio |
-| Top performers by residual | Highest-residual merchants in the portfolio |
+| [Applications summary](/api-reference/dashboards/partner-applications-summary) | Lead pipeline breakdown across all agents |
+| [KPI metrics](/api-reference/dashboards/partner-kpi-metrics) | Key performance indicators for the partner |
+| [Merchant status](/api-reference/dashboards/partner-merchant-status) | Portfolio-level active/inactive/closed breakdown |
+| [Monthly active merchants](/api-reference/dashboards/partner-monthly-active-merchants) | Month-over-month active merchant count |
+| [Monthly processing volume](/api-reference/dashboards/partner-monthly-processing-volume) | Rolling monthly volume trend |
+| [Net merchants](/api-reference/dashboards/partner-net-merchants) | Net merchant adds and attrition by month |
+| [Top agents MTD](/api-reference/dashboards/partner-top-agents) | Best-performing agents month-to-date |
+| [Top performers (processing)](/api-reference/dashboards/partner-top-performers-processing) | Highest-volume merchants in the portfolio |
+| [Top performers (residual)](/api-reference/dashboards/partner-top-performers-residual) | Highest-residual merchants in the portfolio |
 
 ### Partner residuals
 
-ISO residual data scoped to a partner's portfolio:
+ISO residual data scoped to a partner's portfolio. These endpoints are served from the [Financial Reporting](/api-reference/financial-reporting/overview) section:
 
 | Endpoint | Description |
 | --- | --- |
-| List residuals | ISO residual historical summaries and aggregated metrics |
-| Get residual | Single residual period summary |
-| Get residual metrics | Aggregated residual metrics |
-| List all merchant summaries | All-time merchant-level residual summaries |
-| List merchant summaries | Merchant summaries for a specific residual period |
-| Get merchant summary | Single merchant residual summary |
-| List gross details | Gross residual detail records |
-| List merchant details | Line-item residual details for a merchant |
-| Get merchant detail | Single merchant residual detail record |
-| List all overrides | All-time residual overrides |
-| List overrides | Overrides for a specific residual period |
-| Get override | Single residual override record |
+| [List residuals](/api-reference/financial-reporting/list-residuals) | ISO residual historical summaries and aggregated metrics |
+| [Get residual](/api-reference/financial-reporting/get-residual) | Single residual period summary |
+| [Get residual metrics](/api-reference/financial-reporting/get-residual-metrics) | Aggregated residual metrics |
+| [List all merchant summaries](/api-reference/financial-reporting/list-all-residual-merchant-summaries) | All-time merchant-level residual summaries |
+| [List merchant summaries](/api-reference/financial-reporting/list-residual-merchant-summaries) | Merchant summaries for a specific residual period |
+| [Get merchant summary](/api-reference/financial-reporting/get-residual-merchant-summary) | Single merchant residual summary |
+| [List gross details](/api-reference/financial-reporting/list-residual-gross-details) | Gross residual detail records |
+| [List merchant details](/api-reference/financial-reporting/list-residual-merchant-details) | Line-item residual details for a merchant |
+| [Get merchant detail](/api-reference/financial-reporting/get-residual-merchant-detail) | Single merchant residual detail record |
+| [List all overrides](/api-reference/financial-reporting/list-all-residual-overrides) | All-time residual overrides |
+| [List overrides](/api-reference/financial-reporting/list-residual-overrides) | Overrides for a specific residual period |
+| [Get override](/api-reference/financial-reporting/get-residual-override) | Single residual override record |

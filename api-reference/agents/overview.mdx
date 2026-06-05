@@ -9,11 +9,30 @@ Agents are sales representatives who originate and manage merchant leads on beha
 
 ### Core
 
-- **Agent records** — List, create, retrieve, and update agent profiles.
-- **Status transitions** — Activate, deactivate, or close an agent via `PUT /agents/{agentId}/{action}`.
-- **Sensitive data** — Decrypt protected fields (e.g. SSN, bank account numbers) on demand via the dedicated decrypt endpoint.
+| Endpoint | Description |
+| --- | --- |
+| [List agents](/api-reference/agents/list-agents) | Retrieve a paginated list of agents |
+| [Create agent](/api-reference/agents/create-agent) | Create a new agent record |
+| [Get agent](/api-reference/agents/get-agent) | Retrieve a single agent by ID |
+| [Update agent](/api-reference/agents/update-agent) | Update an existing agent's profile |
+| [Update status](/api-reference/agents/update-agent-status) | Transition an agent to a new status (activate, deactivate, close) |
+| [Decrypt sensitive data](/api-reference/agents/decrypt-agent) | Decrypt a protected field (e.g. SSN, bank account number) on demand |
 
-### Sub-resources
+### Documents
 
-- **Documents** — Attach, retrieve, update, and remove documents associated with an agent.
-- **Notes** — Add and manage internal notes on agent records.
+| Endpoint | Description |
+| --- | --- |
+| [List documents](/api-reference/agents/list-agent-documents) | Retrieve all documents attached to an agent |
+| [Create document](/api-reference/agents/create-agent-document) | Attach a new document to an agent |
+| [Get document](/api-reference/agents/get-agent-document) | Retrieve a single document |
+| [Update document](/api-reference/agents/update-agent-document) | Update document metadata |
+| [Delete document](/api-reference/agents/delete-agent-document) | Remove a document from an agent |
+
+### Notes
+
+| Endpoint | Description |
+| --- | --- |
+| [List notes](/api-reference/agents/list-agent-notes) | Retrieve all notes on an agent record |
+| [Create note](/api-reference/agents/create-agent-note) | Add a note to an agent record |
+| [Get note](/api-reference/agents/get-agent-note) | Retrieve a single note |
+| [Update note](/api-reference/agents/update-agent-note) | Edit a note on an agent record |

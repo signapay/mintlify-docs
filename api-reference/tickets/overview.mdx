@@ -9,22 +9,61 @@ The Tickets endpoints power the internal support and task queue. Tickets can be 
 
 ### Core
 
-- **Tickets** — Create, list, retrieve, and update tickets.
-- **Merge** — Consolidate a duplicate ticket into another.
-- **Split** — Break a ticket into two separate issues.
-- **Categories** — Retrieve the full ticket category taxonomy.
+| Endpoint | Description |
+| --- | --- |
+| [List tickets](/api-reference/tickets/list-tickets) | Retrieve a paginated list of support tickets |
+| [Create ticket](/api-reference/tickets/create-ticket) | Create a new support ticket |
+| [Get ticket](/api-reference/tickets/get-ticket) | Retrieve a single ticket by ID |
+| [Update ticket](/api-reference/tickets/update-ticket) | Update an existing support ticket |
+| [Merge tickets](/api-reference/tickets/merge-tickets) | Consolidate a duplicate ticket into another |
+| [Split ticket](/api-reference/tickets/split-ticket) | Break a ticket into two separate issues |
+| [List categories](/api-reference/tickets/list-ticket-categories) | Retrieve the full ticket category taxonomy |
 
-### Collaboration
+### Activities
 
-- **Activities** — Append comments and work log entries to a ticket's activity feed; update or delete existing entries.
-- **Watchers** — Subscribe or unsubscribe users from ticket notifications.
-- **External users** — Add non-platform users to a ticket for visibility or coordination.
+| Endpoint | Description |
+| --- | --- |
+| [List activities](/api-reference/tickets/list-ticket-activities) | Retrieve all activity entries for a ticket |
+| [Create activity](/api-reference/tickets/create-ticket-activity) | Append a comment or work log entry to the activity feed |
+| [Update activity](/api-reference/tickets/update-ticket-activity) | Edit an existing activity entry |
+| [Delete activity](/api-reference/tickets/delete-ticket-activity) | Remove an activity entry from a ticket |
 
-### Associations
+### Watchers
 
-- **Clients** — Link or unlink client records from a ticket.
-- **Documents** — Attach, retrieve, update, and remove documents on a ticket.
+| Endpoint | Description |
+| --- | --- |
+| [List watchers](/api-reference/tickets/list-ticket-watchers) | Retrieve all watchers on a ticket |
+| [Add watcher](/api-reference/tickets/add-ticket-watcher) | Subscribe a user to ticket notifications |
+| [Remove watcher](/api-reference/tickets/remove-ticket-watcher) | Unsubscribe a user from ticket notifications |
+
+### External users
+
+| Endpoint | Description |
+| --- | --- |
+| [List external users](/api-reference/tickets/list-ticket-external-users) | Retrieve all external users on a ticket |
+| [Add external user](/api-reference/tickets/add-ticket-external-user) | Add a non-platform user to a ticket |
+| [Remove external user](/api-reference/tickets/remove-ticket-external-user) | Remove an external user from a ticket |
+
+### Client associations
+
+| Endpoint | Description |
+| --- | --- |
+| [List clients](/api-reference/tickets/list-ticket-clients) | Retrieve all clients linked to a ticket |
+| [Add client](/api-reference/tickets/add-ticket-client) | Associate a client with a ticket |
+| [Remove client](/api-reference/tickets/remove-ticket-client) | Remove a client association from a ticket |
+
+### Documents
+
+| Endpoint | Description |
+| --- | --- |
+| [List documents](/api-reference/tickets/list-ticket-documents) | Retrieve all documents attached to a ticket |
+| [Add document](/api-reference/tickets/add-ticket-document) | Attach a document to a ticket |
+| [Get document](/api-reference/tickets/get-ticket-document) | Retrieve a single ticket document |
+| [Update document](/api-reference/tickets/update-ticket-document) | Update document metadata |
+| [Delete document](/api-reference/tickets/delete-ticket-document) | Remove a document from a ticket |
 
 ### Audit
 
-- **SAM action logs** — Retrieve SAM (status/action/message) audit log entries for any platform entity by its ID.
+| Endpoint | Description |
+| --- | --- |
+| [List SAM action logs](/api-reference/tickets/list-sam-action-logs) | Retrieve SAM (status/action/message) audit log entries for any platform entity |

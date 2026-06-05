@@ -9,35 +9,78 @@ The Financial Reporting endpoints expose read-only monetary and transaction data
 
 ### Deposits
 
-- **Deposits** — List and retrieve daily or batch funding records.
-- **Deposit details** — Line-item breakdown of each deposit record.
+| Endpoint | Description |
+| --- | --- |
+| [List deposits](/api-reference/financial-reporting/list-deposits) | Retrieve a paginated list of deposits |
+| [Get deposit](/api-reference/financial-reporting/get-deposit) | Retrieve a single deposit by ID |
+| [List deposit details](/api-reference/financial-reporting/list-deposit-details) | Retrieve line-item details for a deposit |
+| [Get deposit detail](/api-reference/financial-reporting/get-deposit-detail) | Retrieve a single deposit detail line item |
 
 ### Chargebacks
 
-- **Chargebacks** — List and retrieve dispute records tied to merchant transactions.
-- **Related chargebacks** — Retrieve other chargebacks related to a given dispute.
+| Endpoint | Description |
+| --- | --- |
+| [List chargebacks](/api-reference/financial-reporting/list-chargebacks) | Retrieve a paginated list of chargebacks |
+| [Get chargeback](/api-reference/financial-reporting/get-chargeback) | Retrieve a single chargeback by ID |
+| [List related chargebacks](/api-reference/financial-reporting/list-related-chargebacks) | Retrieve chargebacks related to a given dispute |
 
 ### Residuals
 
-- **ISO residual summaries** — Historical residual payout periods with aggregate metrics.
-- **Residual metrics** — Aggregated KPI metrics across all residual periods.
-- **Gross details** — Cross-residual gross fee breakdown.
-- **Merchant summaries** — Per-merchant residual breakdowns within a residual period, also queryable across all periods.
-- **Merchant details** — Fee category line items for a merchant's residual summary.
-- **Overrides** — Manual residual adjustments for a period, also queryable across all periods.
+#### Summaries & metrics
+
+| Endpoint | Description |
+| --- | --- |
+| [List residuals](/api-reference/financial-reporting/list-residuals) | Retrieve ISO residual historical summaries |
+| [Get residual](/api-reference/financial-reporting/get-residual) | Retrieve a single residual period summary |
+| [Get residual metrics](/api-reference/financial-reporting/get-residual-metrics) | Retrieve aggregated metrics across all residual periods |
+| [List gross details](/api-reference/financial-reporting/list-residual-gross-details) | Retrieve gross fee details across residuals |
+
+#### Merchant summaries
+
+| Endpoint | Description |
+| --- | --- |
+| [List all merchant summaries](/api-reference/financial-reporting/list-all-residual-merchant-summaries) | Retrieve merchant-level summaries across all residuals |
+| [List merchant summaries](/api-reference/financial-reporting/list-residual-merchant-summaries) | Retrieve merchant summaries for a specific residual |
+| [Get merchant summary](/api-reference/financial-reporting/get-residual-merchant-summary) | Retrieve a single merchant-level residual summary |
+| [List merchant details](/api-reference/financial-reporting/list-residual-merchant-details) | Retrieve fee category details for a merchant residual summary |
+| [Get merchant detail](/api-reference/financial-reporting/get-residual-merchant-detail) | Retrieve a single fee category detail record |
+
+#### Overrides
+
+| Endpoint | Description |
+| --- | --- |
+| [List all overrides](/api-reference/financial-reporting/list-all-residual-overrides) | Retrieve residual overrides across all periods |
+| [List overrides](/api-reference/financial-reporting/list-residual-overrides) | Retrieve overrides for a specific residual period |
+| [Get override](/api-reference/financial-reporting/get-residual-override) | Retrieve a single residual override |
 
 ### Transactions
 
-- **Transactions** — List and retrieve individual card transactions with filtering. Look up by external reference ID.
-- **Transaction notes** — Internal notes attached to a transaction.
+| Endpoint | Description |
+| --- | --- |
+| [List transactions](/api-reference/financial-reporting/list-transactions) | Retrieve a paginated list of transactions |
+| [Get transaction](/api-reference/financial-reporting/get-transaction) | Retrieve a single transaction by ID |
+| [List by reference](/api-reference/financial-reporting/list-transactions-by-reference) | Retrieve transactions by an external reference ID |
+| [List notes](/api-reference/financial-reporting/list-transaction-notes) | Retrieve all notes on a transaction |
+| [Create note](/api-reference/financial-reporting/create-transaction-note) | Add a note to a transaction |
+| [Get note](/api-reference/financial-reporting/get-transaction-note) | Retrieve a single transaction note |
 
 ### Transaction batches
 
-- **Batches** — List and retrieve settlement batch records.
-- **Batch notes** — Internal notes on a batch.
+| Endpoint | Description |
+| --- | --- |
+| [List batches](/api-reference/financial-reporting/list-transaction-batches) | Retrieve a paginated list of transaction batches |
+| [Get batch](/api-reference/financial-reporting/get-transaction-batch) | Retrieve a single transaction batch by ID |
+| [List batch notes](/api-reference/financial-reporting/list-batch-notes) | Retrieve all notes on a transaction batch |
+| [Create batch note](/api-reference/financial-reporting/create-batch-note) | Add a note to a transaction batch |
+| [Get batch note](/api-reference/financial-reporting/get-batch-note) | Retrieve a single batch note |
 
 ### Statements
 
-- **Statements** — List and retrieve merchant or partner statement records.
-- **Statement documents** — Download a document attached to a statement.
-- **Statement notes** — Internal notes on a statement.
+| Endpoint | Description |
+| --- | --- |
+| [List statements](/api-reference/financial-reporting/list-statements) | Retrieve a paginated list of statements |
+| [Get statement](/api-reference/financial-reporting/get-statement) | Retrieve a single statement by ID |
+| [Get statement document](/api-reference/financial-reporting/get-statement-document) | Download a document attached to a statement |
+| [List statement notes](/api-reference/financial-reporting/list-statement-notes) | Retrieve all notes on a statement |
+| [Create statement note](/api-reference/financial-reporting/create-statement-note) | Add a note to a statement |
+| [Get statement note](/api-reference/financial-reporting/get-statement-note) | Retrieve a single statement note |
