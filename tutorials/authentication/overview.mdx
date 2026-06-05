@@ -1,93 +1,32 @@
 ---
 title: "Authentication"
-description: "How to authenticate and obtain a valid session token for API requests"
+description: "How to authenticate API requests using an API key"
 ---
 
-Every protected API endpoint requires an `Authorization` header. This tutorial walks through the two supported authentication schemes and the full session login flow, including multi-factor authentication.
-
-## Authentication schemes
-
-| Scheme | Header format | When to use |
-| --- | --- | --- |
-| Session token | `Authorization: Bearer <token>` | User-driven API calls. Obtained by completing the login flow below. |
-| API key | `Authorization: Api-Key <api-key>` | Service-to-service integrations. Managed via the [Client API Key](/api-reference/clients/get-client-api-key) endpoints. |
-
-For interactive integrations, use a session token. For automated back-end integrations, use an API key.
-
----
-
-## Session login flow
-
-### Step 1 — Create a session
-
-Send a `POST /v1/crm/sessions` request with your email and password.
+Every protected API endpoint requires an `Authorization` header with a valid API key.
 
 ```http
-POST /v1/crm/sessions
-Content-Type: application/json
-
-{
-  "email": "you@example.com",
-  "password": "your-password"
-}
+Authorization: Api-Key <api-key>
 ```
 
-**Two possible responses:**
-
-**A — MFA required.** The response contains a `challenge` object instead of a token. Proceed to [Step 2](#step-2-complete-mfa).
-
-**B — Login successful.** The response includes a `token` field. Skip to [Step 3](#step-3-use-the-token).
+API keys are managed via the [Client API Key](/api-reference/clients/get-client-api-key) endpoints.
 
 ---
 
-### Step 2 — Complete MFA
+## Obtain an API key
 
-If your account has MFA enabled, you will receive a one-time password via email or SMS. Submit it to `POST /v1/crm/sessions/mfa`.
+API keys are scoped to a client account. Use the [Get Client API Key](/api-reference/clients/get-client-api-key) endpoint to retrieve the key for a given client.
+
+---
+
+## Make an authenticated request
+
+Include the key in the `Authorization` header of every request.
 
 ```http
-POST /v1/crm/sessions/mfa
-Content-Type: application/json
-
-{
-  "challenge_id": "<challenge_id from step 1>",
-  "code": "123456"
-}
+GET /v1/crm/clients
+Authorization: Api-Key <api-key>
 ```
-
-A successful response contains the session `token`. If the code expired or is incorrect, call [Resend MFA OTP](/api-reference/authentication/resend-mfa-otp) and try again.
-
----
-
-### Step 3 — Use the token
-
-Include the token in the `Authorization` header of every subsequent request.
-
-```http
-GET /v1/crm/sessions
-Authorization: Bearer <token>
-```
-
-You can call [Get session](/api-reference/authentication/get-session) at any time to verify the token is valid and retrieve the associated user. Call [Get session permissions](/api-reference/authentication/get-session-permissions) to inspect the full permission set for the session.
-
----
-
-## First login — forced password change
-
-On first login or after an admin password reset, the API returns a `forced_password_change` flag instead of a usable token. You must set a new password before the session becomes active.
-
-Call [Forced password change](/api-reference/authentication/forced-password-change) with the temporary credentials and your chosen new password, then complete the normal login flow.
-
----
-
-## Password reset flow
-
-If a user has forgotten their password:
-
-1. **Initiate reset** — Call [Create password reset](/api-reference/authentication/create-password-reset) with the user's email. An OTP is sent to the registered address.
-2. **Verify OTP** — Submit the code to [Verify password reset OTP](/api-reference/authentication/verify-password-reset-otp) to receive a reset token.
-3. **Set new password** — Pass the reset token and chosen password to [Complete password reset](/api-reference/authentication/complete-password-reset).
-
-Link-based reset flows (email link rather than OTP) use [Verify password reset token](/api-reference/authentication/verify-password-reset-token) in place of step 2.
 
 ---
 
@@ -95,16 +34,4 @@ Link-based reset flows (email link rather than OTP) use [Verify password reset t
 
 | Endpoint | Description |
 | --- | --- |
-| [Create session](/api-reference/authentication/create-session) | Log in with email and password |
-| [Verify MFA](/api-reference/authentication/verify-mfa) | Submit MFA code to complete login |
-| [Resend MFA OTP](/api-reference/authentication/resend-mfa-otp) | Re-send the MFA one-time password |
-| [Get session](/api-reference/authentication/get-session) | Retrieve the current session and user |
-| [Get session permissions](/api-reference/authentication/get-session-permissions) | Inspect the permission set for the active session |
-| [Change password](/api-reference/authentication/change-password) | Update password within an active session |
-| [Forced password change](/api-reference/authentication/forced-password-change) | Complete a required password change on first login |
-| [Create password reset](/api-reference/authentication/create-password-reset) | Initiate the reset flow |
-| [Verify password reset OTP](/api-reference/authentication/verify-password-reset-otp) | Confirm the OTP sent during reset |
-| [Verify password reset token](/api-reference/authentication/verify-password-reset-token) | Validate a link-based reset token |
-| [Complete password reset](/api-reference/authentication/complete-password-reset) | Finalize the reset with a new password |
-| [Impersonate a user](/api-reference/authentication/impersonate-user) | Assume another user's session (privileged) |
-| [End impersonation](/api-reference/authentication/end-impersonation) | Return to the original session |
+| [Get Client API Key](/api-reference/clients/get-client-api-key) | Retrieve the API key for a client |
