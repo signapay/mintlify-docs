@@ -25,6 +25,7 @@
         "group": "Tutorials",
         "icon": "readme",
         "pages": [
+          "tutorials/authentication/overview",
           {
             "group": "Boarding",
             "icon": "ship",
@@ -32,8 +33,7 @@
               "tutorials/boarding/merchants",
               "tutorials/boarding/partners"
             ]
-          },
-          "tutorials/authentication/overview"
+          }
         ]
       },
       {
@@ -41,45 +41,6 @@
         "icon": "code",
         "pages": [
           "api-reference/overview",
-          {
-            "group": "Authentication",
-            "icon": "lock",
-            "pages": [
-              {
-                "group": "Sessions",
-                "pages": [
-                  "api-reference/authentication/get-session",
-                  "api-reference/authentication/create-session",
-                  "api-reference/authentication/impersonate-user",
-                  "api-reference/authentication/end-impersonation",
-                  "api-reference/authentication/verify-mfa",
-                  "api-reference/authentication/resend-mfa-otp",
-                  "api-reference/authentication/change-password",
-                  "api-reference/authentication/forced-password-change",
-                  "api-reference/authentication/get-session-permissions"
-                ]
-              },
-              {
-                "group": "Password Reset",
-                "pages": [
-                  "api-reference/authentication/create-password-reset",
-                  "api-reference/authentication/complete-password-reset",
-                  "api-reference/authentication/verify-password-reset-token",
-                  "api-reference/authentication/verify-password-reset-otp"
-                ]
-              },
-              {
-                "group": "OTP & Verification",
-                "pages": [
-                  "api-reference/authentication/verify-email",
-                  "api-reference/authentication/send-otp",
-                  "api-reference/authentication/send-phone-otp",
-                  "api-reference/authentication/verify-phone-otp",
-                  "api-reference/authentication/verify-otp"
-                ]
-              }
-            ]
-          },
           {
             "group": "Agents",
             "icon": "user-tie",
@@ -114,51 +75,6 @@
                   "api-reference/agents/create-agent-note",
                   "api-reference/agents/get-agent-note",
                   "api-reference/agents/update-agent-note"
-                ]
-              }
-            ]
-          },
-          {
-            "group": "Reporting",
-            "icon": "chart-line",
-            "pages": [
-              "api-reference/dashboards/index",
-              {
-                "group": "Agent",
-                "pages": [
-                  "api-reference/dashboards/overview",
-                  "api-reference/dashboards/agent-applications-summary",
-                  "api-reference/dashboards/agent-kpi-metrics",
-                  "api-reference/dashboards/agent-merchant-status",
-                  "api-reference/dashboards/agent-monthly-active-merchants",
-                  "api-reference/dashboards/agent-monthly-processing-volume",
-                  "api-reference/dashboards/agent-net-merchants",
-                  "api-reference/dashboards/agent-ticket-counts",
-                  "api-reference/dashboards/agent-top-performers-processing"
-                ]
-              },
-              {
-                "group": "Merchant",
-                "pages": [
-                  "api-reference/dashboards/merchant-kpi-metrics",
-                  "api-reference/dashboards/merchant-latest-batch-date",
-                  "api-reference/dashboards/merchant-recent-transactions",
-                  "api-reference/dashboards/merchant-ticket-counts",
-                  "api-reference/dashboards/merchant-transaction-trend"
-                ]
-              },
-              {
-                "group": "Partner",
-                "pages": [
-                  "api-reference/dashboards/partner-applications-summary",
-                  "api-reference/dashboards/partner-kpi-metrics",
-                  "api-reference/dashboards/partner-merchant-status",
-                  "api-reference/dashboards/partner-monthly-active-merchants",
-                  "api-reference/dashboards/partner-monthly-processing-volume",
-                  "api-reference/dashboards/partner-net-merchants",
-                  "api-reference/dashboards/partner-top-agents",
-                  "api-reference/dashboards/partner-top-performers-processing",
-                  "api-reference/dashboards/partner-top-performers-residual"
                 ]
               }
             ]
@@ -334,6 +250,45 @@
                   "api-reference/leads/lead-match-validation",
                   "api-reference/leads/lead-tincheck-validation",
                   "api-reference/leads/get-lead-validation"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Authentication",
+            "icon": "lock",
+            "pages": [
+              {
+                "group": "Sessions",
+                "pages": [
+                  "api-reference/authentication/get-session",
+                  "api-reference/authentication/create-session",
+                  "api-reference/authentication/impersonate-user",
+                  "api-reference/authentication/end-impersonation",
+                  "api-reference/authentication/verify-mfa",
+                  "api-reference/authentication/resend-mfa-otp",
+                  "api-reference/authentication/change-password",
+                  "api-reference/authentication/forced-password-change",
+                  "api-reference/authentication/get-session-permissions"
+                ]
+              },
+              {
+                "group": "Password Reset",
+                "pages": [
+                  "api-reference/authentication/create-password-reset",
+                  "api-reference/authentication/complete-password-reset",
+                  "api-reference/authentication/verify-password-reset-token",
+                  "api-reference/authentication/verify-password-reset-otp"
+                ]
+              },
+              {
+                "group": "OTP & Verification",
+                "pages": [
+                  "api-reference/authentication/verify-email",
+                  "api-reference/authentication/send-otp",
+                  "api-reference/authentication/send-phone-otp",
+                  "api-reference/authentication/verify-phone-otp",
+                  "api-reference/authentication/verify-otp"
                 ]
               }
             ]
@@ -547,6 +502,51 @@
                 "pages": [
                   "api-reference/partners/list-partner-processor-settings",
                   "api-reference/partners/update-partner-processor-setting"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Reporting",
+            "icon": "chart-line",
+            "pages": [
+              "api-reference/dashboards/index",
+              {
+                "group": "Agent",
+                "pages": [
+                  "api-reference/dashboards/overview",
+                  "api-reference/dashboards/agent-applications-summary",
+                  "api-reference/dashboards/agent-kpi-metrics",
+                  "api-reference/dashboards/agent-merchant-status",
+                  "api-reference/dashboards/agent-monthly-active-merchants",
+                  "api-reference/dashboards/agent-monthly-processing-volume",
+                  "api-reference/dashboards/agent-net-merchants",
+                  "api-reference/dashboards/agent-ticket-counts",
+                  "api-reference/dashboards/agent-top-performers-processing"
+                ]
+              },
+              {
+                "group": "Merchant",
+                "pages": [
+                  "api-reference/dashboards/merchant-kpi-metrics",
+                  "api-reference/dashboards/merchant-latest-batch-date",
+                  "api-reference/dashboards/merchant-recent-transactions",
+                  "api-reference/dashboards/merchant-ticket-counts",
+                  "api-reference/dashboards/merchant-transaction-trend"
+                ]
+              },
+              {
+                "group": "Partner",
+                "pages": [
+                  "api-reference/dashboards/partner-applications-summary",
+                  "api-reference/dashboards/partner-kpi-metrics",
+                  "api-reference/dashboards/partner-merchant-status",
+                  "api-reference/dashboards/partner-monthly-active-merchants",
+                  "api-reference/dashboards/partner-monthly-processing-volume",
+                  "api-reference/dashboards/partner-net-merchants",
+                  "api-reference/dashboards/partner-top-agents",
+                  "api-reference/dashboards/partner-top-performers-processing",
+                  "api-reference/dashboards/partner-top-performers-residual"
                 ]
               }
             ]
