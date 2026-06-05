@@ -55,6 +55,7 @@
               {
                 "group": "Documents",
                 "pages": [
+                  "api-reference/agents/documents",
                   "api-reference/agents/list-agent-documents",
                   "api-reference/agents/create-agent-document",
                   "api-reference/agents/get-agent-document",
@@ -65,6 +66,7 @@
               {
                 "group": "Notes",
                 "pages": [
+                  "api-reference/agents/notes",
                   "api-reference/agents/list-agent-notes",
                   "api-reference/agents/create-agent-note",
                   "api-reference/agents/get-agent-note",
@@ -81,6 +83,7 @@
               {
                 "group": "Addresses",
                 "pages": [
+                  "api-reference/leads/addresses",
                   "api-reference/leads/list-lead-addresses",
                   "api-reference/leads/add-lead-address",
                   "api-reference/leads/get-lead-address",
@@ -90,6 +93,7 @@
               {
                 "group": "Clear",
                 "pages": [
+                  "api-reference/leads/clear",
                   "api-reference/leads/create-clear-session",
                   "api-reference/leads/get-clear-verification-status"
                 ]
@@ -97,6 +101,7 @@
               {
                 "group": "Deposit Info",
                 "pages": [
+                  "api-reference/leads/deposit-info",
                   "api-reference/leads/list-lead-deposit-info",
                   "api-reference/leads/create-lead-deposit-info",
                   "api-reference/leads/get-lead-deposit-info",
@@ -108,6 +113,7 @@
               {
                 "group": "Documents",
                 "pages": [
+                  "api-reference/leads/documents",
                   "api-reference/leads/list-lead-documents",
                   "api-reference/leads/create-lead-document",
                   "api-reference/leads/get-lead-document",
@@ -118,6 +124,7 @@
               {
                 "group": "Equipment",
                 "pages": [
+                  "api-reference/leads/equipment",
                   "api-reference/leads/list-lead-equipment-models",
                   "api-reference/leads/create-lead-equipment-model",
                   "api-reference/leads/get-lead-equipment-model",
@@ -146,6 +153,7 @@
               {
                 "group": "Fast Apply",
                 "pages": [
+                  "api-reference/leads/fast-apply",
                   "api-reference/leads/update-fast-apply-business",
                   "api-reference/leads/update-fast-apply-general",
                   "api-reference/leads/save-fast-apply-principals",
@@ -156,6 +164,7 @@
               {
                 "group": "Lead Sources",
                 "pages": [
+                  "api-reference/leads/lead-sources",
                   "api-reference/leads/list-lead-sources",
                   "api-reference/leads/create-lead-source",
                   "api-reference/leads/get-lead-source",
@@ -188,6 +197,7 @@
               {
                 "group": "Notes",
                 "pages": [
+                  "api-reference/leads/notes",
                   "api-reference/leads/list-lead-notes",
                   "api-reference/leads/create-lead-note",
                   "api-reference/leads/get-lead-note",
@@ -197,6 +207,7 @@
               {
                 "group": "Pricing",
                 "pages": [
+                  "api-reference/leads/pricing",
                   "api-reference/leads/list-lead-pricing-items",
                   "api-reference/leads/create-lead-pricing-item",
                   "api-reference/leads/get-lead-pricing-item",
@@ -217,6 +228,7 @@
               {
                 "group": "Principals",
                 "pages": [
+                  "api-reference/leads/principals",
                   "api-reference/leads/list-lead-principals",
                   "api-reference/leads/add-lead-principal",
                   "api-reference/leads/get-lead-principal",
@@ -228,6 +240,7 @@
               {
                 "group": "Signing",
                 "pages": [
+                  "api-reference/leads/signing",
                   "api-reference/leads/create-signing-session",
                   "api-reference/leads/verify-signing-token"
                 ]
@@ -235,6 +248,7 @@
               {
                 "group": "Validations",
                 "pages": [
+                  "api-reference/leads/validations",
                   "api-reference/leads/list-lead-validations",
                   "api-reference/leads/validate-lead-completeness",
                   "api-reference/leads/lead-datax-validation",
@@ -256,6 +270,7 @@
               {
                 "group": "Addresses",
                 "pages": [
+                  "api-reference/merchants/addresses",
                   "api-reference/merchants/list-merchant-addresses",
                   "api-reference/merchants/add-merchant-address",
                   "api-reference/merchants/get-merchant-address",
@@ -265,6 +280,7 @@
               {
                 "group": "Documents",
                 "pages": [
+                  "api-reference/merchants/documents",
                   "api-reference/merchants/list-merchant-documents",
                   "api-reference/merchants/create-merchant-document",
                   "api-reference/merchants/get-merchant-document",
@@ -275,6 +291,7 @@
               {
                 "group": "Equipment",
                 "pages": [
+                  "api-reference/merchants/equipment",
                   "api-reference/merchants/list-merchant-equipment-models",
                   "api-reference/merchants/create-merchant-equipment-model",
                   "api-reference/merchants/get-merchant-equipment-model",
@@ -303,6 +320,7 @@
               {
                 "group": "ISO Package",
                 "pages": [
+                  "api-reference/merchants/iso-package",
                   "api-reference/merchants/get-merchant-iso-package",
                   "api-reference/merchants/create-merchant-iso-package",
                   "api-reference/merchants/delete-merchant-iso-package"
@@ -330,6 +348,7 @@
               {
                 "group": "Notes",
                 "pages": [
+                  "api-reference/merchants/notes",
                   "api-reference/merchants/list-merchant-notes",
                   "api-reference/merchants/create-merchant-note",
                   "api-reference/merchants/get-merchant-note",
@@ -339,6 +358,7 @@
               {
                 "group": "Pricing",
                 "pages": [
+                  "api-reference/merchants/pricing",
                   "api-reference/merchants/list-merchant-pricing-items",
                   "api-reference/merchants/create-merchant-pricing-item",
                   "api-reference/merchants/get-merchant-pricing-item",
@@ -364,6 +384,7 @@
               {
                 "group": "Principals",
                 "pages": [
+                  "api-reference/merchants/principals",
                   "api-reference/merchants/list-merchant-principals",
                   "api-reference/merchants/add-merchant-principal",
                   "api-reference/merchants/get-merchant-principal",
@@ -381,6 +402,7 @@
               {
                 "group": "Addresses",
                 "pages": [
+                  "api-reference/partners/addresses",
                   "api-reference/partners/list-partner-addresses",
                   "api-reference/partners/add-partner-address",
                   "api-reference/partners/get-partner-address",
@@ -390,6 +412,7 @@
               {
                 "group": "Documents",
                 "pages": [
+                  "api-reference/partners/documents",
                   "api-reference/partners/list-partner-documents",
                   "api-reference/partners/create-partner-document",
                   "api-reference/partners/get-partner-document",
@@ -400,6 +423,7 @@
               {
                 "group": "Notes",
                 "pages": [
+                  "api-reference/partners/notes",
                   "api-reference/partners/list-partner-notes",
                   "api-reference/partners/create-partner-note",
                   "api-reference/partners/get-partner-note",
@@ -420,6 +444,7 @@
               {
                 "group": "Pricing",
                 "pages": [
+                  "api-reference/partners/pricing",
                   "api-reference/partners/list-partner-pricing-items",
                   "api-reference/partners/create-partner-pricing-item",
                   "api-reference/partners/get-partner-pricing-item",
@@ -445,6 +470,7 @@
               {
                 "group": "Principals",
                 "pages": [
+                  "api-reference/partners/principals",
                   "api-reference/partners/list-partner-principals",
                   "api-reference/partners/add-partner-principal",
                   "api-reference/partners/get-partner-principal",
@@ -455,6 +481,7 @@
               {
                 "group": "Processor Settings",
                 "pages": [
+                  "api-reference/partners/processor-settings",
                   "api-reference/partners/list-partner-processor-settings",
                   "api-reference/partners/update-partner-processor-setting"
                 ]
@@ -598,6 +625,7 @@
               {
                 "group": "Activities",
                 "pages": [
+                  "api-reference/tickets/activities",
                   "api-reference/tickets/list-ticket-activities",
                   "api-reference/tickets/create-ticket-activity",
                   "api-reference/tickets/update-ticket-activity",
@@ -607,6 +635,7 @@
               {
                 "group": "Clients",
                 "pages": [
+                  "api-reference/tickets/clients",
                   "api-reference/tickets/list-ticket-clients",
                   "api-reference/tickets/add-ticket-client",
                   "api-reference/tickets/remove-ticket-client"
@@ -615,6 +644,7 @@
               {
                 "group": "Documents",
                 "pages": [
+                  "api-reference/tickets/documents",
                   "api-reference/tickets/list-ticket-documents",
                   "api-reference/tickets/add-ticket-document",
                   "api-reference/tickets/get-ticket-document",
@@ -625,6 +655,7 @@
               {
                 "group": "External Users",
                 "pages": [
+                  "api-reference/tickets/external-users",
                   "api-reference/tickets/list-ticket-external-users",
                   "api-reference/tickets/add-ticket-external-user",
                   "api-reference/tickets/remove-ticket-external-user"
@@ -633,6 +664,7 @@
               {
                 "group": "SAM Action Logs",
                 "pages": [
+                  "api-reference/tickets/sam-action-logs",
                   "api-reference/tickets/list-sam-action-logs"
                 ]
               },
@@ -652,6 +684,7 @@
               {
                 "group": "Watchers",
                 "pages": [
+                  "api-reference/tickets/watchers",
                   "api-reference/tickets/list-ticket-watchers",
                   "api-reference/tickets/add-ticket-watcher",
                   "api-reference/tickets/remove-ticket-watcher"
