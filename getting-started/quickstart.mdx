@@ -8,7 +8,7 @@ description: "Start integrating the SignaPay API into your application in minute
 Before you begin, make sure you have:
 
 - A SignaPay PayHub account with API access enabled
-- Either a user login (email \+ password) or a long-lived **API key** issued for your client — see [Authentication](/tutorials/authentication/overview) for details
+- A long-lived **API key** issued for your client — see [Authentication](/tutorials/authentication/overview) for details
 - An HTTP client such as `curl`, Postman, or your preferred SDK
 
 All requests must be made over HTTPS to the base URL:
@@ -19,69 +19,28 @@ https://api.signapay.com
 
 ---
 
-## Step 1 — Obtain a token
+## Step 1 — Authenticate with your API key
 
-PayHub supports two authentication schemes. Use whichever fits your integration:
+API keys are the only supported authentication method for API integrations. Keys are managed through the [Client API Key](/api-reference/clients/get-client-api-key) endpoints.
 
-<Tabs>
-  <Tab title="Session token (user login)">
-    Exchange an email and password for a short-lived bearer token. If your account has MFA enabled, a second call is required to complete the challenge.
+Pass your key in every request using the `Authorization` header:
 
-    **1a. Create a session**
-
-    ```bash
-    curl -s -X POST https://api.signapay.com/v1/crm/sessions \
-      -H "Content-Type: application/json" \
-      -d '{"email": "you@example.com", "password": "••••••••"}'
-    ```
-
-    A successful response returns a `token` and, if MFA is pending, a `mfaRequired: true` flag.
-
-    **1b. Complete MFA (if required)**
-
-    ```bash
-    curl -s -X POST https://api.signapay.com/v1/crm/sessions/mfa \
-      -H "Content-Type: application/json" \
-      -d '{"code": "123456"}'
-    ```
-
-    Once MFA is verified, the response includes your bearer token. Pass it in every subsequent request:
-
-    ```text
-    Authorization: Bearer <token>
-    ```
-
-    See [Create session](/api-reference/authentication/create-session) and [Verify MFA](/api-reference/authentication/verify-mfa) for full request and response schemas.
-  </Tab>
-  <Tab title="API key (service-to-service)">
-    For automated integrations, use a long-lived API key instead of logging in on each request. Keys are managed through the [Client API Key](/api-reference/clients/get-client-api-key) endpoints.
-
-    Pass the key in every request:
-
-    ```text
-    Authorization: Api-Key <your-api-key>
-    ```
-
-    No session creation step is needed.
-  </Tab>
-</Tabs>
+```text
+Authorization: Api-Key <your-api-key>
+```
 
 ---
 
 ## Step 2 — Make your first request
 
-With your token or API key in hand, try fetching the list of agents in your account:
+With your API key in hand, try fetching the list of agents in your account:
 
 ```bash
 curl -s https://api.signapay.com/v1/crm/agents \
-  -H "Authorization: Bearer <token>"
+  -H "Authorization: Api-Key <your-api-key>"
 ```
 
 A successful `200` response returns a paginated list of agent records. If the list is empty, your account may not have any agents configured yet — that's fine; the important thing is that the request authenticated successfully.
-
-<Tip>
-  Replace `Bearer <token>` with `Api-Key <your-api-key>` if you're using a service key instead.
-</Tip>
 
 ---
 
@@ -119,6 +78,6 @@ From here, the API covers the full merchant lifecycle. Jump to the section that 
 
 ## Next steps
 
-- **Authentication deep dive** — Learn about session management, MFA, impersonation, and password reset flows in the [Authentication overview](/tutorials/authentication/overview).
+- **Authentication deep dive** — Learn about API key management and authentication in the [Authentication overview](/tutorials/authentication/overview).
 - **Full API reference** — Browse every available endpoint in the [API Reference overview](/api-reference/overview).
 - **Errors** — All errors follow a consistent structure. Review response codes before building error-handling logic.
