@@ -7,10 +7,9 @@ This guide walks through the full partner onboarding lifecycle — from creating
 
 ## Prerequisites
 
-Before you start, you need an authenticated session or API key with sufficient privileges to manage partner records. See the [Authentication Overview](/tutorials/authentication/overview) for supported schemes.
+Before you start, you need an API key with sufficient privileges to manage partner records. See the [Authentication Overview](/tutorials/authentication/overview) for details.
 
-- **Session token** — Obtain one via [Create Session](/api-reference/authentication/create-session). Pass it as `Bearer <token>` in the `Authorization` header.
-- **API key** — Long-lived keys for service-to-service integrations. Managed via [Client API Keys](/api-reference/clients/get-client-api-key).
+- **API key** — Long-lived keys for service-to-service integrations. Managed via [Client API Keys](/api-reference/clients/get-client-api-key). Pass it as `Api-Key <your-api-key>` in the `Authorization` header.
 
 ---
 
@@ -26,7 +25,7 @@ Before you start, you need an authenticated session or API key with sufficient p
 
     ```http
     POST /v1/crm/partners
-    Authorization: Bearer <token>
+    Authorization: Api-Key <your-api-key>
     ```
   </Step>
   <Step title="Add a business address">
@@ -73,7 +72,7 @@ Before you start, you need an authenticated session or API key with sufficient p
 
     ```http
     PUT /v1/crm/partners/{partnerId}/activate
-    Authorization: Bearer <token>
+    Authorization: Api-Key <your-api-key>
     ```
   </Step>
 </Steps>
@@ -96,6 +95,6 @@ Before you start, you need an authenticated session or API key with sufficient p
   </Card>
 
   <Card title="Authentication Overview" icon="lock" href="/tutorials/authentication/overview">
-    Session tokens, API keys, and MFA for accessing protected endpoints.
+    API key management and authentication for accessing protected endpoints.
   </Card>
 </CardGroup>
