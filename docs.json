@@ -534,17 +534,6 @@
                   "api-reference/dashboards/merchant-ticket-counts",
                   "api-reference/dashboards/merchant-transaction-trend",
                   {
-                    "group": "Transactions",
-                    "pages": [
-                      "api-reference/financial-reporting/list-transactions",
-                      "api-reference/financial-reporting/list-transactions-by-reference",
-                      "api-reference/financial-reporting/get-transaction",
-                      "api-reference/financial-reporting/list-transaction-notes",
-                      "api-reference/financial-reporting/create-transaction-note",
-                      "api-reference/financial-reporting/get-transaction-note"
-                    ]
-                  },
-                  {
                     "group": "Batches",
                     "pages": [
                       "api-reference/financial-reporting/list-transaction-batches",
@@ -552,6 +541,14 @@
                       "api-reference/financial-reporting/list-batch-notes",
                       "api-reference/financial-reporting/create-batch-note",
                       "api-reference/financial-reporting/get-batch-note"
+                    ]
+                  },
+                  {
+                    "group": "Chargebacks",
+                    "pages": [
+                      "api-reference/financial-reporting/list-chargebacks",
+                      "api-reference/financial-reporting/list-related-chargebacks",
+                      "api-reference/financial-reporting/get-chargeback"
                     ]
                   },
                   {
@@ -564,14 +561,6 @@
                     ]
                   },
                   {
-                    "group": "Chargebacks",
-                    "pages": [
-                      "api-reference/financial-reporting/list-chargebacks",
-                      "api-reference/financial-reporting/list-related-chargebacks",
-                      "api-reference/financial-reporting/get-chargeback"
-                    ]
-                  },
-                  {
                     "group": "Statements",
                     "pages": [
                       "api-reference/financial-reporting/list-statements",
@@ -580,6 +569,17 @@
                       "api-reference/financial-reporting/list-statement-notes",
                       "api-reference/financial-reporting/create-statement-note",
                       "api-reference/financial-reporting/get-statement-note"
+                    ]
+                  },
+                  {
+                    "group": "Transactions",
+                    "pages": [
+                      "api-reference/financial-reporting/list-transactions",
+                      "api-reference/financial-reporting/list-transactions-by-reference",
+                      "api-reference/financial-reporting/get-transaction",
+                      "api-reference/financial-reporting/list-transaction-notes",
+                      "api-reference/financial-reporting/create-transaction-note",
+                      "api-reference/financial-reporting/get-transaction-note"
                     ]
                   }
                 ]

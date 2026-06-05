@@ -6,17 +6,11 @@ description: "Manage merchant applications through the full underwriting and boa
 Applications (leads) capture everything needed to underwrite and board a new merchant — business details, ownership, pricing, equipment, and e-signatures. Once approved, a lead is transitioned into an active merchant record.
 
 <CardGroup cols={3}>
-  <Card title="Leads" icon="user-plus" href="/api-reference/leads/overview">
-    Create and manage merchant applications through the full boarding pipeline.
-  </Card>
-  <Card title="Lead Sources" icon="bullhorn" href="/api-reference/leads/list-lead-sources">
-    Track referral and campaign sources and associate them with individual leads.
-  </Card>
   <Card title="Addresses" icon="location-dot" href="/api-reference/leads/list-lead-addresses">
     Add and manage business location addresses for a lead.
   </Card>
-  <Card title="Principals" icon="users" href="/api-reference/leads/list-lead-principals">
-    Capture beneficial owners and signers with encrypted SSN and date-of-birth support.
+  <Card title="Clear" icon="id-card" href="/api-reference/leads/create-clear-session">
+    Initiate Clear identity verification sessions and retrieve verification status.
   </Card>
   <Card title="Deposit Info" icon="building-columns" href="/api-reference/leads/list-lead-deposit-info">
     ACH funding account details with field-level encryption and decryption.
@@ -24,25 +18,31 @@ Applications (leads) capture everything needed to underwrite and board a new mer
   <Card title="Documents" icon="file-lines" href="/api-reference/leads/list-lead-documents">
     Attach, retrieve, update, and delete supporting documents on a lead.
   </Card>
+  <Card title="Equipment" icon="computer" href="/api-reference/leads/list-lead-equipment-models">
+    Manage terminal hardware, deployment orders, gateway configuration, and file build types.
+  </Card>
+  <Card title="Fast Apply" icon="bolt" href="/api-reference/leads/update-fast-apply-general">
+    Streamlined public-facing MPA form endpoints for quick merchant application intake.
+  </Card>
+  <Card title="Lead Sources" icon="bullhorn" href="/api-reference/leads/list-lead-sources">
+    Track referral and campaign sources and associate them with individual leads.
+  </Card>
+  <Card title="Leads" icon="user-plus" href="/api-reference/leads/overview">
+    Create and manage merchant applications through the full boarding pipeline.
+  </Card>
   <Card title="Notes" icon="note-sticky" href="/api-reference/leads/list-lead-notes">
     Add and manage internal collaboration notes on a lead record.
   </Card>
   <Card title="Pricing" icon="tag" href="/api-reference/leads/list-lead-pricing-items">
     Configure pricing items, packages, and conditional pricing rules for a lead.
   </Card>
-  <Card title="Equipment" icon="computer" href="/api-reference/leads/list-lead-equipment-models">
-    Manage terminal hardware, deployment orders, gateway configuration, and file build types.
-  </Card>
-  <Card title="Validations" icon="shield-check" href="/api-reference/leads/list-lead-validations">
-    Run identity, credit, MATCH, bank account, and tax ID verification checks.
+  <Card title="Principals" icon="users" href="/api-reference/leads/list-lead-principals">
+    Capture beneficial owners and signers with encrypted SSN and date-of-birth support.
   </Card>
   <Card title="Signing" icon="signature" href="/api-reference/leads/create-signing-session">
     Create and verify e-signature sessions for MPA agreement delivery.
   </Card>
-  <Card title="Clear" icon="id-card" href="/api-reference/leads/create-clear-session">
-    Initiate Clear identity verification sessions and retrieve verification status.
-  </Card>
-  <Card title="Fast Apply" icon="bolt" href="/api-reference/leads/update-fast-apply-general">
-    Streamlined public-facing MPA form endpoints for quick merchant application intake.
+  <Card title="Validations" icon="shield-check" href="/api-reference/leads/list-lead-validations">
+    Run identity, credit, MATCH, bank account, and tax ID verification checks.
   </Card>
 </CardGroup>
