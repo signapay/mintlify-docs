@@ -25,14 +25,7 @@
         "group": "Tutorials",
         "icon": "readme",
         "pages": [
-          {
-            "group": "Boarding",
-            "icon": "ship",
-            "pages": [
-              "tutorials/boarding/merchants",
-              "tutorials/boarding/partners"
-            ]
-          }
+          "tutorials/boarding/merchants"
         ]
       },
       {
