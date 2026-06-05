@@ -30,4 +30,4 @@
 ## Content boundaries
 
 {/* Define what should and shouldn't be documented */}
-{/* Example: Don't document internal admin features */}
+- Do not document internal resources: Accounts, Authentication, Clients, Export, Lookups, Match, Users
