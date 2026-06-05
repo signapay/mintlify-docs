@@ -1,37 +1,93 @@
 ---
 title: "Authentication"
-description: "How to authenticate API requests using an API key"
+description: "How to obtain and use an API key to authenticate requests to the PayHub API"
 ---
 
-Every protected API endpoint requires an `Authorization` header with a valid API key.
+Every protected endpoint requires a valid API key passed in the `Authorization` header.
 
 ```http
-Authorization: Api-Key <api-key>
+Authorization: Api-Key <your-api-key>
 ```
 
-API keys are managed via the [Client API Key](/api-reference/clients/get-client-api-key) endpoints.
+API keys are scoped to a **client** (a merchant account in PayHub). You need the numeric `clientId` for the client you are integrating with before you can retrieve or generate a key.
 
 ---
 
-## Obtain an API key
+## Key lifecycle
 
-API keys are scoped to a client account. Use the [Get Client API Key](/api-reference/clients/get-client-api-key) endpoint to retrieve the key for a given client.
+<Steps>
+  <Step title="Retrieve an existing key">
+    If a key has already been generated for your client, retrieve it with [Get API Key](/api-reference/clients/get-client-api-key).
+
+    ```bash
+    curl -s https://api.signapay.com/v1/crm/clients/{clientId}/api-keys \
+      -H "Authorization: Api-Key <your-api-key>"
+    ```
+
+    A `200` response returns the active key. A `404` means no key exists yet — proceed to the next step.
+  </Step>
+
+  <Step title="Generate a new key">
+    Use [Generate API Key](/api-reference/clients/generate-client-api-key) to create a key for a client that does not have one, or to rotate an existing key.
+
+    ```bash
+    curl -s -X POST https://api.signapay.com/v1/crm/clients/{clientId}/api-keys/generate \
+      -H "Authorization: Api-Key <your-api-key>"
+    ```
+
+    The response includes the new key value. **Copy it immediately** — the plaintext key is only returned at generation time.
+
+    <Warning>
+      Generating a new key immediately invalidates the previous one. Any integrations using the old key will start receiving `401 Unauthorized` responses until updated.
+    </Warning>
+  </Step>
+
+  <Step title="Use the key in requests">
+    Pass the key in the `Authorization` header on every request.
+
+    ```bash
+    curl -s https://api.signapay.com/v1/crm/clients \
+      -H "Authorization: Api-Key <your-api-key>"
+    ```
+
+    A successful `200` confirms the key is valid and active. See [Make your first request](/getting-started/quickstart) for a guided walkthrough.
+  </Step>
+
+  <Step title="Revoke keys when no longer needed">
+    Use [Revoke API Keys](/api-reference/clients/revoke-client-api-keys) to immediately invalidate all active keys for a client. Do this when decommissioning an integration or rotating credentials as part of an incident response.
+
+    ```bash
+    curl -s -X POST https://api.signapay.com/v1/crm/clients/{clientId}/api-keys/revoke \
+      -H "Authorization: Api-Key <your-api-key>"
+    ```
+  </Step>
+</Steps>
 
 ---
 
-## Make an authenticated request
+## Error responses
 
-Include the key in the `Authorization` header of every request.
+| Status | Meaning |
+|--------|---------|
+| `401 Unauthorized` | The `Authorization` header is missing, malformed, or the key has been revoked. |
+| `403 Forbidden` | The key is valid but does not have permission to access the requested resource. |
 
-```http
-GET /v1/crm/clients
-Authorization: Api-Key <api-key>
-```
+Both errors return a consistent error body. Build your error-handling logic against these two codes for all authentication failures.
+
+---
+
+## Security guidance
+
+- **Store keys in environment variables or a secrets manager** — never commit them to source control.
+- **Rotate keys periodically** — use the generate endpoint to issue a new key, then update all consumers before the old key is revoked.
+- **Revoke immediately on suspected compromise** — use the revoke endpoint to invalidate all active keys for a client at once.
 
 ---
 
 ## Reference
 
 | Endpoint | Description |
-| --- | --- |
-| [Get Client API Key](/api-reference/clients/get-client-api-key) | Retrieve the API key for a client |
+|----------|-------------|
+| [Get API Key](/api-reference/clients/get-client-api-key) | Retrieve the active API key for a client |
+| [Generate API Key](/api-reference/clients/generate-client-api-key) | Generate a new API key, invalidating any existing key |
+| [Revoke API Keys](/api-reference/clients/revoke-client-api-keys) | Revoke all active API keys for a client |
