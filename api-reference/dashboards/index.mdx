@@ -1,18 +1,31 @@
 ---
 title: "Overview"
-description: "Pre-aggregated KPI metrics and summary data across the platform"
+description: "Pre-aggregated KPI metrics, summary data, and financial reporting across the platform"
 ---
 
-The Reporting endpoints return pre-aggregated metrics that power the SignaPay admin, partner, agent, and merchant UIs. All responses are read-only and scoped to the authenticated user's role and client hierarchy.
+The Reporting endpoints return pre-aggregated metrics and financial data that power the SignaPay admin, partner, agent, and merchant UIs. All responses are read-only and scoped to the authenticated user's role and client hierarchy.
 
 <CardGroup cols={3}>
-  <Card title="Agent Dashboard" icon="user-tie" href="/api-reference/dashboards/overview">
-    KPI metrics, merchant status, processing volume, and top-performer rankings for an agent's portfolio.
+  <Card title="Agent" icon="user-tie" href="/api-reference/dashboards/overview">
+    KPI metrics, merchant status, processing volume, top-performer rankings, and residuals for an agent's portfolio.
   </Card>
-  <Card title="Merchant Dashboard" icon="store" href="/api-reference/dashboards/merchant-kpi-metrics">
-    KPI metrics, recent transactions, transaction trends, and batch history for a single merchant.
+  <Card title="Merchant" icon="store" href="/api-reference/dashboards/merchant-kpi-metrics">
+    KPI metrics, transaction history, batch records, deposits, chargebacks, and statements for a single merchant.
   </Card>
-  <Card title="Partner Dashboard" icon="handshake" href="/api-reference/dashboards/partner-applications-summary">
-    Portfolio-level volume, merchant activity, top agent rankings, and lead pipeline data for a partner.
+  <Card title="Partner" icon="handshake" href="/api-reference/dashboards/partner-applications-summary">
+    Portfolio-level volume, merchant activity, top agent rankings, lead pipeline data, and residuals for a partner.
   </Card>
 </CardGroup>
+
+## Merchant Reporting
+
+The Merchant group includes both dashboard summary endpoints and detailed financial record endpoints.
+
+| Section | Description |
+|---|---|
+| Dashboard | KPI metrics, recent transactions, transaction trends, and latest batch date |
+| Transactions | Full transaction history with per-transaction detail and notes |
+| Batches | Batch settlement records with batch-level notes |
+| Deposits | Deposit records and line-item deposit details |
+| Chargebacks | Chargeback cases including related chargeback lookups |
+| Statements | Monthly statements, statement documents, and statement notes |
