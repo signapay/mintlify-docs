@@ -255,45 +255,6 @@
             ]
           },
           {
-            "group": "Authentication",
-            "icon": "lock",
-            "pages": [
-              {
-                "group": "Sessions",
-                "pages": [
-                  "api-reference/authentication/get-session",
-                  "api-reference/authentication/create-session",
-                  "api-reference/authentication/impersonate-user",
-                  "api-reference/authentication/end-impersonation",
-                  "api-reference/authentication/verify-mfa",
-                  "api-reference/authentication/resend-mfa-otp",
-                  "api-reference/authentication/change-password",
-                  "api-reference/authentication/forced-password-change",
-                  "api-reference/authentication/get-session-permissions"
-                ]
-              },
-              {
-                "group": "Password Reset",
-                "pages": [
-                  "api-reference/authentication/create-password-reset",
-                  "api-reference/authentication/complete-password-reset",
-                  "api-reference/authentication/verify-password-reset-token",
-                  "api-reference/authentication/verify-password-reset-otp"
-                ]
-              },
-              {
-                "group": "OTP & Verification",
-                "pages": [
-                  "api-reference/authentication/verify-email",
-                  "api-reference/authentication/send-otp",
-                  "api-reference/authentication/send-phone-otp",
-                  "api-reference/authentication/verify-phone-otp",
-                  "api-reference/authentication/verify-otp"
-                ]
-              }
-            ]
-          },
-          {
             "group": "Merchants",
             "icon": "store",
             "pages": [
