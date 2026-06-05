@@ -40,7 +40,7 @@ curl -s https://api.signapay.com/v1/crm/agents \
   -H "Authorization: Api-Key <your-api-key>"
 ```
 
-A successful `200` response returns a paginated list of agent records. If the list is empty, your account may not have any agents configured yet — that's fine; the important thing is that the request authenticated successfully.
+A successful `200` response returns a [paginated](/getting-started/pagination) list of agent records. If the list is empty, your account may not have any agents configured yet — that's fine; the important thing is that the request authenticated successfully.
 
 ---
 
@@ -79,4 +79,6 @@ From here, the API covers the full merchant lifecycle. Jump to the section that 
 ## Next steps
 
 - **Full API reference** — Browse every available endpoint in the [API Reference overview](/api-reference/overview).
-- **Errors** — All errors follow a consistent structure. Review response codes before building error-handling logic.
+- **Pagination** — All list endpoints return paged results. Learn the [request parameters and response envelope](/getting-started/pagination) before building list-fetching logic.
+- **Errors** — All errors follow a consistent structure. Review [response codes and error shapes](/getting-started/errors) before building error-handling logic.
+- **Board a merchant** — Ready to integrate? Follow the [end-to-end boarding walkthrough](/tutorials/boarding/merchants) from lead creation through MID assignment.

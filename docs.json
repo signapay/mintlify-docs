@@ -18,7 +18,9 @@
         "icon": "check-to-slot",
         "pages": [
           "getting-started/index",
-          "getting-started/quickstart"
+          "getting-started/quickstart",
+          "getting-started/pagination",
+          "getting-started/errors"
         ]
       },
       {
@@ -464,6 +466,7 @@
             "icon": "chart-line",
             "pages": [
               "api-reference/dashboards/index",
+              "api-reference/financial-reporting/overview",
               {
                 "group": "Agent",
                 "pages": [

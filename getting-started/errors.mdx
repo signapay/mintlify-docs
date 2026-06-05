@@ -1,0 +1,37 @@
+---
+title: "Errors"
+description: "HTTP status codes and error response structure for the PayHub API"
+---
+
+All error responses share a consistent JSON body:
+
+```json
+{
+  "status": 422,
+  "code": "VALIDATION_ERROR",
+  "detail": "One or more fields failed validation.",
+  "errors": [
+    "dba_name is required",
+    "tax_id must be 9 digits"
+  ]
+}
+```
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `status` | number | The HTTP status code repeated in the body |
+| `code` | string | A machine-readable error code |
+| `detail` | string | A human-readable description of the error |
+| `errors` | string[] | Per-field validation messages (present on `422` responses only) |
+
+## Status codes
+
+| Code | Meaning | Common cause |
+| --- | --- | --- |
+| `400` | Bad Request | Malformed request syntax or invalid JSON |
+| `401` | Unauthorized | Missing or invalid API key |
+| `403` | Forbidden | Valid credentials but insufficient permissions for the resource |
+| `404` | Not Found | The requested resource ID does not exist |
+| `409` | Conflict | Resource already exists or conflicts with existing data |
+| `422` | Unprocessable Entity | Request was well-formed but failed field-level validation |
+| `503` | Service Unavailable | The service is temporarily unavailable — retry with backoff |

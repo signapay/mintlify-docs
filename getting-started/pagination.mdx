@@ -1,0 +1,60 @@
+---
+title: "Pagination"
+description: "How to page through list results in the PayHub API"
+---
+
+All list endpoints use page-based pagination. Results are returned in pages of a fixed size, and you advance through them using the `page` query parameter.
+
+## Request parameters
+
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `page` | number | `1` | The page number to retrieve (1-indexed) |
+| `size` | number | `20` | The number of records per page |
+
+```bash
+GET /v1/crm/leads?page=2&size=50
+Authorization: Api-Key <your-api-key>
+```
+
+## Response envelope
+
+Every list response wraps results in a consistent envelope:
+
+```json
+{
+  "meta": {
+    "page": 2,
+    "perPage": 50,
+    "totalCount": 134,
+    "totalPages": 3
+  },
+  "data": [...]
+}
+```
+
+| Field | Description |
+| --- | --- |
+| `meta.page` | The current page number |
+| `meta.perPage` | The number of records returned on this page |
+| `meta.totalCount` | The total number of records matching the query |
+| `meta.totalPages` | The total number of pages available |
+| `data` | The array of records for the current page |
+
+## Iterating all pages
+
+To retrieve every record, loop until `meta.page` equals `meta.totalPages`:
+
+```bash
+page=1
+while true; do
+  response=$(curl -s "https://api.signapay.com/v1/crm/leads?page=$page&size=100" \
+    -H "Authorization: Api-Key <your-api-key>")
+  
+  total_pages=$(echo "$response" | jq '.meta.totalPages')
+  # process $response.data ...
+
+  [ "$page" -ge "$total_pages" ] && break
+  page=$((page + 1))
+done
+```
