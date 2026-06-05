@@ -18,9 +18,7 @@
         "icon": "check-to-slot",
         "pages": [
           "getting-started/index",
-          "getting-started/quickstart",
-          "getting-started/pagination",
-          "getting-started/errors"
+          "getting-started/quickstart"
         ]
       },
       {
@@ -35,6 +33,8 @@
         "icon": "code",
         "pages": [
           "api-reference/overview",
+          "api-reference/pagination",
+          "api-reference/errors",
           {
             "group": "Agents",
             "icon": "user-tie",
