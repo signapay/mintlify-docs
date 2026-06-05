@@ -169,38 +169,6 @@
             "pages": [
               "api-reference/leads/index",
               {
-                "group": "Leads",
-                "pages": [
-                  "api-reference/leads/overview",
-                  "api-reference/leads/list-leads",
-                  "api-reference/leads/create-lead",
-                  "api-reference/leads/get-lead",
-                  "api-reference/leads/update-lead",
-                  "api-reference/leads/delete-lead",
-                  "api-reference/leads/decrypt-lead",
-                  "api-reference/leads/get-lead-mid",
-                  "api-reference/leads/update-lead-risk-profile",
-                  "api-reference/leads/get-lead-service-acceptance",
-                  "api-reference/leads/update-lead-service-acceptance",
-                  "api-reference/leads/submit-lead-for-review",
-                  "api-reference/leads/transition-lead-status"
-                ]
-              },
-              {
-                "group": "Lead Sources",
-                "pages": [
-                  "api-reference/leads/list-lead-sources",
-                  "api-reference/leads/create-lead-source",
-                  "api-reference/leads/get-lead-source",
-                  "api-reference/leads/update-lead-source",
-                  "api-reference/leads/list-leads-for-source",
-                  "api-reference/leads/get-lead-source-summary",
-                  "api-reference/leads/list-lead-lead-sources",
-                  "api-reference/leads/add-lead-source-to-lead",
-                  "api-reference/leads/remove-lead-source-from-lead"
-                ]
-              },
-              {
                 "group": "Addresses",
                 "pages": [
                   "api-reference/leads/list-lead-addresses",
@@ -210,14 +178,10 @@
                 ]
               },
               {
-                "group": "Principals",
+                "group": "Clear",
                 "pages": [
-                  "api-reference/leads/list-lead-principals",
-                  "api-reference/leads/add-lead-principal",
-                  "api-reference/leads/get-lead-principal",
-                  "api-reference/leads/update-lead-principal",
-                  "api-reference/leads/delete-lead-principal",
-                  "api-reference/leads/decrypt-lead-principal"
+                  "api-reference/leads/create-clear-session",
+                  "api-reference/leads/get-clear-verification-status"
                 ]
               },
               {
@@ -239,6 +203,76 @@
                   "api-reference/leads/get-lead-document",
                   "api-reference/leads/update-lead-document",
                   "api-reference/leads/delete-lead-document"
+                ]
+              },
+              {
+                "group": "Equipment",
+                "pages": [
+                  "api-reference/leads/list-lead-equipment-models",
+                  "api-reference/leads/create-lead-equipment-model",
+                  "api-reference/leads/get-lead-equipment-model",
+                  "api-reference/leads/update-lead-equipment-model",
+                  "api-reference/leads/delete-lead-equipment-model",
+                  "api-reference/leads/list-lead-equipment-orders",
+                  "api-reference/leads/create-lead-equipment-order",
+                  "api-reference/leads/get-lead-equipment-order",
+                  "api-reference/leads/update-lead-equipment-order",
+                  "api-reference/leads/delete-lead-equipment-order",
+                  "api-reference/leads/list-lead-equipment-order-items",
+                  "api-reference/leads/create-lead-equipment-order-item",
+                  "api-reference/leads/get-lead-equipment-order-item",
+                  "api-reference/leads/update-lead-equipment-order-item",
+                  "api-reference/leads/delete-lead-equipment-order-item",
+                  "api-reference/leads/get-lead-equipment-order-gateway",
+                  "api-reference/leads/create-lead-equipment-order-gateway",
+                  "api-reference/leads/update-lead-equipment-order-gateway",
+                  "api-reference/leads/delete-lead-equipment-order-gateway",
+                  "api-reference/leads/get-lead-equipment-order-file-build-type",
+                  "api-reference/leads/create-lead-equipment-order-file-build-type",
+                  "api-reference/leads/update-lead-equipment-order-file-build-type",
+                  "api-reference/leads/delete-lead-equipment-order-file-build-type"
+                ]
+              },
+              {
+                "group": "Fast Apply",
+                "pages": [
+                  "api-reference/leads/update-fast-apply-business",
+                  "api-reference/leads/update-fast-apply-general",
+                  "api-reference/leads/save-fast-apply-principals",
+                  "api-reference/leads/create-fast-apply-principal",
+                  "api-reference/leads/update-fast-apply-principal"
+                ]
+              },
+              {
+                "group": "Lead Sources",
+                "pages": [
+                  "api-reference/leads/list-lead-sources",
+                  "api-reference/leads/create-lead-source",
+                  "api-reference/leads/get-lead-source",
+                  "api-reference/leads/update-lead-source",
+                  "api-reference/leads/list-leads-for-source",
+                  "api-reference/leads/get-lead-source-summary",
+                  "api-reference/leads/list-lead-lead-sources",
+                  "api-reference/leads/add-lead-source-to-lead",
+                  "api-reference/leads/remove-lead-source-from-lead"
+                ]
+              },
+              {
+                "group": "Leads",
+                "pages": [
+                  "api-reference/leads/overview",
+                  "api-reference/leads/list-leads",
+                  "api-reference/leads/create-lead",
+                  "api-reference/leads/get-lead",
+                  "api-reference/leads/update-lead",
+                  "api-reference/leads/delete-lead",
+                  "api-reference/leads/decrypt-lead",
+                  "api-reference/leads/get-lead-mid",
+                  "api-reference/leads/update-lead-risk-profile",
+                  "api-reference/leads/get-lead-service-acceptance",
+                  "api-reference/leads/update-lead-service-acceptance",
+                  "api-reference/leads/submit-lead-for-review",
+                  "api-reference/leads/transition-lead-status"
                 ]
               },
               {
@@ -271,31 +305,21 @@
                 ]
               },
               {
-                "group": "Equipment",
+                "group": "Principals",
                 "pages": [
-                  "api-reference/leads/list-lead-equipment-models",
-                  "api-reference/leads/create-lead-equipment-model",
-                  "api-reference/leads/get-lead-equipment-model",
-                  "api-reference/leads/update-lead-equipment-model",
-                  "api-reference/leads/delete-lead-equipment-model",
-                  "api-reference/leads/list-lead-equipment-orders",
-                  "api-reference/leads/create-lead-equipment-order",
-                  "api-reference/leads/get-lead-equipment-order",
-                  "api-reference/leads/update-lead-equipment-order",
-                  "api-reference/leads/delete-lead-equipment-order",
-                  "api-reference/leads/list-lead-equipment-order-items",
-                  "api-reference/leads/create-lead-equipment-order-item",
-                  "api-reference/leads/get-lead-equipment-order-item",
-                  "api-reference/leads/update-lead-equipment-order-item",
-                  "api-reference/leads/delete-lead-equipment-order-item",
-                  "api-reference/leads/get-lead-equipment-order-gateway",
-                  "api-reference/leads/create-lead-equipment-order-gateway",
-                  "api-reference/leads/update-lead-equipment-order-gateway",
-                  "api-reference/leads/delete-lead-equipment-order-gateway",
-                  "api-reference/leads/get-lead-equipment-order-file-build-type",
-                  "api-reference/leads/create-lead-equipment-order-file-build-type",
-                  "api-reference/leads/update-lead-equipment-order-file-build-type",
-                  "api-reference/leads/delete-lead-equipment-order-file-build-type"
+                  "api-reference/leads/list-lead-principals",
+                  "api-reference/leads/add-lead-principal",
+                  "api-reference/leads/get-lead-principal",
+                  "api-reference/leads/update-lead-principal",
+                  "api-reference/leads/delete-lead-principal",
+                  "api-reference/leads/decrypt-lead-principal"
+                ]
+              },
+              {
+                "group": "Signing",
+                "pages": [
+                  "api-reference/leads/create-signing-session",
+                  "api-reference/leads/verify-signing-token"
                 ]
               },
               {
@@ -311,30 +335,6 @@
                   "api-reference/leads/lead-tincheck-validation",
                   "api-reference/leads/get-lead-validation"
                 ]
-              },
-              {
-                "group": "Signing",
-                "pages": [
-                  "api-reference/leads/create-signing-session",
-                  "api-reference/leads/verify-signing-token"
-                ]
-              },
-              {
-                "group": "Clear",
-                "pages": [
-                  "api-reference/leads/create-clear-session",
-                  "api-reference/leads/get-clear-verification-status"
-                ]
-              },
-              {
-                "group": "Fast Apply",
-                "pages": [
-                  "api-reference/leads/update-fast-apply-business",
-                  "api-reference/leads/update-fast-apply-general",
-                  "api-reference/leads/save-fast-apply-principals",
-                  "api-reference/leads/create-fast-apply-principal",
-                  "api-reference/leads/update-fast-apply-principal"
-                ]
               }
             ]
           },
@@ -343,25 +343,6 @@
             "icon": "store",
             "pages": [
               "api-reference/merchants/index",
-              {
-                "group": "Merchants",
-                "pages": [
-                  "api-reference/merchants/overview",
-                  "api-reference/merchants/list-merchants",
-                  "api-reference/merchants/get-merchant",
-                  "api-reference/merchants/update-merchant",
-                  "api-reference/merchants/decrypt-merchant",
-                  "api-reference/merchants/get-merchant-mid",
-                  "api-reference/merchants/update-merchant-risk-profile",
-                  "api-reference/merchants/get-merchant-service-acceptance",
-                  "api-reference/merchants/update-merchant-service-acceptance",
-                  "api-reference/merchants/get-terminal-setup",
-                  "api-reference/merchants/update-terminal-setup",
-                  "api-reference/merchants/download-var-sheet",
-                  "api-reference/merchants/complete-merchant-qa",
-                  "api-reference/merchants/update-merchant-status"
-                ]
-              },
               {
                 "group": "Addresses",
                 "pages": [
@@ -372,16 +353,6 @@
                 ]
               },
               {
-                "group": "Principals",
-                "pages": [
-                  "api-reference/merchants/list-merchant-principals",
-                  "api-reference/merchants/add-merchant-principal",
-                  "api-reference/merchants/get-merchant-principal",
-                  "api-reference/merchants/update-merchant-principal",
-                  "api-reference/merchants/decrypt-merchant-principal"
-                ]
-              },
-              {
                 "group": "Documents",
                 "pages": [
                   "api-reference/merchants/list-merchant-documents",
@@ -389,40 +360,6 @@
                   "api-reference/merchants/get-merchant-document",
                   "api-reference/merchants/update-merchant-document",
                   "api-reference/merchants/delete-merchant-document"
-                ]
-              },
-              {
-                "group": "Notes",
-                "pages": [
-                  "api-reference/merchants/list-merchant-notes",
-                  "api-reference/merchants/create-merchant-note",
-                  "api-reference/merchants/get-merchant-note",
-                  "api-reference/merchants/update-merchant-note"
-                ]
-              },
-              {
-                "group": "Pricing",
-                "pages": [
-                  "api-reference/merchants/list-merchant-pricing-items",
-                  "api-reference/merchants/create-merchant-pricing-item",
-                  "api-reference/merchants/get-merchant-pricing-item",
-                  "api-reference/merchants/update-merchant-pricing-item",
-                  "api-reference/merchants/delete-merchant-pricing-item",
-                  "api-reference/merchants/list-merchant-pricing-packages",
-                  "api-reference/merchants/create-merchant-pricing-package",
-                  "api-reference/merchants/get-merchant-pricing-package",
-                  "api-reference/merchants/update-merchant-pricing-package",
-                  "api-reference/merchants/delete-merchant-pricing-package",
-                  "api-reference/merchants/list-merchant-pricing-templates",
-                  "api-reference/merchants/create-merchant-pricing-template",
-                  "api-reference/merchants/get-merchant-pricing-template",
-                  "api-reference/merchants/update-merchant-pricing-template",
-                  "api-reference/merchants/delete-merchant-pricing-template",
-                  "api-reference/merchants/list-merchant-pricing-rules",
-                  "api-reference/merchants/create-merchant-pricing-rule",
-                  "api-reference/merchants/get-merchant-pricing-rule",
-                  "api-reference/merchants/update-merchant-pricing-rule",
-                  "api-reference/merchants/delete-merchant-pricing-rule"
                 ]
               },
               {
@@ -460,6 +397,69 @@
                   "api-reference/merchants/create-merchant-iso-package",
                   "api-reference/merchants/delete-merchant-iso-package"
                 ]
+              },
+              {
+                "group": "Merchants",
+                "pages": [
+                  "api-reference/merchants/overview",
+                  "api-reference/merchants/list-merchants",
+                  "api-reference/merchants/get-merchant",
+                  "api-reference/merchants/update-merchant",
+                  "api-reference/merchants/decrypt-merchant",
+                  "api-reference/merchants/get-merchant-mid",
+                  "api-reference/merchants/update-merchant-risk-profile",
+                  "api-reference/merchants/get-merchant-service-acceptance",
+                  "api-reference/merchants/update-merchant-service-acceptance",
+                  "api-reference/merchants/get-terminal-setup",
+                  "api-reference/merchants/update-terminal-setup",
+                  "api-reference/merchants/download-var-sheet",
+                  "api-reference/merchants/complete-merchant-qa",
+                  "api-reference/merchants/update-merchant-status"
+                ]
+              },
+              {
+                "group": "Notes",
+                "pages": [
+                  "api-reference/merchants/list-merchant-notes",
+                  "api-reference/merchants/create-merchant-note",
+                  "api-reference/merchants/get-merchant-note",
+                  "api-reference/merchants/update-merchant-note"
+                ]
+              },
+              {
+                "group": "Pricing",
+                "pages": [
+                  "api-reference/merchants/list-merchant-pricing-items",
+                  "api-reference/merchants/create-merchant-pricing-item",
+                  "api-reference/merchants/get-merchant-pricing-item",
+                  "api-reference/merchants/update-merchant-pricing-item",
+                  "api-reference/merchants/delete-merchant-pricing-item",
+                  "api-reference/merchants/list-merchant-pricing-packages",
+                  "api-reference/merchants/create-merchant-pricing-package",
+                  "api-reference/merchants/get-merchant-pricing-package",
+                  "api-reference/merchants/update-merchant-pricing-package",
+                  "api-reference/merchants/delete-merchant-pricing-package",
+                  "api-reference/merchants/list-merchant-pricing-templates",
+                  "api-reference/merchants/create-merchant-pricing-template",
+                  "api-reference/merchants/get-merchant-pricing-template",
+                  "api-reference/merchants/update-merchant-pricing-template",
+                  "api-reference/merchants/delete-merchant-pricing-template",
+                  "api-reference/merchants/list-merchant-pricing-rules",
+                  "api-reference/merchants/create-merchant-pricing-rule",
+                  "api-reference/merchants/get-merchant-pricing-rule",
+                  "api-reference/merchants/update-merchant-pricing-rule",
+                  "api-reference/merchants/delete-merchant-pricing-rule"
+                ]
+              },
+              {
+                "group": "Principals",
+                "pages": [
+                  "api-reference/merchants/list-merchant-principals",
+                  "api-reference/merchants/add-merchant-principal",
+                  "api-reference/merchants/get-merchant-principal",
+                  "api-reference/merchants/update-merchant-principal",
+                  "api-reference/merchants/decrypt-merchant-principal"
+                ]
               }
             ]
           },
@@ -469,33 +469,12 @@
             "pages": [
               "api-reference/partners/index",
               {
-                "group": "Partners",
-                "pages": [
-                  "api-reference/partners/overview",
-                  "api-reference/partners/list-partners",
-                  "api-reference/partners/get-partner",
-                  "api-reference/partners/update-partner",
-                  "api-reference/partners/decrypt-partner",
-                  "api-reference/partners/update-partner-status"
-                ]
-              },
-              {
                 "group": "Addresses",
                 "pages": [
                   "api-reference/partners/list-partner-addresses",
                   "api-reference/partners/add-partner-address",
                   "api-reference/partners/get-partner-address",
                   "api-reference/partners/update-partner-address"
-                ]
-              },
-              {
-                "group": "Principals",
-                "pages": [
-                  "api-reference/partners/list-partner-principals",
-                  "api-reference/partners/add-partner-principal",
-                  "api-reference/partners/get-partner-principal",
-                  "api-reference/partners/update-partner-principal",
-                  "api-reference/partners/decrypt-partner-principal"
                 ]
               },
               {
@@ -515,6 +494,17 @@
                   "api-reference/partners/create-partner-note",
                   "api-reference/partners/get-partner-note",
                   "api-reference/partners/update-partner-note"
+                ]
+              },
+              {
+                "group": "Partners",
+                "pages": [
+                  "api-reference/partners/overview",
+                  "api-reference/partners/list-partners",
+                  "api-reference/partners/get-partner",
+                  "api-reference/partners/update-partner",
+                  "api-reference/partners/decrypt-partner",
+                  "api-reference/partners/update-partner-status"
                 ]
               },
               {
@@ -543,6 +533,16 @@
                 ]
               },
               {
+                "group": "Principals",
+                "pages": [
+                  "api-reference/partners/list-partner-principals",
+                  "api-reference/partners/add-partner-principal",
+                  "api-reference/partners/get-partner-principal",
+                  "api-reference/partners/update-partner-principal",
+                  "api-reference/partners/decrypt-partner-principal"
+                ]
+              },
+              {
                 "group": "Processor Settings",
                 "pages": [
                   "api-reference/partners/list-partner-processor-settings",
@@ -557,33 +557,12 @@
             "pages": [
               "api-reference/tickets/index",
               {
-                "group": "Tickets",
-                "pages": [
-                  "api-reference/tickets/overview",
-                  "api-reference/tickets/list-tickets",
-                  "api-reference/tickets/create-ticket",
-                  "api-reference/tickets/get-ticket",
-                  "api-reference/tickets/update-ticket",
-                  "api-reference/tickets/merge-tickets",
-                  "api-reference/tickets/split-ticket",
-                  "api-reference/tickets/list-ticket-categories"
-                ]
-              },
-              {
                 "group": "Activities",
                 "pages": [
                   "api-reference/tickets/list-ticket-activities",
                   "api-reference/tickets/create-ticket-activity",
                   "api-reference/tickets/update-ticket-activity",
                   "api-reference/tickets/delete-ticket-activity"
-                ]
-              },
-              {
-                "group": "Watchers",
-                "pages": [
-                  "api-reference/tickets/list-ticket-watchers",
-                  "api-reference/tickets/add-ticket-watcher",
-                  "api-reference/tickets/remove-ticket-watcher"
                 ]
               },
               {
@@ -616,6 +595,27 @@
                 "group": "SAM Action Logs",
                 "pages": [
                   "api-reference/tickets/list-sam-action-logs"
+                ]
+              },
+              {
+                "group": "Tickets",
+                "pages": [
+                  "api-reference/tickets/overview",
+                  "api-reference/tickets/list-tickets",
+                  "api-reference/tickets/create-ticket",
+                  "api-reference/tickets/get-ticket",
+                  "api-reference/tickets/update-ticket",
+                  "api-reference/tickets/merge-tickets",
+                  "api-reference/tickets/split-ticket",
+                  "api-reference/tickets/list-ticket-categories"
+                ]
+              },
+              {
+                "group": "Watchers",
+                "pages": [
+                  "api-reference/tickets/list-ticket-watchers",
+                  "api-reference/tickets/add-ticket-watcher",
+                  "api-reference/tickets/remove-ticket-watcher"
                 ]
               }
             ]
