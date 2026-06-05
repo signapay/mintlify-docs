@@ -76,6 +76,23 @@
                   "api-reference/agents/get-agent-note",
                   "api-reference/agents/update-agent-note"
                 ]
+              },
+              {
+                "group": "Residuals",
+                "pages": [
+                  "api-reference/financial-reporting/list-residuals",
+                  "api-reference/financial-reporting/get-residual",
+                  "api-reference/financial-reporting/get-residual-metrics",
+                  "api-reference/financial-reporting/list-all-residual-merchant-summaries",
+                  "api-reference/financial-reporting/list-residual-merchant-summaries",
+                  "api-reference/financial-reporting/get-residual-merchant-summary",
+                  "api-reference/financial-reporting/list-residual-gross-details",
+                  "api-reference/financial-reporting/list-residual-merchant-details",
+                  "api-reference/financial-reporting/get-residual-merchant-detail",
+                  "api-reference/financial-reporting/list-all-residual-overrides",
+                  "api-reference/financial-reporting/list-residual-overrides",
+                  "api-reference/financial-reporting/get-residual-override"
+                ]
               }
             ]
           },
@@ -463,6 +480,23 @@
                 "pages": [
                   "api-reference/partners/list-partner-processor-settings",
                   "api-reference/partners/update-partner-processor-setting"
+                ]
+              },
+              {
+                "group": "Residuals",
+                "pages": [
+                  "api-reference/financial-reporting/list-residuals",
+                  "api-reference/financial-reporting/get-residual",
+                  "api-reference/financial-reporting/get-residual-metrics",
+                  "api-reference/financial-reporting/list-all-residual-merchant-summaries",
+                  "api-reference/financial-reporting/list-residual-merchant-summaries",
+                  "api-reference/financial-reporting/get-residual-merchant-summary",
+                  "api-reference/financial-reporting/list-residual-gross-details",
+                  "api-reference/financial-reporting/list-residual-merchant-details",
+                  "api-reference/financial-reporting/get-residual-merchant-detail",
+                  "api-reference/financial-reporting/list-all-residual-overrides",
+                  "api-reference/financial-reporting/list-residual-overrides",
+                  "api-reference/financial-reporting/get-residual-override"
                 ]
               }
             ]
