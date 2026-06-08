@@ -161,17 +161,6 @@
             ]
           },
           {
-            "group": "Fast Apply",
-            "pages": [
-              "api-reference/leads/fast-apply",
-              "api-reference/leads/update-fast-apply-business",
-              "api-reference/leads/update-fast-apply-general",
-              "api-reference/leads/save-fast-apply-principals",
-              "api-reference/leads/create-fast-apply-principal",
-              "api-reference/leads/update-fast-apply-principal"
-            ]
-          },
-          {
             "group": "Application Sources",
             "pages": [
               "api-reference/leads/lead-sources",
