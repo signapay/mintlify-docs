@@ -3,7 +3,7 @@ title: "Boarding a Merchant"
 description: "End-to-end walkthrough for originating and activating a new merchant account on PayHub"
 ---
 
-This guide walks through the full merchant boarding lifecycle — from creating the initial lead through compliance checks, e-signature, and final activation. Each step links to the relevant API endpoint or overview for details.
+This guide walks through the full merchant boarding lifecycle — from creating the initial application through compliance checks, e-signature, and final activation. Each step links to the relevant API endpoint or overview for details.
 
 ## Prerequisites
 
@@ -16,12 +16,12 @@ Before you start, you need an API key.
 ## Boarding steps
 
 <Steps>
-  <Step title="Create the lead">
-    A lead is the merchant application record. All subsequent data — business info, pricing, equipment, and compliance — attaches to this record.
+  <Step title="Create the application">
+    An application is the merchant application record. All subsequent data — business info, pricing, equipment, and compliance — attaches to this record.
 
-    **Endpoint:** [Create Lead](/api-reference/leads/create-lead) — `POST /v1/crm/leads`
+    **Endpoint:** [Create Application](/api-reference/leads/create-lead) — `POST /v1/crm/leads`
 
-    At minimum, provide the merchant's DBA name, legal name, and the agent or ISO the lead belongs to. Refer to the [Leads Overview](/api-reference/leads/overview) for a full description of the lead lifecycle and available fields.
+    At minimum, provide the merchant's DBA name, legal name, and the agent or ISO the application belongs to. Refer to the [Applications Overview](/api-reference/leads/overview) for a full description of the application lifecycle and available fields.
 
     ```http
     POST /v1/crm/leads
@@ -30,18 +30,18 @@ Before you start, you need an API key.
   </Step>
 
   <Step title="Add business profile">
-    Populate the merchant's business details on the lead.
+    Populate the merchant's business details on the application.
 
-    - **Address** — [Add Lead Address](/api-reference/leads/add-lead-address) (`POST /v1/crm/leads/{leadId}/addresses`). Add the physical business location.
-    - **Principals** — [Add Lead Principal](/api-reference/leads/add-lead-principal) (`POST /v1/crm/leads/{leadId}/principals`). Capture each beneficial owner and signer. SSN and date of birth are encrypted at rest.
+    - **Address** — [Add Application Address](/api-reference/leads/add-lead-address) (`POST /v1/crm/leads/{leadId}/addresses`). Add the physical business location.
+    - **Principals** — [Add Application Principal](/api-reference/leads/add-lead-principal) (`POST /v1/crm/leads/{leadId}/principals`). Capture each beneficial owner and signer. SSN and date of birth are encrypted at rest.
   </Step>
 
   <Step title="Add banking / deposit information">
     Provide ACH funding account details so the merchant can receive deposits.
 
-    **Endpoint:** [Create Lead Deposit Info](/api-reference/leads/create-lead-deposit-info) — `POST /v1/crm/leads/{leadId}/deposit-info`
+    **Endpoint:** [Create Application Deposit Info](/api-reference/leads/create-lead-deposit-info) — `POST /v1/crm/leads/{leadId}/deposit-info`
 
-    Sensitive bank fields are encrypted. Use [Decrypt Lead Deposit Info](/api-reference/leads/decrypt-lead-deposit-info) to retrieve them later.
+    Sensitive bank fields are encrypted. Use [Decrypt Application Deposit Info](/api-reference/leads/decrypt-lead-deposit-info) to retrieve them later.
   </Step>
 
   <Step title="Configure pricing">
@@ -53,7 +53,7 @@ Before you start, you need an API key.
   </Step>
 
   <Step title="Add equipment order (optional)">
-    If the merchant requires physical terminal hardware, create an equipment order on the lead.
+    If the merchant requires physical terminal hardware, create an equipment order on the application.
 
     - **Equipment order** — [Create Equipment Order](/api-reference/leads/create-lead-equipment-order) (`POST /v1/crm/leads/{leadId}/equipment-orders`).
     - **Order items** — [Create Equipment Order Item](/api-reference/leads/create-lead-equipment-order-item) — line items within the order.
@@ -63,11 +63,11 @@ Before you start, you need an API key.
   <Step title="Attach supporting documents">
     Upload any required underwriting or compliance documents.
 
-    **Endpoint:** [Create Lead Document](/api-reference/leads/create-lead-document) — `POST /v1/crm/leads/{leadId}/documents`
+    **Endpoint:** [Create Application Document](/api-reference/leads/create-lead-document) — `POST /v1/crm/leads/{leadId}/documents`
   </Step>
 
   <Step title="Run compliance validations">
-    Before submission, run identity and risk screening checks against the lead.
+    Before submission, run identity and risk screening checks against the application.
 
     | Check | Endpoint |
     |-------|----------|
@@ -90,25 +90,25 @@ Before you start, you need an API key.
   </Step>
 
   <Step title="Submit for review">
-    Submit the lead to underwriting or compliance for final review.
+    Submit the application to underwriting or compliance for final review.
 
-    **Endpoint:** [Submit Lead for Review](/api-reference/leads/submit-lead-for-review) — `PUT /v1/crm/leads/{leadId}/submit/{reviewer}`
+    **Endpoint:** [Submit Application for Review](/api-reference/leads/submit-lead-for-review) — `PUT /v1/crm/leads/{leadId}/submit/{reviewer}`
 
     Pass `underwriting` or `compliance` as the `reviewer` path parameter depending on the required workflow.
   </Step>
 
   <Step title="Transition status through the pipeline">
-    As the review progresses, update the lead's status.
+    As the review progresses, update the application's status.
 
-    **Endpoint:** [Transition Lead Status](/api-reference/leads/transition-lead-status) — `PUT /v1/crm/leads/{leadId}/transition/{status}`
+    **Endpoint:** [Transition Application Status](/api-reference/leads/transition-lead-status) — `PUT /v1/crm/leads/{leadId}/transition/{status}`
 
-    See the [Leads Overview](/api-reference/leads/overview) for a description of available statuses and valid transitions.
+    See the [Applications Overview](/api-reference/leads/overview) for a description of available statuses and valid transitions.
   </Step>
 
   <Step title="Retrieve the assigned MID">
-    Once the lead is approved and boarding is complete, the merchant is assigned a Merchant ID (MID).
+    Once the application is approved and boarding is complete, the merchant is assigned a Merchant ID (MID).
 
-    **Endpoint:** [Get Lead MID](/api-reference/leads/get-lead-mid) — `GET /v1/crm/leads/{leadId}/mid`
+    **Endpoint:** [Get Application MID](/api-reference/leads/get-lead-mid) — `GET /v1/crm/leads/{leadId}/mid`
 
     At this point the merchant becomes an active client record in the system.
   </Step>
@@ -119,8 +119,8 @@ Before you start, you need an API key.
 ## Related resources
 
 <CardGroup cols={2}>
-  <Card title="Leads Overview" icon="file-text" href="/api-reference/leads/overview">
-    Full reference for the lead lifecycle, status pipeline, and all available sub-resources.
+  <Card title="Applications Overview" icon="file-text" href="/api-reference/leads/overview">
+    Full reference for the application lifecycle, status pipeline, and all available sub-resources.
   </Card>
   <Card title="Financial Reporting" icon="chart-line" href="/api-reference/financial-reporting/overview">
     Transactions, batches, deposits, and statements for active merchants.

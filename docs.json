@@ -162,7 +162,7 @@
                 ]
               },
               {
-                "group": "Lead Sources",
+                "group": "Application Sources",
                 "pages": [
                   "api-reference/leads/lead-sources",
                   "api-reference/leads/list-lead-sources",
@@ -177,7 +177,7 @@
                 ]
               },
               {
-                "group": "Leads",
+                "group": "Applications",
                 "pages": [
                   "api-reference/leads/overview",
                   "api-reference/leads/list-leads",

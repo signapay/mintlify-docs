@@ -1,57 +1,57 @@
 ---
 title: "Overview"
-description: "Manage prospective merchant leads through the sales pipeline"
+description: "Manage prospective merchant applications through the sales pipeline"
 ---
 
-Leads represent merchant applications in progress. A lead captures everything needed to underwrite and board a new merchant — business details, ownership, pricing, equipment, and e-signatures. Once approved, a lead is transitioned into an active merchant record.
+Applications represent merchant applications in progress. An application captures everything needed to underwrite and board a new merchant — business details, ownership, pricing, equipment, and e-signatures. Once approved, an application is transitioned into an active merchant record.
 
 ## Subsections
 
 <CardGroup cols={2}>
-  <Card title="Lead Sources" icon="crosshair" href="/api-reference/leads/lead-sources">
-    Track referral channels and marketing campaigns that originate leads.
+  <Card title="Application Sources" icon="crosshair" href="/api-reference/leads/lead-sources">
+    Track referral channels and marketing campaigns that originate applications.
   </Card>
   <Card title="Addresses" icon="map-pin" href="/api-reference/leads/addresses">
-    Manage business addresses on a lead record.
+    Manage business addresses on an application record.
   </Card>
   <Card title="Principals" icon="users" href="/api-reference/leads/principals">
-    Manage beneficial owners and signatories on a lead record.
+    Manage beneficial owners and signatories on an application record.
   </Card>
   <Card title="Deposit Info" icon="landmark" href="/api-reference/leads/deposit-info">
-    Manage bank account and deposit routing information for a lead.
+    Manage bank account and deposit routing information for an application.
   </Card>
   <Card title="Documents" icon="file-text" href="/api-reference/leads/documents">
-    Manage documents attached to a lead record.
+    Manage documents attached to an application record.
   </Card>
   <Card title="Notes" icon="sticky-note" href="/api-reference/leads/notes">
-    Add and manage internal notes on a lead record.
+    Add and manage internal notes on an application record.
   </Card>
   <Card title="Pricing" icon="tag" href="/api-reference/leads/pricing">
-    Manage pricing items, packages, and rules for a lead.
+    Manage pricing items, packages, and rules for an application.
   </Card>
   <Card title="Equipment" icon="monitor" href="/api-reference/leads/equipment">
-    Manage terminal equipment models and deployment orders for a lead.
+    Manage terminal equipment models and deployment orders for an application.
   </Card>
   <Card title="Validations" icon="shield-check" href="/api-reference/leads/validations">
-    Run identity, credit, and compliance checks against a lead.
+    Run identity, credit, and compliance checks against an application.
   </Card>
   <Card title="Signing" icon="pen-line" href="/api-reference/leads/signing">
     Manage e-signature sessions for merchant application agreements.
   </Card>
   <Card title="Clear Identity Verification" icon="id-card" href="/api-reference/leads/clear">
-    Initiate and check Clear identity verification sessions for a lead.
+    Initiate and check Clear identity verification sessions for an application.
   </Card>
   <Card title="Fast Apply" icon="bolt" href="/api-reference/leads/fast-apply">
-    Streamlined public-facing MPA form endpoints for lead capture.
+    Streamlined public-facing MPA form endpoints for application capture.
   </Card>
 </CardGroup>
 
 ## Lifecycle
 
-Leads move through a configurable pipeline of statuses:
+Applications move through a configurable pipeline of statuses:
 
-- Use [Transition status](/api-reference/leads/transition-lead-status) to move a lead to a new pipeline stage.
-- Use [Submit for review](/api-reference/leads/submit-lead-for-review) to send a lead to underwriting or compliance.
+- Use [Transition status](/api-reference/leads/transition-lead-status) to move an application to a new pipeline stage.
+- Use [Submit for review](/api-reference/leads/submit-lead-for-review) to send an application to underwriting or compliance.
 
 ## What's included
 
@@ -59,39 +59,39 @@ Leads move through a configurable pipeline of statuses:
 
 | Endpoint | Description |
 | --- | --- |
-| [List leads](/api-reference/leads/list-leads) | Retrieve a paginated list of leads |
-| [Create lead](/api-reference/leads/create-lead) | Create a new merchant lead |
-| [Get lead](/api-reference/leads/get-lead) | Retrieve a single lead by ID |
-| [Update lead](/api-reference/leads/update-lead) | Update an existing lead record |
-| [Delete lead](/api-reference/leads/delete-lead) | Permanently delete a lead record |
-| [Transition status](/api-reference/leads/transition-lead-status) | Move a lead to a new status in the pipeline |
-| [Submit for review](/api-reference/leads/submit-lead-for-review) | Submit a lead for underwriting or compliance review |
+| [List applications](/api-reference/leads/list-leads) | Retrieve a paginated list of applications |
+| [Create application](/api-reference/leads/create-lead) | Create a new merchant application |
+| [Get application](/api-reference/leads/get-lead) | Retrieve a single application by ID |
+| [Update application](/api-reference/leads/update-lead) | Update an existing application record |
+| [Delete application](/api-reference/leads/delete-lead) | Permanently delete an application record |
+| [Transition status](/api-reference/leads/transition-lead-status) | Move an application to a new status in the pipeline |
+| [Submit for review](/api-reference/leads/submit-lead-for-review) | Submit an application for underwriting or compliance review |
 | [Get MID](/api-reference/leads/get-lead-mid) | Retrieve the assigned merchant identifier once boarding is complete |
-| [Update risk profile](/api-reference/leads/update-lead-risk-profile) | Update the lead's risk classification |
+| [Update risk profile](/api-reference/leads/update-lead-risk-profile) | Update the application's risk classification |
 | [Get service acceptance](/api-reference/leads/get-lead-service-acceptance) | Retrieve service terms acceptance status |
 | [Update service acceptance](/api-reference/leads/update-lead-service-acceptance) | Update service terms acceptance |
 | [Decrypt sensitive data](/api-reference/leads/decrypt-lead) | Decrypt a protected field (SSN, bank account, etc.) on demand |
 
-### [Lead sources](/api-reference/leads/lead-sources)
+### [Application sources](/api-reference/leads/lead-sources)
 
 | Endpoint | Description |
 | --- | --- |
-| [List lead sources](/api-reference/leads/list-lead-sources) | Retrieve all lead sources |
-| [Create lead source](/api-reference/leads/create-lead-source) | Create a new referral or campaign source |
-| [Get lead source](/api-reference/leads/get-lead-source) | Retrieve a single lead source by ID |
-| [Update lead source](/api-reference/leads/update-lead-source) | Update an existing lead source |
-| [Get source summary](/api-reference/leads/get-lead-source-summary) | Retrieve an aggregate summary for a lead source |
-| [List leads for source](/api-reference/leads/list-leads-for-source) | Retrieve all leads associated with a lead source |
-| [List sources for lead](/api-reference/leads/list-lead-lead-sources) | Retrieve all sources associated with a lead |
-| [Add source to lead](/api-reference/leads/add-lead-source-to-lead) | Associate a lead source with a lead |
-| [Remove source from lead](/api-reference/leads/remove-lead-source-from-lead) | Remove a lead source association from a lead |
+| [List application sources](/api-reference/leads/list-lead-sources) | Retrieve all application sources |
+| [Create application source](/api-reference/leads/create-lead-source) | Create a new referral or campaign source |
+| [Get application source](/api-reference/leads/get-lead-source) | Retrieve a single application source by ID |
+| [Update application source](/api-reference/leads/update-lead-source) | Update an existing application source |
+| [Get source summary](/api-reference/leads/get-lead-source-summary) | Retrieve an aggregate summary for an application source |
+| [List applications for source](/api-reference/leads/list-leads-for-source) | Retrieve all applications associated with an application source |
+| [List sources for application](/api-reference/leads/list-lead-lead-sources) | Retrieve all sources associated with an application |
+| [Add source to application](/api-reference/leads/add-lead-source-to-lead) | Associate an application source with an application |
+| [Remove source from application](/api-reference/leads/remove-lead-source-from-lead) | Remove an application source association from an application |
 
 ### [Business addresses](/api-reference/leads/addresses)
 
 | Endpoint | Description |
 | --- | --- |
-| [List addresses](/api-reference/leads/list-lead-addresses) | Retrieve all business addresses for a lead |
-| [Add address](/api-reference/leads/add-lead-address) | Add a business address to a lead |
+| [List addresses](/api-reference/leads/list-lead-addresses) | Retrieve all business addresses for an application |
+| [Add address](/api-reference/leads/add-lead-address) | Add a business address to an application |
 | [Get address](/api-reference/leads/get-lead-address) | Retrieve a single business address |
 | [Update address](/api-reference/leads/update-lead-address) | Update a business address |
 
@@ -99,92 +99,92 @@ Leads move through a configurable pipeline of statuses:
 
 | Endpoint | Description |
 | --- | --- |
-| [List principals](/api-reference/leads/list-lead-principals) | Retrieve all principals associated with a lead |
-| [Add principal](/api-reference/leads/add-lead-principal) | Add a beneficial owner or signer to a lead |
+| [List principals](/api-reference/leads/list-lead-principals) | Retrieve all principals associated with an application |
+| [Add principal](/api-reference/leads/add-lead-principal) | Add a beneficial owner or signer to an application |
 | [Get principal](/api-reference/leads/get-lead-principal) | Retrieve a single principal by ID |
-| [Update principal](/api-reference/leads/update-lead-principal) | Update a lead principal's information |
-| [Delete principal](/api-reference/leads/delete-lead-principal) | Remove a principal from a lead record |
+| [Update principal](/api-reference/leads/update-lead-principal) | Update an application principal's information |
+| [Delete principal](/api-reference/leads/delete-lead-principal) | Remove a principal from an application record |
 | [Decrypt principal data](/api-reference/leads/decrypt-lead-principal) | Decrypt a sensitive field on a principal |
 
 ### [Deposit info](/api-reference/leads/deposit-info)
 
 | Endpoint | Description |
 | --- | --- |
-| [List deposit info](/api-reference/leads/list-lead-deposit-info) | Retrieve all deposit info records for a lead |
-| [Create deposit info](/api-reference/leads/create-lead-deposit-info) | Add a deposit info record to a lead |
+| [List deposit info](/api-reference/leads/list-lead-deposit-info) | Retrieve all deposit info records for an application |
+| [Create deposit info](/api-reference/leads/create-lead-deposit-info) | Add a deposit info record to an application |
 | [Get deposit info](/api-reference/leads/get-lead-deposit-info) | Retrieve a single deposit info record |
 | [Update deposit info](/api-reference/leads/update-lead-deposit-info) | Update a deposit info record |
-| [Delete deposit info](/api-reference/leads/delete-lead-deposit-info) | Remove a deposit info record from a lead |
+| [Delete deposit info](/api-reference/leads/delete-lead-deposit-info) | Remove a deposit info record from an application |
 | [Decrypt deposit info](/api-reference/leads/decrypt-lead-deposit-info) | Decrypt a sensitive field on a deposit info record |
 
 ### [Documents](/api-reference/leads/documents)
 
 | Endpoint | Description |
 | --- | --- |
-| [List documents](/api-reference/leads/list-lead-documents) | Retrieve all documents for a lead |
-| [Create document](/api-reference/leads/create-lead-document) | Attach a document to a lead |
-| [Get document](/api-reference/leads/get-lead-document) | Retrieve a single lead document |
+| [List documents](/api-reference/leads/list-lead-documents) | Retrieve all documents for an application |
+| [Create document](/api-reference/leads/create-lead-document) | Attach a document to an application |
+| [Get document](/api-reference/leads/get-lead-document) | Retrieve a single application document |
 | [Update document](/api-reference/leads/update-lead-document) | Update document metadata |
-| [Delete document](/api-reference/leads/delete-lead-document) | Remove a document from a lead |
+| [Delete document](/api-reference/leads/delete-lead-document) | Remove a document from an application |
 
 ### [Notes](/api-reference/leads/notes)
 
 | Endpoint | Description |
 | --- | --- |
-| [List notes](/api-reference/leads/list-lead-notes) | Retrieve all notes on a lead record |
-| [Create note](/api-reference/leads/create-lead-note) | Add a note to a lead record |
+| [List notes](/api-reference/leads/list-lead-notes) | Retrieve all notes on an application record |
+| [Create note](/api-reference/leads/create-lead-note) | Add a note to an application record |
 | [Get note](/api-reference/leads/get-lead-note) | Retrieve a single note |
-| [Update note](/api-reference/leads/update-lead-note) | Edit a note on a lead record |
+| [Update note](/api-reference/leads/update-lead-note) | Edit a note on an application record |
 
 ### [Pricing items](/api-reference/leads/pricing)
 
 | Endpoint | Description |
 | --- | --- |
-| [List pricing items](/api-reference/leads/list-lead-pricing-items) | Retrieve all pricing items for a lead |
-| [Create pricing item](/api-reference/leads/create-lead-pricing-item) | Add a pricing item (e.g. interchange, basis points) to a lead |
+| [List pricing items](/api-reference/leads/list-lead-pricing-items) | Retrieve all pricing items for an application |
+| [Create pricing item](/api-reference/leads/create-lead-pricing-item) | Add a pricing item (e.g. interchange, basis points) to an application |
 | [Get pricing item](/api-reference/leads/get-lead-pricing-item) | Retrieve a single pricing item |
-| [Update pricing item](/api-reference/leads/update-lead-pricing-item) | Update a lead pricing item |
-| [Delete pricing item](/api-reference/leads/delete-lead-pricing-item) | Remove a pricing item from a lead |
+| [Update pricing item](/api-reference/leads/update-lead-pricing-item) | Update an application pricing item |
+| [Delete pricing item](/api-reference/leads/delete-lead-pricing-item) | Remove a pricing item from an application |
 
 ### [Pricing packages](/api-reference/leads/pricing#pricing-packages)
 
 | Endpoint | Description |
 | --- | --- |
-| [List pricing packages](/api-reference/leads/list-lead-pricing-packages) | Retrieve all pricing packages for a lead |
-| [Create pricing package](/api-reference/leads/create-lead-pricing-package) | Add a pricing package to a lead |
+| [List pricing packages](/api-reference/leads/list-lead-pricing-packages) | Retrieve all pricing packages for an application |
+| [Create pricing package](/api-reference/leads/create-lead-pricing-package) | Add a pricing package to an application |
 | [Get pricing package](/api-reference/leads/get-lead-pricing-package) | Retrieve a single pricing package |
-| [Update pricing package](/api-reference/leads/update-lead-pricing-package) | Update a lead pricing package |
-| [Delete pricing package](/api-reference/leads/delete-lead-pricing-package) | Remove a pricing package from a lead |
+| [Update pricing package](/api-reference/leads/update-lead-pricing-package) | Update an application pricing package |
+| [Delete pricing package](/api-reference/leads/delete-lead-pricing-package) | Remove a pricing package from an application |
 
 ### [Pricing rules](/api-reference/leads/pricing#pricing-rules)
 
 | Endpoint | Description |
 | --- | --- |
-| [List pricing rules](/api-reference/leads/list-lead-pricing-rules) | Retrieve all pricing rules for a lead |
-| [Create pricing rule](/api-reference/leads/create-lead-pricing-rule) | Add a pricing rule to a lead |
+| [List pricing rules](/api-reference/leads/list-lead-pricing-rules) | Retrieve all pricing rules for an application |
+| [Create pricing rule](/api-reference/leads/create-lead-pricing-rule) | Add a pricing rule to an application |
 | [Get pricing rule](/api-reference/leads/get-lead-pricing-rule) | Retrieve a single pricing rule |
-| [Update pricing rule](/api-reference/leads/update-lead-pricing-rule) | Update a lead pricing rule |
-| [Delete pricing rule](/api-reference/leads/delete-lead-pricing-rule) | Remove a pricing rule from a lead |
+| [Update pricing rule](/api-reference/leads/update-lead-pricing-rule) | Update an application pricing rule |
+| [Delete pricing rule](/api-reference/leads/delete-lead-pricing-rule) | Remove a pricing rule from an application |
 
 ### [Equipment models](/api-reference/leads/equipment)
 
 | Endpoint | Description |
 | --- | --- |
-| [List equipment models](/api-reference/leads/list-lead-equipment-models) | Retrieve all equipment models for a lead |
-| [Create equipment model](/api-reference/leads/create-lead-equipment-model) | Add an equipment model to a lead |
+| [List equipment models](/api-reference/leads/list-lead-equipment-models) | Retrieve all equipment models for an application |
+| [Create equipment model](/api-reference/leads/create-lead-equipment-model) | Add an equipment model to an application |
 | [Get equipment model](/api-reference/leads/get-lead-equipment-model) | Retrieve a single equipment model |
-| [Update equipment model](/api-reference/leads/update-lead-equipment-model) | Update a lead equipment model |
-| [Delete equipment model](/api-reference/leads/delete-lead-equipment-model) | Remove an equipment model from a lead |
+| [Update equipment model](/api-reference/leads/update-lead-equipment-model) | Update an application equipment model |
+| [Delete equipment model](/api-reference/leads/delete-lead-equipment-model) | Remove an equipment model from an application |
 
 ### [Equipment orders](/api-reference/leads/equipment#equipment-orders)
 
 | Endpoint | Description |
 | --- | --- |
-| [List equipment orders](/api-reference/leads/list-lead-equipment-orders) | Retrieve all equipment orders for a lead |
-| [Create equipment order](/api-reference/leads/create-lead-equipment-order) | Create a new equipment order for a lead |
+| [List equipment orders](/api-reference/leads/list-lead-equipment-orders) | Retrieve all equipment orders for an application |
+| [Create equipment order](/api-reference/leads/create-lead-equipment-order) | Create a new equipment order for an application |
 | [Get equipment order](/api-reference/leads/get-lead-equipment-order) | Retrieve a single equipment order |
-| [Update equipment order](/api-reference/leads/update-lead-equipment-order) | Update a lead equipment order |
-| [Delete equipment order](/api-reference/leads/delete-lead-equipment-order) | Remove an equipment order from a lead |
+| [Update equipment order](/api-reference/leads/update-lead-equipment-order) | Update an application equipment order |
+| [Delete equipment order](/api-reference/leads/delete-lead-equipment-order) | Remove an equipment order from an application |
 | [List order items](/api-reference/leads/list-lead-equipment-order-items) | Retrieve all items in an equipment order |
 | [Create order item](/api-reference/leads/create-lead-equipment-order-item) | Add an item to an equipment order |
 | [Get order item](/api-reference/leads/get-lead-equipment-order-item) | Retrieve a single order item |
@@ -210,7 +210,7 @@ Leads move through a configurable pipeline of statuses:
 | [GIACT validation](/api-reference/leads/lead-giact-validation) | Run a GIACT bank account validation |
 | [MATCH inquiry](/api-reference/leads/lead-match-validation) | Run a MATCH Pro terminated merchant screening |
 | [TinCheck](/api-reference/leads/lead-tincheck-validation) | Run a TinCheck tax ID verification |
-| [List validations](/api-reference/leads/list-lead-validations) | Retrieve all validation records for a lead |
+| [List validations](/api-reference/leads/list-lead-validations) | Retrieve all validation records for an application |
 | [Get validation](/api-reference/leads/get-lead-validation) | Retrieve a single validation record |
 
 ### [Signing](/api-reference/leads/signing)
@@ -229,7 +229,7 @@ Leads move through a configurable pipeline of statuses:
 
 ### [Fast Apply](/api-reference/leads/fast-apply)
 
-Streamlined public-facing MPA form flow for lead capture:
+Streamlined public-facing MPA form flow for application capture:
 
 | Endpoint | Description |
 | --- | --- |
