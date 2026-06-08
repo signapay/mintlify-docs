@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "aspen",
   "name": "PayHub API Documentation",
   "colors": {
-    "primary": "#00a0dc",
-    "light": "#00a0dc",
-    "dark": "#00a0dc"
+    "primary": "#003dbe",
+    "light": "#003dbe",
+    "dark": "#2b8aff"
   },
   "navigation": {
     "global": {
@@ -712,5 +712,8 @@
   },
   "interaction": {
     "drilldown": true
+  },
+  "icons": {
+    "library": "lucide"
   }
 }
