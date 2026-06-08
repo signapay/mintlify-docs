@@ -15,7 +15,7 @@
     "groups": [
       {
         "group": "Getting Started",
-        "icon": "check-to-slot",
+        "icon": "rocket",
         "pages": [
           "getting-started/index",
           "getting-started/quickstart"
@@ -23,7 +23,7 @@
       },
       {
         "group": "Tutorials",
-        "icon": "readme",
+        "icon": "book-open",
         "pages": [
           "tutorials/boarding/merchants"
         ]
@@ -37,7 +37,7 @@
           "api-reference/errors",
           {
             "group": "Agents",
-            "icon": "user-tie",
+            "icon": "briefcase",
             "pages": [
               "api-reference/agents/index",
               {
@@ -490,7 +490,7 @@
           },
           {
             "group": "Reporting",
-            "icon": "chart-line",
+            "icon": "line-chart",
             "pages": [
               "api-reference/dashboards/index",
               {
