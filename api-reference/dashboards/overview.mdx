@@ -5,9 +5,7 @@ description: "Aggregated metrics and visualizations across the platform"
 
 The Dashboard endpoints return pre-aggregated metrics that power the SignaPay admin, partner, agent, and merchant UIs. All responses are read-only and scoped to the authenticated user's role and client hierarchy.
 
-## Dashboard types
-
-### Agent dashboard
+## Agent dashboard
 
 Metrics scoped to a specific agent's portfolio:
 
@@ -22,26 +20,7 @@ Metrics scoped to a specific agent's portfolio:
 | [Ticket counts](/api-reference/dashboards/agent-ticket-counts) | Open ticket summary for the agent |
 | [Top performers (processing)](/api-reference/dashboards/agent-top-performers-processing) | Highest-volume merchants in the agent's book |
 
-### Agent residuals
-
-ISO residual data scoped to an agent's portfolio. These endpoints are served from the [Financial Reporting](/api-reference/financial-reporting/overview) section:
-
-| Endpoint | Description |
-| --- | --- |
-| [List residuals](/api-reference/financial-reporting/list-residuals) | ISO residual historical summaries and aggregated metrics |
-| [Get residual](/api-reference/financial-reporting/get-residual) | Single residual period summary |
-| [Get residual metrics](/api-reference/financial-reporting/get-residual-metrics) | Aggregated residual metrics |
-| [List all merchant summaries](/api-reference/financial-reporting/list-all-residual-merchant-summaries) | All-time merchant-level residual summaries |
-| [List merchant summaries](/api-reference/financial-reporting/list-residual-merchant-summaries) | Merchant summaries for a specific residual period |
-| [Get merchant summary](/api-reference/financial-reporting/get-residual-merchant-summary) | Single merchant residual summary |
-| [List gross details](/api-reference/financial-reporting/list-residual-gross-details) | Gross residual detail records |
-| [List merchant details](/api-reference/financial-reporting/list-residual-merchant-details) | Line-item residual details for a merchant |
-| [Get merchant detail](/api-reference/financial-reporting/get-residual-merchant-detail) | Single merchant residual detail record |
-| [List all overrides](/api-reference/financial-reporting/list-all-residual-overrides) | All-time residual overrides |
-| [List overrides](/api-reference/financial-reporting/list-residual-overrides) | Overrides for a specific residual period |
-| [Get override](/api-reference/financial-reporting/get-residual-override) | Single residual override record |
-
-### Merchant dashboard
+## Merchant dashboard
 
 Metrics scoped to a single merchant's activity:
 
@@ -53,7 +32,7 @@ Metrics scoped to a single merchant's activity:
 | [Ticket counts](/api-reference/dashboards/merchant-ticket-counts) | Open support tickets for the merchant |
 | [Transaction trend](/api-reference/dashboards/merchant-transaction-trend) | Volume trend over time |
 
-### Partner dashboard
+## Partner dashboard
 
 Metrics scoped to a partner's full downstream portfolio:
 
@@ -68,22 +47,3 @@ Metrics scoped to a partner's full downstream portfolio:
 | [Top agents MTD](/api-reference/dashboards/partner-top-agents) | Best-performing agents month-to-date |
 | [Top performers (processing)](/api-reference/dashboards/partner-top-performers-processing) | Highest-volume merchants in the portfolio |
 | [Top performers (residual)](/api-reference/dashboards/partner-top-performers-residual) | Highest-residual merchants in the portfolio |
-
-### Partner residuals
-
-ISO residual data scoped to a partner's portfolio. These endpoints are served from the [Financial Reporting](/api-reference/financial-reporting/overview) section:
-
-| Endpoint | Description |
-| --- | --- |
-| [List residuals](/api-reference/financial-reporting/list-residuals) | ISO residual historical summaries and aggregated metrics |
-| [Get residual](/api-reference/financial-reporting/get-residual) | Single residual period summary |
-| [Get residual metrics](/api-reference/financial-reporting/get-residual-metrics) | Aggregated residual metrics |
-| [List all merchant summaries](/api-reference/financial-reporting/list-all-residual-merchant-summaries) | All-time merchant-level residual summaries |
-| [List merchant summaries](/api-reference/financial-reporting/list-residual-merchant-summaries) | Merchant summaries for a specific residual period |
-| [Get merchant summary](/api-reference/financial-reporting/get-residual-merchant-summary) | Single merchant residual summary |
-| [List gross details](/api-reference/financial-reporting/list-residual-gross-details) | Gross residual detail records |
-| [List merchant details](/api-reference/financial-reporting/list-residual-merchant-details) | Line-item residual details for a merchant |
-| [Get merchant detail](/api-reference/financial-reporting/get-residual-merchant-detail) | Single merchant residual detail record |
-| [List all overrides](/api-reference/financial-reporting/list-all-residual-overrides) | All-time residual overrides |
-| [List overrides](/api-reference/financial-reporting/list-residual-overrides) | Overrides for a specific residual period |
-| [Get override](/api-reference/financial-reporting/get-residual-override) | Single residual override record |

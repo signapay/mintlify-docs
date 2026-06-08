@@ -5,20 +5,7 @@ description: "Manage sales agents and their merchant assignments"
 
 Agents are sales representatives who originate and manage merchant applications on behalf of a partner organization. Each agent record tracks identity, contact details, and status within the SignaPay network.
 
-## Subsections
-
-<CardGroup cols={2}>
-  <Card title="Documents" icon="file-text" href="/api-reference/agents/documents">
-    Manage documents attached to an agent record.
-  </Card>
-  <Card title="Notes" icon="sticky-note" href="/api-reference/agents/notes">
-    Add and manage internal notes on an agent record.
-  </Card>
-</CardGroup>
-
 ## What's included
-
-### Core
 
 | Endpoint | Description |
 | --- | --- |
@@ -28,22 +15,3 @@ Agents are sales representatives who originate and manage merchant applications 
 | [Update agent](/api-reference/agents/update-agent) | Update an existing agent's profile |
 | [Update status](/api-reference/agents/update-agent-status) | Transition an agent to a new status (activate, deactivate, close) |
 | [Decrypt sensitive data](/api-reference/agents/decrypt-agent) | Decrypt a protected field (e.g. SSN, bank account number) on demand |
-
-### [Documents](/api-reference/agents/documents)
-
-| Endpoint | Description |
-| --- | --- |
-| [List documents](/api-reference/agents/list-agent-documents) | Retrieve all documents attached to an agent |
-| [Create document](/api-reference/agents/create-agent-document) | Attach a new document to an agent |
-| [Get document](/api-reference/agents/get-agent-document) | Retrieve a single document |
-| [Update document](/api-reference/agents/update-agent-document) | Update document metadata |
-| [Delete document](/api-reference/agents/delete-agent-document) | Remove a document from an agent |
-
-### [Notes](/api-reference/agents/notes)
-
-| Endpoint | Description |
-| --- | --- |
-| [List notes](/api-reference/agents/list-agent-notes) | Retrieve all notes on an agent record |
-| [Create note](/api-reference/agents/create-agent-note) | Add a note to an agent record |
-| [Get note](/api-reference/agents/get-agent-note) | Retrieve a single note |
-| [Update note](/api-reference/agents/update-agent-note) | Edit a note on an agent record |
