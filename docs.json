@@ -715,5 +715,9 @@
   },
   "icons": {
     "library": "lucide"
+  },
+  "fonts": {
+    "family": "Geist",
+    "weight": 400
   }
 }
