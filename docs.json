@@ -704,16 +704,8 @@
   "navbar": {
     "links": [
       {
-        "href": "/getting-started#guides",
-        "label": "Guides"
-      },
-      {
-        "href": "/getting-started#api-reference",
-        "label": "API Reference"
-      },
-      {
-        "href": "/getting-started#changelog",
-        "label": "Changelog"
+        "href": "http://portal.payhub.com/",
+        "label": "Login"
       }
     ]
   },
