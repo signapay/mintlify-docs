@@ -20,7 +20,6 @@
             "group": "Getting Started",
             "icon": "rocket",
             "pages": [
-              "getting-started/index",
               "getting-started/quickstart"
             ]
           },
