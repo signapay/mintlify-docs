@@ -689,7 +689,12 @@
     "dark": "/images/PayHub-Logo.png"
   },
   "navbar": {
-    "links": []
+    "links": [
+      {
+        "href": "/getting-started#guides",
+        "label": "Guides"
+      }
+    ]
   },
   "contextual": {
     "options": [
