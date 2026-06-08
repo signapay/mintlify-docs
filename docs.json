@@ -40,6 +40,7 @@
             "group": "API Reference",
             "icon": "code",
             "pages": [
+              "api-reference/overview",
               "api-reference/pagination",
               "api-reference/errors"
             ]
