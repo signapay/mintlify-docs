@@ -490,7 +490,7 @@
           },
           {
             "group": "Reporting",
-            "icon": "line-chart",
+            "icon": "chart-line",
             "pages": [
               "api-reference/dashboards/index",
               {
