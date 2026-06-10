@@ -5,58 +5,17 @@ description: "Pre-aggregated KPI metrics, summary data, and financial reporting 
 
 The Reporting endpoints return pre-aggregated metrics and financial data that power the SignaPay admin, partner, agent, and merchant UIs. All responses are read-only and scoped to the authenticated user's role and client hierarchy.
 
-## Agent dashboard
-
-Metrics scoped to a specific agent's portfolio:
-
-| Endpoint | Description |
-| --- | --- |
-| [Applications summary](/api-reference/dashboards/agent-applications-summary) | Application counts broken down by pipeline stage |
-| [KPI metrics](/api-reference/dashboards/agent-kpi-metrics) | Key performance indicators for the agent |
-| [Merchant status](/api-reference/dashboards/agent-merchant-status) | Active, inactive, and closed merchant breakdown |
-| [Monthly active merchants](/api-reference/dashboards/agent-monthly-active-merchants) | Month-over-month active merchant count |
-| [Monthly processing volume](/api-reference/dashboards/agent-monthly-processing-volume) | Rolling monthly processing volume trend |
-| [Net merchants](/api-reference/dashboards/agent-net-merchants) | Net merchant adds and attrition by month |
-| [Ticket counts](/api-reference/dashboards/agent-ticket-counts) | Open ticket summary for the agent |
-| [Top performers (processing)](/api-reference/dashboards/agent-top-performers-processing) | Highest-volume merchants in the agent's book |
-
-## Merchant dashboard
-
-Metrics scoped to a single merchant's activity:
-
-| Endpoint | Description |
-| --- | --- |
-| [KPI metrics](/api-reference/dashboards/merchant-kpi-metrics) | Key performance indicators for the merchant |
-| [Latest batch date](/api-reference/dashboards/merchant-latest-batch-date) | Most recent settlement batch date |
-| [Recent transactions](/api-reference/dashboards/merchant-recent-transactions) | Latest transaction activity |
-| [Ticket counts](/api-reference/dashboards/merchant-ticket-counts) | Open support tickets for the merchant |
-| [Transaction trend](/api-reference/dashboards/merchant-transaction-trend) | Volume trend over time |
-
-## Partner dashboard
-
-Metrics scoped to a partner's full downstream portfolio:
-
-| Endpoint | Description |
-| --- | --- |
-| [Applications summary](/api-reference/dashboards/partner-applications-summary) | Application pipeline breakdown across all agents |
-| [KPI metrics](/api-reference/dashboards/partner-kpi-metrics) | Key performance indicators for the partner |
-| [Merchant status](/api-reference/dashboards/partner-merchant-status) | Portfolio-level active/inactive/closed breakdown |
-| [Monthly active merchants](/api-reference/dashboards/partner-monthly-active-merchants) | Month-over-month active merchant count |
-| [Monthly processing volume](/api-reference/dashboards/partner-monthly-processing-volume) | Rolling monthly volume trend |
-| [Net merchants](/api-reference/dashboards/partner-net-merchants) | Net merchant adds and attrition by month |
-| [Top agents MTD](/api-reference/dashboards/partner-top-agents) | Best-performing agents month-to-date |
-| [Top performers (processing)](/api-reference/dashboards/partner-top-performers-processing) | Highest-volume merchants in the portfolio |
-| [Top performers (residual)](/api-reference/dashboards/partner-top-performers-residual) | Highest-residual merchants in the portfolio |
-
-## Financial Reporting
-
-Detailed financial record endpoints are grouped separately from dashboard KPIs and are accessible regardless of persona.
-
-| Section | Description |
-|---|---|
-| [Transactions](/api-reference/financial-reporting/overview) | Full transaction history with per-transaction detail and notes |
-| [Batches](/api-reference/financial-reporting/overview) | Batch settlement records with batch-level notes |
-| [Deposits](/api-reference/financial-reporting/overview) | Deposit records and line-item deposit details |
-| [Chargebacks](/api-reference/financial-reporting/overview) | Chargeback cases including related chargeback lookups |
-| [Statements](/api-reference/financial-reporting/overview) | Monthly statements, statement documents, and statement notes |
-| [Residuals](/api-reference/financial-reporting/overview) | ISO residual summaries, merchant-level details, and overrides |
+<CardGroup cols={2}>
+  <Card title="Agent Dashboard" icon="briefcase" href="/api-reference/dashboards/agent-dashboard">
+    KPI metrics, merchant status, processing volume, and top-performer rankings for an agent's portfolio.
+  </Card>
+  <Card title="Merchant Dashboard" icon="store" href="/api-reference/dashboards/merchant-dashboard">
+    KPI metrics, recent transactions, batch dates, and volume trends for a single merchant.
+  </Card>
+  <Card title="Partner Dashboard" icon="handshake" href="/api-reference/dashboards/partner-dashboard">
+    Portfolio-level volume, merchant activity, top agent rankings, and application pipeline data for a partner.
+  </Card>
+  <Card title="Financial Reporting" icon="dollar-sign" href="/api-reference/financial-reporting/overview">
+    Transactions, batches, deposits, chargebacks, statements, and ISO residuals.
+  </Card>
+</CardGroup>

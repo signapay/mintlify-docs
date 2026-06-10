@@ -494,6 +494,7 @@
           {
             "group": "Agent Dashboard",
             "pages": [
+              "api-reference/dashboards/agent-dashboard",
               "api-reference/dashboards/agent-applications-summary",
               "api-reference/dashboards/agent-kpi-metrics",
               "api-reference/dashboards/agent-merchant-status",
@@ -507,6 +508,7 @@
           {
             "group": "Merchant Dashboard",
             "pages": [
+              "api-reference/dashboards/merchant-dashboard",
               "api-reference/dashboards/merchant-kpi-metrics",
               "api-reference/dashboards/merchant-latest-batch-date",
               "api-reference/dashboards/merchant-recent-transactions",
@@ -517,6 +519,7 @@
           {
             "group": "Partner Dashboard",
             "pages": [
+              "api-reference/dashboards/partner-dashboard",
               "api-reference/dashboards/partner-applications-summary",
               "api-reference/dashboards/partner-kpi-metrics",
               "api-reference/dashboards/partner-merchant-status",
