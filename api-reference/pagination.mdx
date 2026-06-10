@@ -48,7 +48,7 @@ To retrieve every record, loop until `meta.page` equals `meta.totalPages`:
 ```bash
 page=1
 while true; do
-  response=$(curl -s "https://api.signapay.com/v1/crm/leads?page=$page&size=100" \
+  response=$(curl -s "https://api.payhub.com/v1/crm/leads?page=$page&size=100" \
     -H "Authorization: Api-Key <your-api-key>")
   
   total_pages=$(echo "$response" | jq '.meta.totalPages')
