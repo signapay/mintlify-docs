@@ -494,7 +494,6 @@
           {
             "group": "Agent Dashboard",
             "pages": [
-              "api-reference/dashboards/overview",
               "api-reference/dashboards/agent-applications-summary",
               "api-reference/dashboards/agent-kpi-metrics",
               "api-reference/dashboards/agent-merchant-status",

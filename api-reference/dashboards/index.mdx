@@ -5,17 +5,48 @@ description: "Pre-aggregated KPI metrics, summary data, and financial reporting 
 
 The Reporting endpoints return pre-aggregated metrics and financial data that power the SignaPay admin, partner, agent, and merchant UIs. All responses are read-only and scoped to the authenticated user's role and client hierarchy.
 
-<CardGroup cols={3}>
-  <Card title="Agent" icon="briefcase" href="/api-reference/dashboards/overview">
-    KPI metrics, merchant status, processing volume, top-performer rankings, and residuals for an agent's portfolio.
-  </Card>
-  <Card title="Merchant" icon="store" href="/api-reference/dashboards/merchant-kpi-metrics">
-    KPI metrics, transaction history, batch records, deposits, chargebacks, and statements for a single merchant.
-  </Card>
-  <Card title="Partner" icon="handshake" href="/api-reference/dashboards/partner-applications-summary">
-    Portfolio-level volume, merchant activity, top agent rankings, application pipeline data, and residuals for a partner.
-  </Card>
-</CardGroup>
+## Agent dashboard
+
+Metrics scoped to a specific agent's portfolio:
+
+| Endpoint | Description |
+| --- | --- |
+| [Applications summary](/api-reference/dashboards/agent-applications-summary) | Application counts broken down by pipeline stage |
+| [KPI metrics](/api-reference/dashboards/agent-kpi-metrics) | Key performance indicators for the agent |
+| [Merchant status](/api-reference/dashboards/agent-merchant-status) | Active, inactive, and closed merchant breakdown |
+| [Monthly active merchants](/api-reference/dashboards/agent-monthly-active-merchants) | Month-over-month active merchant count |
+| [Monthly processing volume](/api-reference/dashboards/agent-monthly-processing-volume) | Rolling monthly processing volume trend |
+| [Net merchants](/api-reference/dashboards/agent-net-merchants) | Net merchant adds and attrition by month |
+| [Ticket counts](/api-reference/dashboards/agent-ticket-counts) | Open ticket summary for the agent |
+| [Top performers (processing)](/api-reference/dashboards/agent-top-performers-processing) | Highest-volume merchants in the agent's book |
+
+## Merchant dashboard
+
+Metrics scoped to a single merchant's activity:
+
+| Endpoint | Description |
+| --- | --- |
+| [KPI metrics](/api-reference/dashboards/merchant-kpi-metrics) | Key performance indicators for the merchant |
+| [Latest batch date](/api-reference/dashboards/merchant-latest-batch-date) | Most recent settlement batch date |
+| [Recent transactions](/api-reference/dashboards/merchant-recent-transactions) | Latest transaction activity |
+| [Ticket counts](/api-reference/dashboards/merchant-ticket-counts) | Open support tickets for the merchant |
+| [Transaction trend](/api-reference/dashboards/merchant-transaction-trend) | Volume trend over time |
+
+## Partner dashboard
+
+Metrics scoped to a partner's full downstream portfolio:
+
+| Endpoint | Description |
+| --- | --- |
+| [Applications summary](/api-reference/dashboards/partner-applications-summary) | Application pipeline breakdown across all agents |
+| [KPI metrics](/api-reference/dashboards/partner-kpi-metrics) | Key performance indicators for the partner |
+| [Merchant status](/api-reference/dashboards/partner-merchant-status) | Portfolio-level active/inactive/closed breakdown |
+| [Monthly active merchants](/api-reference/dashboards/partner-monthly-active-merchants) | Month-over-month active merchant count |
+| [Monthly processing volume](/api-reference/dashboards/partner-monthly-processing-volume) | Rolling monthly volume trend |
+| [Net merchants](/api-reference/dashboards/partner-net-merchants) | Net merchant adds and attrition by month |
+| [Top agents MTD](/api-reference/dashboards/partner-top-agents) | Best-performing agents month-to-date |
+| [Top performers (processing)](/api-reference/dashboards/partner-top-performers-processing) | Highest-volume merchants in the portfolio |
+| [Top performers (residual)](/api-reference/dashboards/partner-top-performers-residual) | Highest-residual merchants in the portfolio |
 
 ## Financial Reporting
 
