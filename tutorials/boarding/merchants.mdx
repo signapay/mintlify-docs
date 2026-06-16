@@ -66,21 +66,6 @@ Before you start, you need an API key.
     **Endpoint:** [Create Application Document](/api-reference/leads/create-lead-document) — `POST /v1/crm/leads/{leadId}/documents`
   </Step>
 
-  <Step title="Run compliance validations">
-    Before submission, run identity and risk screening checks against the application.
-
-    | Check | Endpoint |
-    |-------|----------|
-    | Completeness check | [Validate Completeness](/api-reference/leads/validate-lead-completeness) |
-    | Tax ID verification | [TinCheck](/api-reference/leads/lead-tincheck-validation) |
-    | Identity verification | [DataX](/api-reference/leads/lead-datax-validation) |
-    | Credit & state ID | [Equifax](/api-reference/leads/lead-equifax-credit) |
-    | Bank account | [GIACT](/api-reference/leads/lead-giact-validation) |
-    | Terminated merchant | [MATCH Pro](/api-reference/leads/lead-match-validation) |
-
-    Resolve any failures before proceeding to review.
-  </Step>
-
   <Step title="Send for e-signature">
     Generate an MPA (Merchant Processing Agreement) signing session for the merchant to review and sign.
 

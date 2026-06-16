@@ -242,21 +242,6 @@
               "api-reference/leads/create-signing-session",
               "api-reference/leads/verify-signing-token"
             ]
-          },
-          {
-            "group": "Validations",
-            "pages": [
-              "api-reference/leads/validations",
-              "api-reference/leads/list-lead-validations",
-              "api-reference/leads/validate-lead-completeness",
-              "api-reference/leads/lead-datax-validation",
-              "api-reference/leads/lead-equifax-credit",
-              "api-reference/leads/lead-equifax-state-id",
-              "api-reference/leads/lead-giact-validation",
-              "api-reference/leads/lead-match-validation",
-              "api-reference/leads/lead-tincheck-validation",
-              "api-reference/leads/get-lead-validation"
-            ]
           }
         ]
       },
