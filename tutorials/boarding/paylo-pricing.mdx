@@ -36,7 +36,7 @@ See [Quickstart](/getting-started/quickstart) for API access setup.
 ## Steps
 
 <Steps>
-  <Step title="Create the application">
+  <Step title="Create the application" id="create-the-application">
     Create the initial application record. All subsequent data — addresses, principals, pricing, and banking — attaches to this record.
 
     **Endpoint:** [Create Application](/api-reference/leads/create-lead) — `POST /v1/crm/leads`
@@ -77,7 +77,7 @@ See [Quickstart](/getting-started/quickstart) for API access setup.
     The response includes an `id` field. Use this value as `{leadId}` in all subsequent steps.
   </Step>
 
-  <Step title="Add DBA address">
+  <Step title="Add DBA address" id="add-dba-address">
     Add the merchant's primary business (DBA) address.
 
     **Endpoint:** [Add Application Business Address](/api-reference/leads/add-lead-address) — `POST /v1/crm/leads/{leadId}/business-addresses`
@@ -100,7 +100,7 @@ See [Quickstart](/getting-started/quickstart) for API access setup.
     ```
   </Step>
 
-  <Step title="Add legal address">
+  <Step title="Add legal address" id="add-legal-address">
     Add the merchant's registered legal address.
 
     **Endpoint:** [Add Application Business Address](/api-reference/leads/add-lead-address) — `POST /v1/crm/leads/{leadId}/business-addresses`
@@ -123,7 +123,7 @@ See [Quickstart](/getting-started/quickstart) for API access setup.
     ```
   </Step>
 
-  <Step title="Add mailing address">
+  <Step title="Add mailing address" id="add-mailing-address">
     Add the merchant's mailing address.
 
     **Endpoint:** [Add Application Business Address](/api-reference/leads/add-lead-address) — `POST /v1/crm/leads/{leadId}/business-addresses`
@@ -146,7 +146,7 @@ See [Quickstart](/getting-started/quickstart) for API access setup.
     ```
   </Step>
 
-  <Step title="Find the managing director">
+  <Step title="Find the managing director" id="find-the-managing-director">
     Retrieve the principals on the application and note the `id` of the principal where `isManagingDirector` is `true`. Use this as `{principalId}` in the next step.
 
     **Endpoint:** [List Application Principals](/api-reference/leads/list-lead-principals) — `GET /v1/crm/leads/{leadId}/principals`
@@ -157,7 +157,7 @@ See [Quickstart](/getting-started/quickstart) for API access setup.
     ```
   </Step>
 
-  <Step title="Update the principal">
+  <Step title="Update the principal" id="update-the-principal">
     Populate the managing director's identity, contact, and ownership details.
 
     **Endpoint:** [Update Application Principal](/api-reference/leads/update-lead-principal) — `PUT /v1/crm/leads/{leadId}/principals/{principalId}`
@@ -193,7 +193,7 @@ See [Quickstart](/getting-started/quickstart) for API access setup.
     ```
   </Step>
 
-  <Step title="Add deposit information">
+  <Step title="Add deposit information" id="add-deposit-information">
     Provide the ACH funding account details for merchant deposits.
 
     **Endpoint:** [Create Application Deposit Info](/api-reference/leads/create-lead-deposit-info) — `POST /v1/crm/leads/{leadId}/deposit-info`
@@ -211,7 +211,7 @@ See [Quickstart](/getting-started/quickstart) for API access setup.
     ```
   </Step>
 
-  <Step title="Find the PayLo pricing template">
+  <Step title="Find the PayLo pricing template" id="find-the-paylo-pricing-template">
     List available merchant pricing templates and note the `id` of the template named **PayLo**. Use it as `{templateId}` in the next step.
 
     **Endpoint:** [List Pricing Templates](/api-reference/lookups/list-pricing-templates) — `GET /v1/crm/pricing-templates`
@@ -222,7 +222,7 @@ See [Quickstart](/getting-started/quickstart) for API access setup.
     ```
   </Step>
 
-  <Step title="Create a pricing package">
+  <Step title="Create a pricing package" id="create-a-pricing-package">
     Attach the PayLo template to the application as a pricing package.
 
     **Endpoint:** [Create Application Pricing Package](/api-reference/leads/create-lead-pricing-package) — `POST /v1/crm/leads/{leadId}/pricing-packages`
@@ -237,7 +237,7 @@ See [Quickstart](/getting-started/quickstart) for API access setup.
     The response should include `"status": "active"`.
   </Step>
 
-  <Step title="Find the PayLo discount rule">
+  <Step title="Find the PayLo discount rule" id="find-the-paylo-discount-rule">
     List the pricing rules on the application. Find the rule where `item.key` is `"DISCOUNT-PAYLO"` and note its `id` and `pricingItemId`. Use these as `{pricingRuleId}` and `{pricingItemId}` in the next step.
 
     **Endpoint:** [List Application Pricing Rules](/api-reference/leads/list-lead-pricing-rules) — `GET /v1/crm/leads/{leadId}/pricing-rules`
@@ -248,7 +248,7 @@ See [Quickstart](/getting-started/quickstart) for API access setup.
     ```
   </Step>
 
-  <Step title="Set the PayLo rate">
+  <Step title="Set the PayLo rate" id="set-the-paylo-rate">
     Update the PayLo discount rule with the desired percentage rate.
 
     **Endpoint:** [Update Application Pricing Rule](/api-reference/leads/update-lead-pricing-rule) — `PUT /v1/crm/leads/{leadId}/pricing-rules/{pricingRuleId}`
@@ -261,7 +261,7 @@ See [Quickstart](/getting-started/quickstart) for API access setup.
     ```
   </Step>
 
-  <Step title="Submit for signature">
+  <Step title="Submit for signature" id="submit-for-signature">
     Submit the completed application for merchant review and e-signature. A signing email is sent to the managing director's address from step 6.
 
     **Endpoint:** [Submit Application for Review](/api-reference/leads/submit-lead-for-review) — `PUT /v1/crm/leads/{leadId}/submit/{reviewer}`
