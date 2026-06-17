@@ -1,0 +1,281 @@
+---
+title: "Setting Up PayLo Pricing"
+description: "Step-by-step walkthrough for creating a merchant application and configuring a PayLo discount rate"
+---
+
+This tutorial walks through creating a merchant application and configuring a PayLo discount rate from scratch. By the end, the application will have a complete business profile, banking details, and a custom PayLo rate — ready to send for merchant signature.
+
+Each step includes a sample request and links to the full API reference for that endpoint.
+
+## Prerequisites
+
+- A valid API key — pass it as `Api-Key <your-api-key>` in every `Authorization` header
+- Base URL: `https://api.payhub.com`
+
+See [Quickstart](/getting-started/quickstart) for API access setup.
+
+---
+
+## Steps
+
+<Steps>
+  <Step title="Create the application">
+    Create the initial application record. All subsequent data — addresses, principals, pricing, and banking — attaches to this record.
+
+    **Endpoint:** [Create Application](/api-reference/leads/create-lead) — `POST /v1/crm/leads`
+
+    ```bash
+    curl -X POST https://api.payhub.com/v1/crm/leads \
+      -H "Authorization: Api-Key <your-api-key>" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "type": "merchant",
+        "status": "lead",
+        "dba": "Example Merchant DBA",
+        "legal": "Example Merchant LLC",
+        "firstName": "Alex",
+        "lastName": "Example",
+        "email": "merchant@example.com",
+        "phoneNumber": "+14694694696",
+        "businessPhoneNumber": "+14694694696",
+        "companyWebsite": "example-merchant.test",
+        "mcc": "5812",
+        "industryTypeId": 45,
+        "merchantTypeId": 522,
+        "ownershipType": "Limited Liability (LLC)",
+        "stateOfIncorporation": "TX",
+        "dateEstablished": "2018-04-01",
+        "federalTaxId": "123456789",
+        "returnPolicy": "no_questions",
+        "goodsAndServices": "Restaurant meals and beverages",
+        "averageTicket": 45,
+        "monthlyVolume": 50000,
+        "retail": 100,
+        "moto": 0,
+        "internet": 0,
+        "keyed": 0
+      }'
+    ```
+
+    The response includes an `id` field. Use this value as `{leadId}` in all subsequent steps.
+  </Step>
+
+  <Step title="Add DBA address">
+    Add the merchant's primary business (DBA) address.
+
+    **Endpoint:** [Add Application Business Address](/api-reference/leads/add-lead-address) — `POST /v1/crm/leads/{leadId}/business-addresses`
+
+    ```bash
+    curl -X POST https://api.payhub.com/v1/crm/leads/{leadId}/business-addresses \
+      -H "Authorization: Api-Key <your-api-key>" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "type": "dba",
+        "addressLine1": "123 Main St",
+        "addressLine2": "Suite 100",
+        "city": "Dallas",
+        "state": "TX",
+        "zip": "75201",
+        "country": "US",
+        "sameAsDba": false,
+        "sameAsLegal": false
+      }'
+    ```
+  </Step>
+
+  <Step title="Add legal address">
+    Add the merchant's registered legal address.
+
+    **Endpoint:** [Add Application Business Address](/api-reference/leads/add-lead-address) — `POST /v1/crm/leads/{leadId}/business-addresses`
+
+    ```bash
+    curl -X POST https://api.payhub.com/v1/crm/leads/{leadId}/business-addresses \
+      -H "Authorization: Api-Key <your-api-key>" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "type": "legal",
+        "addressLine1": "123 Main St",
+        "addressLine2": "Suite 100",
+        "city": "Dallas",
+        "state": "TX",
+        "zip": "75201",
+        "country": "US",
+        "sameAsDba": true,
+        "sameAsLegal": false
+      }'
+    ```
+  </Step>
+
+  <Step title="Add mailing address">
+    Add the merchant's mailing address.
+
+    **Endpoint:** [Add Application Business Address](/api-reference/leads/add-lead-address) — `POST /v1/crm/leads/{leadId}/business-addresses`
+
+    ```bash
+    curl -X POST https://api.payhub.com/v1/crm/leads/{leadId}/business-addresses \
+      -H "Authorization: Api-Key <your-api-key>" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "type": "mailing",
+        "addressLine1": "123 Main St",
+        "addressLine2": "Suite 100",
+        "city": "Dallas",
+        "state": "TX",
+        "zip": "75201",
+        "country": "US",
+        "sameAsDba": true,
+        "sameAsLegal": true
+      }'
+    ```
+  </Step>
+
+  <Step title="Find the managing director">
+    Retrieve the principals on the application and note the `id` of the principal where `isManagingDirector` is `true`. Use this as `{principalId}` in the next step.
+
+    **Endpoint:** [List Application Principals](/api-reference/leads/list-lead-principals) — `GET /v1/crm/leads/{leadId}/principals`
+
+    ```bash
+    curl "https://api.payhub.com/v1/crm/leads/{leadId}/principals?size=10" \
+      -H "Authorization: Api-Key <your-api-key>"
+    ```
+  </Step>
+
+  <Step title="Update the principal">
+    Populate the managing director's identity, contact, and ownership details.
+
+    **Endpoint:** [Update Application Principal](/api-reference/leads/update-lead-principal) — `PUT /v1/crm/leads/{leadId}/principals/{principalId}`
+
+    ```bash
+    curl -X PUT https://api.payhub.com/v1/crm/leads/{leadId}/principals/{principalId} \
+      -H "Authorization: Api-Key <your-api-key>" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "firstName": "Alex",
+        "lastName": "Example",
+        "title": "Owner",
+        "email": "email@example.com",
+        "phoneNumber": "+14694694696",
+        "isManagingDirector": true,
+        "addressLine1": "123 Main St",
+        "addressLine2": "Suite 100",
+        "city": "Dallas",
+        "state": "TX",
+        "zip": "75201",
+        "country": "US",
+        "role": "Owner",
+        "percentOwnership": 100,
+        "dob": "1985-06-15",
+        "ssn": "555555555",
+        "identificationType": "driving_license",
+        "identificationId": "TX12345678",
+        "identificationExpiresAt": "2028-06-15",
+        "identificationIssuingState": "TX",
+        "identificationIssuingCountry": "US",
+        "bankruptcy": false
+      }'
+    ```
+  </Step>
+
+  <Step title="Add deposit information">
+    Provide the ACH funding account details for merchant deposits.
+
+    **Endpoint:** [Create Application Deposit Info](/api-reference/leads/create-lead-deposit-info) — `POST /v1/crm/leads/{leadId}/deposit-info`
+
+    ```bash
+    curl -X POST https://api.payhub.com/v1/crm/leads/{leadId}/deposit-info \
+      -H "Authorization: Api-Key <your-api-key>" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "depositCategory": "all",
+        "bankName": "Test Bank NA",
+        "routingNumber": "111000025",
+        "accountNumber": "11111111111"
+      }'
+    ```
+  </Step>
+
+  <Step title="Find the PayLo pricing template">
+    List available merchant pricing templates and note the `id` of the template named **PayLo**. Use it as `{templateId}` in the next step.
+
+    **Endpoint:** [List Pricing Templates](/api-reference/lookups/list-pricing-templates) — `GET /v1/crm/pricing-templates`
+
+    ```bash
+    curl "https://api.payhub.com/v1/crm/pricing-templates?size=50&filter[type]=merchant" \
+      -H "Authorization: Api-Key <your-api-key>"
+    ```
+  </Step>
+
+  <Step title="Create a pricing package">
+    Attach the PayLo template to the application as a pricing package.
+
+    **Endpoint:** [Create Application Pricing Package](/api-reference/leads/create-lead-pricing-package) — `POST /v1/crm/leads/{leadId}/pricing-packages`
+
+    ```bash
+    curl -X POST https://api.payhub.com/v1/crm/leads/{leadId}/pricing-packages \
+      -H "Authorization: Api-Key <your-api-key>" \
+      -H "Content-Type: application/json" \
+      -d '{"templateId": "{templateId}"}'
+    ```
+
+    The response should include `"status": "active"`.
+  </Step>
+
+  <Step title="Find the PayLo discount rule">
+    List the pricing rules on the application. Find the rule where `item.key` is `"DISCOUNT-PAYLO"` and note its `id` and `pricingItemId`. Use these as `{pricingRuleId}` and `{pricingItemId}` in the next step.
+
+    **Endpoint:** [List Application Pricing Rules](/api-reference/leads/list-lead-pricing-rules) — `GET /v1/crm/leads/{leadId}/pricing-rules`
+
+    ```bash
+    curl "https://api.payhub.com/v1/crm/leads/{leadId}/pricing-rules?size=100&expand=item" \
+      -H "Authorization: Api-Key <your-api-key>"
+    ```
+  </Step>
+
+  <Step title="Set the PayLo rate">
+    Update the PayLo discount rule with the desired percentage rate.
+
+    **Endpoint:** [Update Application Pricing Rule](/api-reference/leads/update-lead-pricing-rule) — `PUT /v1/crm/leads/{leadId}/pricing-rules/{pricingRuleId}`
+
+    ```bash
+    curl -X PUT https://api.payhub.com/v1/crm/leads/{leadId}/pricing-rules/{pricingRuleId} \
+      -H "Authorization: Api-Key <your-api-key>" \
+      -H "Content-Type: application/json" \
+      -d '{"percent": 3.5, "pricingItemId": "{pricingItemId}"}'
+    ```
+  </Step>
+
+  <Step title="Submit for signature">
+    Submit the completed application for merchant review and e-signature. A signing email is sent to the managing director's address from step 6.
+
+    **Endpoint:** [Submit Application for Review](/api-reference/leads/submit-lead-for-review) — `PUT /v1/crm/leads/{leadId}/submit/{reviewer}`
+
+    ```bash
+    curl -X PUT "https://api.payhub.com/v1/crm/leads/{leadId}/submit/merchant?acknowledgeWarnings=true" \
+      -H "Authorization: Api-Key <your-api-key>"
+    ```
+
+    The response should include `"status": "review"`.
+  </Step>
+</Steps>
+
+---
+
+## Related resources
+
+<CardGroup cols={2}>
+  <Card title="Applications Overview" icon="file-text" href="/api-reference/leads/overview">
+    Full reference for the application lifecycle, status pipeline, and all available sub-resources.
+  </Card>
+
+  <Card title="Pricing Reference" icon="tag" href="/api-reference/leads/pricing">
+    Pricing packages, items, and rules — how they relate and what fields are available.
+  </Card>
+
+  <Card title="Boarding a Merchant" icon="user-plus" href="/tutorials/boarding/merchants">
+    Conceptual walkthrough of the complete merchant boarding lifecycle.
+  </Card>
+
+  <Card title="List Pricing Templates" icon="list" href="/api-reference/lookups/list-pricing-templates">
+    Browse all available pricing templates, including PayLo.
+  </Card>
+</CardGroup>
