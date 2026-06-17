@@ -27,7 +27,8 @@
             "group": "Tutorials",
             "icon": "book-open",
             "pages": [
-              "tutorials/boarding/merchants"
+              "tutorials/boarding/merchants",
+              "tutorials/boarding/paylo-pricing"
             ]
           }
         ]
